@@ -54,12 +54,12 @@ export class validacionCorreoPage{
 
       if(this.tipoRegistro == 'apple'){
         this.myForm = this.formBuilder.group({
-          email: ['', [Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+          email: ['', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
           celular: ['', [Validators.max(999999999),Validators.min(111111111)]]
         });
       }else{
         this.myForm = this.formBuilder.group({
-          email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+          email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
           celular: ['', [Validators.required, Validators.max(999999999),Validators.min(111111111)]]
         });
       }

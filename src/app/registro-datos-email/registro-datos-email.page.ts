@@ -42,7 +42,7 @@ export class RegistroDatosEmailPage implements OnInit {
       nombres: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
      // celular: ['', [Validators.required, Validators.pattern('^[0-9]+$'),Validators.max(999999999),Validators.min(111111111)]],
-      email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
      // direccion: ['', [Validators.required]]
     });
