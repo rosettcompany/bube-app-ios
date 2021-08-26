@@ -1,0 +1,128 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button style="color: #ffff;" ><ion-icon name="close-outline"></ion-icon></ion-back-button>
+        </ion-buttons>
+        <ion-button fill="clear" slot="start" (click) = "closeModal()"><ion-icon style="zoom:1.5; color:aliceblue;" name="close-outline"></ion-icon>  </ion-button>
+        <ion-button class="ion-button-toolbar" (click) = "Limpiar()" fill="clear" slot="end"> <ion-label class="label-button-header"> Limpiar</ion-label></ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-row style="margin: 20px;">
+      <ion-item-divider style="background-color: transparent;">
+        <ion-label class="ion-label-title">Filtrar</ion-label>
+    </ion-item-divider>
+    </ion-row>
+    <ion-row style="margin: 20px;" *ngIf="parteSuperiorVisible">
+          <div class="div-filtro1" >
+             <ion-icon class="icon-style" name="cart-outline"></ion-icon>
+          </div>
+
+          <div class="div-filtro1">
+             <ion-label class="label-style">Solo muestra establecimientos <br> donde puedo comprar</ion-label>
+          </div>
+          <div class="div-filtro1">
+             <ion-radio-group [(ngModel)]="radio1" >
+                <ion-item class="item-radio2" lines="none">
+                 <ion-radio class="radio-style" value="comprar" (click) = "clickRadioButton1()"></ion-radio>
+               </ion-item>
+              </ion-radio-group>
+           </div>
+
+    </ion-row>
+    <ion-row style="margin: 20px;" *ngIf="parteSuperiorVisible2">
+
+      <div class="div-filtro1" >
+         <ion-icon class="icon-style" src="./assets/Iconos/porcentaje.svg"></ion-icon>
+      </div>
+
+      <div class="div-filtro1">
+         <ion-label class="label-style">Mostrar solo promociones</ion-label>
+      </div>
+      <div class="div-filtro1">
+         <ion-radio-group [(ngModel)]="radio2" (ionChange) = "clickRadioButton2()">
+            <ion-item class="item-radio2" lines="none">
+             <ion-radio class="radio-style" value="promocion"></ion-radio>
+           </ion-item>
+          </ion-radio-group>
+       </div>
+
+      </ion-row>
+
+
+      <div class="verticalLine"></div>
+        
+      <ion-list class="ion-list-checkbox">
+        <ion-item-divider style="background-color: transparent;">
+            <ion-label class="ion-label">Rango de Precios</ion-label>
+          </ion-item-divider>
+        <ion-item lines="none" class="item-radio">
+          <ion-label class="label-range-price">Hasta S/50</ion-label>
+          <ion-checkbox class="ion-checkbox" [(ngModel)]="rango1" (ionChange) ="ItemRango1()" slot="end"></ion-checkbox>
+        </ion-item>
+        <ion-item lines="none" class="item-radio">
+            <ion-label class="label-range-price">S/50 - S/250</ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="rango2" (ionChange) ="ItemRango2()" slot="end"></ion-checkbox>
+          </ion-item>
+        <ion-item lines="none" class="item-radio">
+            <ion-label class="label-range-price">S/250 - S/500</ion-label>
+            <ion-checkbox  class="ion-checkbox" [(ngModel)]="rango3" (ionChange) ="ItemRango3()" slot="end"></ion-checkbox>
+          </ion-item>
+        <ion-item lines="none" class="item-radio">
+            <ion-label class="label-range-price">S/500 - S/1000</ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="rango4" (ionChange) ="ItemRango4()" slot="end"></ion-checkbox>
+          </ion-item>
+        <ion-item lines="none" class="item-radio">
+            <ion-label class="label-range-price">S/1000 a más</ion-label>
+            <ion-checkbox  class="ion-checkbox"  [(ngModel)]="rango5" (ionChange) ="ItemRango5()" slot="end"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <div class="verticalLine"></div>
+
+   <div class="ion-list-checkbox">
+ 
+    <ion-item-divider style="background-color: transparent;">
+        <ion-label class="ion-label">Marcas</ion-label>
+    </ion-item-divider>
+
+      <ion-row *ngIf="spinnerMarcas">
+        <div class="div-spinner-style">
+          <ion-spinner name="circles"></ion-spinner>
+        </div>
+      </ion-row>
+        <ion-row class="checkbox-tags rounded-checkbox-tags">
+          <ion-item lines="none" class="checkbox-tag rounded-tag" *ngFor="let marca of ListaMarca" >
+              <div class="div-border">
+                <ion-label class="tag-label">{{marca.nombremarca}}</ion-label>
+                <ion-checkbox [(ngModel)]="marca.isChecked" (ionChange) ="ItemsMarca(marca)"></ion-checkbox>
+              </div>
+          </ion-item>
+        </ion-row>
+
+      <ion-item-divider style="background-color: transparent;">
+        <ion-label class="ion-label">Pack</ion-label>
+      </ion-item-divider>
+      <ion-row *ngIf="spinnerMarcas">
+        <div class="div-spinner-style">
+          <ion-spinner name="circles"></ion-spinner>
+        </div>
+      </ion-row>
+        <ion-row class="checkbox-tags rounded-checkbox-tags">
+          <ion-item lines="none" class="checkbox-tag rounded-tag" *ngFor="let pack of ListaPacks">
+            <div class="div-border">
+              <ion-label class="tag-label">{{pack.numeropack}} u.</ion-label>
+              <ion-checkbox [(ngModel)]="pack.isChecked" (ionChange) ="ItemsPacks(pack)"></ion-checkbox>
+            </div>
+          </ion-item>
+        </ion-row>
+
+    </div> 
+
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-button  class="button-aplicar" (click) = "Aplicar()" style="margin: 40px;" expand="block">Aplicar</ion-button>
+</ion-footer>

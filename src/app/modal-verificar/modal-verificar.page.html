@@ -1,0 +1,20 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <div id="contenedor">
+    <h3>Verifique su dirección</h3>
+
+    <p>Actualmente esta es su dirección</p>
+      <ion-item style="--background: #121212;" (click) ="confirmar()">
+        <ion-icon slot="start" name="navigate-circle" size="large" style="color: green;"></ion-icon>
+        <p class="label-dire">{{direccion}}</p>
+        <ion-icon name="ellipse" slot="end" style="color: #108b3c;"></ion-icon>
+      </ion-item>
+    
+  
+    <ion-button id="btn-cancelar"  searchIcon="location" (click)="obtenerDireccion()"><ion-icon name="location"></ion-icon>¿ Deseas actualizar su dirección ?</ion-button>
+
+  </div>
+
+</ion-content>

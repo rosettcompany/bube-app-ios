@@ -1,0 +1,120 @@
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-broad-margin);
+  --page-background: var(--app-background);
+
+  --page-swiper-pagination-space: 40px;
+  --page-swiper-pagination-height: 18px;
+  --page-pagination-bullet-size: 10px;
+
+  --page-first-slide-background: #121212;
+  --page-second-slide-background: #121212;
+  --page-third-slide-background: #121212;
+  --page-last-slide-background: #121212;
+
+  --page-vector-decoration-fill: var(--ion-color-light-shade);
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+ion-content{
+  --background: var(--page-first-slide-background);
+
+}
+
+
+ion-footer{
+      background: var(--page-first-slide-background);
+  ion-button{
+    --color: var(--ion-color-lightest);
+     text-transform: none;
+     --box-shadow: none !important;
+  }
+
+}
+
+
+ion-content {
+  // To get the ion-content behind the ion-header
+  position: relative;
+  top: 0;
+
+}
+
+
+.info-paragraph {
+
+  margin-top: 5px;
+  margin-bottom: var(--page-margin);
+  color: #f3f2ed;
+  text-align: center;
+  font-family: 'SFCompactText-Medium';
+  font-size: 16px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.info-title {
+  margin: 0px;
+  margin-bottom: var(--page-margin);
+  color: #f3f2ed;
+  text-align: center;
+  font-family: 'Gotham-Medium';
+  font-size: 20px;
+
+}
+
+.imagenLogo{
+  width: 120px; 
+  height: 120px;
+  margin: auto;
+  margin-top: 5%;
+  display: block;
+}
+
+.button-continuar {
+  --background: #108b3c;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  bottom: 20px;
+  font-size: 16px;
+  text-transform: none;
+  height: 50px;
+  width: 80%;
+  --border-radius: 16px;
+  font-family: 'SFCompactText-Medium';
+  --color: #ffffff;
+  color: #ffffff;
+}
+
+.input-item{
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: var(--ion-color-dark);
+  color: #121212!important;
+  --border-radius: 10px;
+  --background: #f3f2ed;
+  --highlight-background: black !important;
+   width: 80%;
+}
+
+
+.error-input{
+  margin-left: 8%;
+
+
+  .label-error{
+
+    font-family: 'SFCompactText-Medium';
+      font-style: Regular;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: red;
+  }
+
+
+}

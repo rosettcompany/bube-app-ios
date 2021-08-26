@@ -1,0 +1,65 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+  <div class="cabezera">
+    <h3 > Mi Selección</h3>
+    <ion-button class="btn-salir" fill="clear" (click)="cerrarModal()"><ion-icon name="close"></ion-icon></ion-button>
+  </div>
+  
+  <ion-list>
+    <ion-item lines="none" *ngFor="let bebida of listaSeleccion;let i = index">
+      <ion-col size="4">
+        <ion-row>
+          <app-aspect-ratio [ratio]="{w: 56, h: 56}">
+            <app-image-shell class="producto-picture" animation="spinner" src = "{{bebida.rutaimagenbebida}}" ></app-image-shell> <!-- [src]="friend.image"-->
+         </app-aspect-ratio>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row style="width: 120px;">
+          <ion-label class="ion-label-nombreMarca">{{bebida.nombremarca}}</ion-label>
+        </ion-row>
+        <ion-row style="width: 120px;">
+          <p class="ion-label-nombreBebida">{{bebida.nombrebebida}}</p>
+        </ion-row>
+        <ion-row>
+          <ion-label class="ion-label-nombreBebida" style="color: red;">{{bebida.disponible}}</ion-label>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-label class="ion-label-precio">S/ {{bebida.preciobebidasocio.toFixed(2)}}</ion-label>
+        </ion-row>
+      </ion-col>
+      <div>
+        <ion-row  size="2.3">
+          <app-aspect-ratio [ratio]="{w: 56, h: 56}">
+            <app-image-shell class="client-picture" [src]="bebida.rutafotosocio" ></app-image-shell> <!-- [src]="friend.image"-->
+         </app-aspect-ratio>
+        </ion-row>
+        <ion-row>
+            <ion-icon (click)="menos(i)" class="btn-cantidad" name="remove-circle-sharp"></ion-icon>
+            <ion-label id="txt-numero" style="margin-top: 9px; margin-left: 5px;margin-right: 5px;color: #ffffff;">{{bebida.cantidad}}</ion-label>
+            <ion-icon (click)="mas(i)" class="btn-cantidad" name="add-circle"></ion-icon>
+        </ion-row>
+      </div>
+    </ion-item>
+  </ion-list>
+
+<ng-template #customContent>
+    <ion-label class="label-tour" >En el mapa encontrarás todos los establecimientos que tienen el total de tu pedido, escoge el de tu preferencia en base al mejor precio y distancia disponible.</ion-label>
+</ng-template> 
+
+<ng-template #doneButton>
+<ion-button class="button-tour" hidden>
+    Ok!
+</ion-button>
+</ng-template>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+      <ion-button  joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton"  expand="block" disabled={{buttonDisabled}} id="btn-agregar-carrito" (click)="agregarAlcarrito()">
+        <ion-label id="txt-cantidad-btn">{{num_bebidas}}</ion-label>
+         <ion-label class="label-boton"> Ver en el mapa </ion-label>
+         <ion-label id="txt-total"> S/ {{total}}</ion-label>
+      </ion-button>
+</ion-footer>

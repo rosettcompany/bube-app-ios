@@ -1,0 +1,30 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <div id="spinner" class="div-spinner">
+    <ion-spinner color="success" name="circles"></ion-spinner>
+  </div>  
+
+  <div id="contenedor" style="display: none;">
+    <h3>¿ Como editar y eliminar su tarjeta ?</h3>
+
+    <p>Para editar arrastre hacia la derecha</p>
+      <ion-item >
+        <ion-img class="dedo" src="../../assets/Tour/dedoDE.png"></ion-img>
+        <ion-img src="{{editar}}"></ion-img>
+        
+      </ion-item>
+      <p>Para eliminar arrastre hacia la izquierda</p>
+      <ion-item>
+        <ion-img src="{{eliminar}}"></ion-img>
+        <ion-img class="dedo" src="../../assets/Tour/dedoIZ.png"></ion-img>
+      </ion-item>
+
+  </div>
+  <div >
+    <ion-button (click)="cerrarModaL()">Cerrar</ion-button>
+  </div>
+
+</ion-content>
+

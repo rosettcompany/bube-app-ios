@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row>
+    <div class="conteiner-logo">
+      <ion-img src="./assets/Iconos/LogoBube_final.png" alt="logo bube" class="img-logo"></ion-img>
+      <ion-label class="titulo-login" style="font-size: 30px;">Únete<br></ion-label>
+      <ion-label class="titulo-login">a la comunidad de Bube</ion-label>
+    </div>
+  </ion-row>
+  <div id="container" style="margin-top: 20px;">
+    <!-- boton para logearse con facebook -->
+    <div class="contenedor">
+      <ion-button class="btn-inicio-sesion" expand="block" (click)="loginFacebook()">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        <ion-label class="text-google">Iniciar sesión con Facebook</ion-label>
+      </ion-button>
+    </div>
+    <div class="contenedor" *ngIf="showSingApple">
+      <ion-button [disabled] = "botonApple" expand="block"  (click) ="cargarLoginApple()" class="btn-inicio-apple">
+         <ion-icon slot="start" name="logo-apple" style="color: #000;"></ion-icon>
+         <ion-label class="text-google">Iniciar sesión con Apple</ion-label>
+         <ion-spinner *ngIf="botonApple" name="crescent"></ion-spinner>
+      </ion-button>
+    </div>
+    <ion-row>
+      <ion-col>
+        <ion-label (click) ="irOtrosInicios()" class="text-inicio-sesion">
+          Otros inicios de sesión
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col>
+              <ion-label class="info-paragraph">Al registrarse estás de<br> acuerdo con nuestros</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear" class="btn-terminos" (click)="terminosYcondiciones()">términos y condiciones</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

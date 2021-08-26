@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: #f3f2ed;">
+      <ion-back-button id="volver" (click) = "regresar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #f3f2ed;">Métodos de pago</ion-title>
+    <ion-icon style="color: #f3f2ed; margin-right: 10px;" size="large" slot="end" name="help-circle-outline" (click)="tutorial()"></ion-icon>
+   <!--  <ion-icon style="color: #ffff; margin-right: 10px;" size="large" slot="end" name="reload-circle-sharp" (click)="ionViewDidEnter()"></ion-icon>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button mode="ios" fill="clear" class="boton" expand="block"  (click)="agregarTarjeta()"><ion-icon name="card-outline" class="icon-tarjeta"></ion-icon>Añadir tarjeta<ion-icon class="icono-inferiores" name="chevron-forward-outline" class="icon-flecha"></ion-icon></ion-button>
+
+  <ion-row *ngIf="spinner">
+    <div class="div-spinner-style">
+      <ion-spinner name="circles"></ion-spinner>
+    </div>
+  </ion-row>
+
+  <ion-list *ngIf="!spinner" #lista [@visibilityChanged]="animation" style="opacity: 0">
+
+    <ion-item-sliding  *ngFor="let tarjeta of tarjetas">
+
+      <ion-item > 
+        <ion-col size="2">
+          <img src="./assets/Iconos/{{tarjeta.tipo}}.png" width="40px" height="40px">
+        </ion-col>
+        <ion-col>
+          <ion-row style="margin-top: 5px;">
+              <ion-label style="color: #f3f2ed;">{{tarjeta.titular}}</ion-label>          
+          </ion-row>
+          <ion-row style="margin-top: 5px;">
+            <ion-label style="color: #f3f2ed; font-weight: bolder;">{{n1(tarjeta.numero)}} {{n2(tarjeta.numero)}}*** **** {{n3(tarjeta.numero)}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-item>
+
+      <ion-item-options  side="start">
+        <ion-item-option (click)="editar(tarjeta)">
+          <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
+        </ion-item-option>  
+      </ion-item-options>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="eliminar(tarjeta)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    
+  </ion-list>
+</ion-content>

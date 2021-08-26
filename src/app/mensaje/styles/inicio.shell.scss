@@ -1,0 +1,16 @@
+
+
+app-image-shell.illustration-image {
+    --image-shell-loading-background: transparent;
+    --image-shell-spinner-color: var(--ion-color-lightest);
+  }
+  
+  app-image-shell.establecimiento-picture {
+    --image-shell-border-radius: 50%;
+    --image-shell-loading-background: transparent;
+    --image-shell-spinner-color: var(--ion-color-lightest);
+  }
+
+  app-image-shell.promocion-picture {
+    --image-shell-border-radius: 5%;
+  }

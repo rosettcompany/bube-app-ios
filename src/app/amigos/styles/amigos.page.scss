@@ -1,0 +1,190 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400&display=swap');
+
+
+.toolbar-amigos{
+  --background: #108b3c;
+
+  ion-title{
+    margin-left: 20px;
+    color: #ffffff;
+    
+  }
+}
+
+
+ion-content{
+  --background: #121212;
+}
+.toolbar-invitar{
+  --background: #121212;
+  border-bottom: solid 5px #464545;
+
+  ion-button{
+    width: min-content;
+    padding: 0px;
+    height: min-content;
+  
+    ion-icon{
+      color: #ffc30b;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+   .ion-tittle{
+     font-family: 'SFCompactText-Medium';
+     font-size: 18px;
+     letter-spacing: 0.25px;
+   }
+  }
+
+  ion-title{
+    margin-left: 0px;
+    color: #ffffff;
+  }
+ 
+   ion-searchbar{
+     --background: #ffffff;
+     --color: #919291;
+     --icon-color: #919291;
+     --placeholder-color: #919291;
+     --border-radius: 10px;
+     margin-top: 20px;
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+   ion-list{
+    background: #121212;
+    padding: 0;
+   }
+   ion-item{
+     --background: linear-gradient(to bottom, #32383e 0%, #17191c 100%);
+     border: none;
+     border-radius: 10px;
+     margin: 0 10px 15px 10px;
+     --padding-start: 3px;
+     --padding-end:0px;
+     --padding-bottom:5px;
+     --padding-top:5px;
+   }
+
+   h5{
+    margin-left: 20px;
+    color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 18px;
+    letter-spacing: 0.25px;
+   }
+   ion-avatar{
+     margin: 0px;
+     margin-left:2px;
+     left: 0;
+   }
+   img{
+     margin: 0;
+   }
+
+   ion-grid{
+     margin: 0;
+     padding: 0;
+     margin-right: 10px;
+   }
+   ion-row{
+    margin: 0;
+    padding: 0;
+   }
+
+   .col-nombre{
+
+    ion-label{
+      color: #ffffff;
+    }
+   }
+   .col-bebidas{
+     --ion-grid-column-padding: 0px;  
+     margin-left: 3px;
+
+    
+   }
+
+   .col-ver{
+     margin-right: 1px;
+     --ion-grid-column-padding: 0px; 
+     margin-left: 5px;
+     display: block;
+        
+   }
+
+   .col-cumple{
+
+    ion-label{
+      color: #c4c4c4;
+      font-size: 10px;
+      font-family: 'SFUIDisplay-Regular';
+    }
+   }
+
+   ion-nombre{
+
+    ion-label{
+      font-family: 'Kumbh Sans';
+      color: #ffffff;
+    }
+   }
+
+   #chip{
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'SFUIDisplay-Regular';
+    background-color: #108b3c;
+    border-radius: 15px;
+    ion-icon{
+      margin-right: 1px;
+      margin-left: 0;
+    }
+   }
+
+   ion-avatar{
+    width: 60px;
+    height: 60px;
+   }
+
+
+   #ver_mas{
+    position: absolute;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: #ffffff;
+    background-color: #1d2024;
+    font-size: 11px; 
+    font-style: italic;
+    right: 2px;
+    bottom: 0;
+    border: 1px solid #c4c4c4;
+    border-radius: 3px;
+    padding: 0px;
+    height: 18px;
+   }
+
+   .nombre-apellido-amigo{
+
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    color: #ffffff;
+   }
+   .facebook{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    --padding-bottom: 15px;
+    --padding-top:15px;
+    text-transform: none;
+    height: max-content;
+    font-size: 16px;
+  
+    ion-icon{
+      margin-right: 5px;
+      width: 40px;
+      height: 40px;
+    }
+  }

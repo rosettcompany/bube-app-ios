@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: #f3f2ed;">
+      <ion-back-button id="volver" (click) = "regresar()" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="fondoVisible">
+  <ion-list>
+    <ion-item class="contenedor-card" lines="none" *ngFor="let notificacion of notificaciones">
+      <ion-card-header>
+        <p class="fecha-noti">{{notificacion.fecha_notificacion}} </p>
+        <p class="titulo-noti">{{notificacion.descripcion}}  </p>
+     
+        <p class="descri-noti">{{notificacion.fechafin}}</p>
+      </ion-card-header>   
+    </ion-item>
+  </ion-list>
+  </div>
+  <div *ngIf="spinner" class="div-spinner">
+    <ion-spinner color="success" name="circles"></ion-spinner>
+  </div>  
+   
+
+</ion-content>

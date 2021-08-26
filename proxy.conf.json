@@ -1,0 +1,8 @@
+{
+    "/bube/*":{
+        "target":"https://bube.com.pe",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

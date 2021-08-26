@@ -1,0 +1,789 @@
+// (Note: Don't change the order of the devices as it may break the correct css precedence)
+
+// (see: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/#iphone-queries)
+// (see: https://stackoverflow.com/a/47750261/1116959)
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Portrait and Landscape */
+/* ----------- Galaxy S6 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 22px;
+   }
+
+   .text-ion-bar{
+    font-size: 16px;
+  }
+
+    .ion-label-radio{
+      margin-left: 4px;  
+      font-size: 14px;
+    }
+  
+    .tittle-product{
+      font-size: 18px;
+  }
+
+    .description-product{
+      font-size: 12px;
+    }
+
+    .price-product{
+      font-size: 18px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 12px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 18px;
+
+      }
+    
+    }
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 12px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 16px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 18px;
+
+    }
+
+    .text-footer-seleccion{
+      font-size: 18px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 9px;
+      }
+    }
+    
+    
+}
+
+/* ----------- HTC One ----------- */
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 20px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+    }
+  
+
+    .tittle-product{
+      font-size: 16px;
+  }
+
+    .description-product{
+      font-size: 10px;
+    }
+
+    .price-product{
+      font-size: 16px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 16px;
+
+      }
+    }
+    .button-escoger{
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 16px;
+
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+    
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+    
+  
+    
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 19px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+   
+    }
+  
+
+    .tittle-product{
+      font-size: 15px;
+  }
+
+    .description-product{
+      font-size: 10px;
+    }
+    
+    .price-product{
+      margin-top: 0;
+      font-size: 15px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 15px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 16px;
+
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+  
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+
+  
+}
+
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 1) 
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 19px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+   
+    }
+  
+
+    .tittle-product{
+      font-size: 15px;
+  }
+
+    .description-product{
+      font-size: 10px;
+    }
+    
+    .price-product{
+      margin-top: 0;
+      font-size: 15px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 15px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 16px;
+
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+  
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+
+  
+}
+
+
+/*  Galaxy S3 mini  */
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 533px) 
+  and (-webkit-device-pixel-ratio: 1) 
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 18px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+   
+    }
+  
+
+    .tittle-product{
+      font-size: 15px;
+  }
+
+    .description-product{
+      font-size: 10px;
+    }
+    
+    .price-product{
+      margin-top: 0;
+      font-size: 15px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 10px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 15px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 16px;
+
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+  
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+
+  
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 19px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+    }
+  
+    .tittle-product{
+      font-size: 15px;
+  }
+
+    .description-product{
+      font-size: 9px;
+    }
+    
+    .price-product{
+      font-size: 15px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 15px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 16px;
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+
+
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .label-toolbar{
+      font-size: 19px;
+   }
+
+   .text-ion-bar{
+    font-size: 14px;
+  }
+  
+    .ion-label-radio{
+      margin-left: 3px;  
+      font-size: 12px;
+ 
+    }
+  
+    .tittle-product{
+      font-size: 15px;
+  }
+
+    .description-product{
+      font-size: 10px;
+    }
+    
+    .price-product{
+      font-size: 15px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 15px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 10px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 14px;
+    }
+  
+    #txt-cantidad-btn{
+      font-size: 16px;
+    }
+
+    .text-footer-seleccion{
+      font-size: 16px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 7px;
+      }
+    }
+
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+    .label-toolbar{
+      font-size: 21px;
+   }
+
+   .text-ion-bar{
+    font-size: 15px;
+  }
+  
+    .ion-label-radio{
+      margin-left: 4px;  
+      font-size: 13px;
+    }
+  
+
+    .tittle-product{
+      font-size: 16px;
+  }
+   
+
+    .description-product{
+      font-size: 10px;
+    }
+
+    .price-product{
+      font-size: 16px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 16px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 11px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 15px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 17px;
+    }
+
+    .text-footer-seleccion{
+      font-size: 17px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 8px;
+      }
+    }
+
+  
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    .label-toolbar{
+      font-size: 21px;
+   }
+
+   .text-ion-bar{
+    font-size: 15px;
+  }
+  
+    .ion-label-radio{
+      margin-left: 4px;  
+      font-size: 13px;
+    }
+  
+
+    .tittle-product{
+      font-size: 16px;
+  }
+
+    .description-product{
+      font-size: 11px;
+    }
+    
+    .price-product{
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 11px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 16px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 11px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 15px;
+    }
+  
+    #txt-cantidad-btn{
+      font-size: 17px;
+    }
+
+    .text-footer-seleccion{
+      font-size: 17px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 8px;
+      }
+    }
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    .label-toolbar{
+      font-size: 22px;
+   }
+
+   .text-ion-bar{
+    font-size: 16px;
+
+  }
+  
+    .ion-label-radio{
+      margin-left: 4px;  
+      font-size: 14px;
+    }
+  
+    
+    .tittle-product{
+      font-size: 18px;
+  }
+
+    .description-product{
+      font-size: 12px;
+    }
+    
+    .price-product{
+      font-size: 18px;
+    }
+
+    .label-dist-calificaion{
+      font-size: 12px;
+    }
+
+    .cantidad-style{
+      margin: 15px 30px 10px 30px;
+    
+      .label-cantidad{
+        font-size: 18px;
+      }
+    
+    }
+
+    .button-escoger{
+
+      .label-button-escoger{
+        font-size: 12px;
+      }
+    }
+
+    .escoger-label{
+      font-size: 16px;
+    }
+
+    #txt-cantidad-btn{
+      font-size: 18px;
+    }
+
+    .text-footer-seleccion{
+      font-size: 18px;
+    }
+
+    .ion-item-producto{
+
+      .label-nombre-establecimiento{
+        font-size: 9px;
+      }
+    }
+
+
+  
+}

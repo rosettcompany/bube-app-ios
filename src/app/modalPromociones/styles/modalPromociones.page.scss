@@ -1,0 +1,44 @@
+ion-content{
+    --background: #121212;
+}
+ion-header{
+    --background: #121212;
+}
+
+h3{
+    color: #ffffff;
+    font-family: 'Gotham-Medium';
+    margin-top: 70px;
+}
+p{
+    color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 18px;
+    
+}
+
+.label-detalle{
+
+    color: #ffffff;
+    font-family: 'SFProText-MediumItalic';
+    font-size: 16px;
+}
+
+.btn-promociones{
+    --background: #121212;
+    color: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    font-family: 'SFCompactText-Medium';
+    font-size: 16px;
+    width: 90%;
+    text-transform: none;
+    height: 50px;
+    margin-top: 20px;
+
+}
+
+.contenedor{
+    align-content: center;
+    text-align: center  ;
+}

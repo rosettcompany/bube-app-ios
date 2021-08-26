@@ -1,0 +1,101 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button class="skip-walkthrough-button" fill="clear" (click)="skipWalkthrough()"><ion-label class="font-button">Saltar</ion-label></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides class="walkthrough-slides" pager="true" [options]="slidesOptions">
+    <ion-slide class="first-slide illustration-and-decoration-slide">
+
+      <ion-row class="slide-inner-row">
+        <div>
+          <h1 class="font-tittle"><b>BUSCA Y<br> COMPARA</b></h1>
+       </div>
+       <ion-col class="illustration-col">
+        <app-aspect-ratio   [ratio]="{w:915, h:849}">
+          <app-image-shell style="max-width: 100%; min-height: 100%;" class="illustration-image" animation="spinner" [src]="'./assets/Onboarding/Onboarding_1.png'" [alt]="'walkthrough'"></app-image-shell>
+        </app-aspect-ratio>
+       </ion-col>
+        <ion-row>
+          <div class="info-wrapper">
+            <p class="info-title">PRECIOS DE TUS<br> BEBIDAS EN<br> DIFERENTES ESTABLECIMIENTOS</p>
+          </div>
+        </ion-row>
+        <ion-col>
+          <ion-row style="height: 40%;">
+          </ion-row>
+          <ion-row>
+            <ion-col class="call-to-actions-wrapper">
+            </ion-col>
+            <ion-col class="call-to-actions-wrapper">
+              <ion-button class="get-started-button" expand="block" (click)="skipPage()" color="transparent"><ion-label class="font-button">Siguiente</ion-label></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+
+
+    <ion-slide class="second-slide illustration-and-decoration-slide">
+      <ion-row class="slide-inner-row">
+        <div>
+          <h1 class="font-tittle"><b>CONECTA Y <br> COMPARTE</b></h1>
+       </div>
+       <ion-col class="illustration-col">
+        <app-aspect-ratio [ratio]="{w:915, h:849}">
+          <app-image-shell style="max-width: 100%; min-height: 100%;" class="illustration-image" animation="spinner" [src]="'./assets/Onboarding/Onboarding_2.png'" [alt]="'walkthrough'"></app-image-shell>
+        </app-aspect-ratio>
+       </ion-col>
+       <ion-row>
+        <div class="info-wrapper">
+          <p class="info-title">CON LOS GUSTOS Y PREFERENCIAS<br>DE TUS PERSONAS<br>FAVORITAS</p>
+        </div>
+      </ion-row>
+        <ion-col>
+          <ion-row style="height: 40%;">
+          </ion-row>
+          <ion-row>
+            <ion-col class="call-to-actions-wrapper">
+              <ion-button class="get-started-button font-button" expand="block" (click)="backPage()"color="transparent"><ion-label class="font-button">Anterior</ion-label></ion-button>
+            </ion-col>
+            <ion-col class="call-to-actions-wrapper">
+              <ion-button class="get-started-button font-button" expand="block" (click)="skipPage2()" color="transparent"><ion-label class="font-button">Siguiente</ion-label></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide class="last-slide illustration-and-decoration-slide">
+      <ion-row class="slide-inner-row">
+        <div>
+          <h1 class="font-tittle"><b>AHORRA Y <br> DISFRUTA</b></h1>
+        </div>
+        <ion-col class="illustration-col">
+          <app-aspect-ratio [ratio]="{w:915, h:849}">
+            <app-image-shell class="illustration-image" animation="spinner" [src]="'./assets/Onboarding/Onboarding_3.png'" [alt]="'walkthrough'"></app-image-shell>
+          </app-aspect-ratio>
+        </ion-col>
+        <ion-row>
+          <div class="info-wrapper">
+            <p class="info-title">CON UN FILTRO HECHO<br>A LA MEDIDA PARA QUE ENCUENTRES<br> TU BEBIDA FAVORITA</p>
+          </div>
+        </ion-row>
+        <ion-col>
+          <ion-row style="height: 40%;">
+          </ion-row>
+          <ion-row>
+             <ion-col>
+              <ion-button class="button-aplicar" style="width: 80%; margin: auto;" expand="block" [routerLink]="['/login']"><ion-label class="font-button">Aplicar</ion-label></ion-button>
+             </ion-col>
+          </ion-row>
+      </ion-col>
+      </ion-row>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

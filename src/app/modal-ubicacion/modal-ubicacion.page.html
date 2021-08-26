@@ -1,0 +1,21 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <div id="contenedor">
+    <h3>Explora cerca de ti</h3>
+
+    <img src="./assets/sample-images/map- image.png">
+
+    <p>Por favor, danos permiso para<br>usar tu ubicación</p>
+
+    <ion-button id="btn-compartir" (click)="obtenerDireccion()">Comparte tu ubicación</ion-button>
+
+    <ion-button id="btn-cancelar" (click)="regresar()">En este momento no</ion-button>
+
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-progress-bar id="progress"  type="indeterminate" color="success"></ion-progress-bar>
+</ion-footer>

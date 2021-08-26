@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-row class="user-details-wrapper">
+      </ion-row>
+
+      <ion-row class="user-details-row">
+            <ion-col size="4" class="ion-colum-avatar">
+                  <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+                    <app-image-shell class="user-avatar" animation="spinner" [src]="usuarioFoto" [alt]="'notification image'"></app-image-shell>
+                  </app-aspect-ratio>
+                  <!--
+                  <div class="contenerdo-btn-editar-foto" [hidden]="!mostrarBotonCambiarFoto">
+                    <ion-button fill="clear" class="btn-cambiar-foto">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </ion-button>
+                  </div>
+                  -->                 
+                </ion-col>
+      </ion-row>
+      <ion-row class="user-info-wrapper"  >
+            <ion-col size="8">
+                  <h3 class="user-name">{{usuarioNombresApellidos}}</h3>
+            </ion-col>
+      </ion-row>
+
+        <ion-row>
+            <ion-list class="ion-list">
+
+                  <ion-item class="input-item-list" (click) = "goMisDatos()">
+                    <ion-icon name = "person-circle-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Mis datos</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+          
+                  <ion-item class="input-item-list" (click) = "goMetodosPago()">
+                    <ion-icon name = "card-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Métodos de pago</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+          
+                  <ion-item class="input-item-list" (click) = "goTerminosCondiciones()">
+                    <ion-icon name = "information-circle-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Términos y condiciones</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+          
+                  <ion-item class="input-item-list" (click) = "goTutorial()">
+                    <ion-icon name = "help-circle-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Tutorial</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+          
+                  <ion-item class="input-item-list" (click) = "goNotificaciones()">
+                    <ion-icon name = "notifications-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Notificaciones</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+
+                  <ion-item class="input-item-list" (click) = "goContactanos()">
+                    <ion-icon name = "headset-outline"slot="start" color = "primary-contrast"></ion-icon>
+                    <ion-label class="ion-label-menu">Contáctanos</ion-label>
+                    <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                  </ion-item>
+
+                  <ion-item class="input-item-list" (click) = "presentAlertConfirm()">
+                        <ion-icon name = "power-outline"slot="start" color = "primary-contrast"></ion-icon>
+                        <ion-label class="ion-label-menu">Cerrar sesión</ion-label>
+                        <ion-icon name = "chevron-forward-outline"slot="end" color = "primary-contrast"></ion-icon>
+                      </ion-item>
+                </ion-list>
+        </ion-row>
+
+  </ion-content>

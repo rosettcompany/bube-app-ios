@@ -1,0 +1,31 @@
+ion-content{
+    --background: #686767;
+    position: relative;
+}
+div{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    ion-spinner{
+        transform: scale(6);
+        margin-bottom: 50px;
+    }
+    h4{
+       
+        font-family: 'Gotham-Medium';
+        color: #ffffff;
+    }
+    p{
+        color: #c4c4c4;
+        font-family: 'SFUIDisplay-Regular';
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+}

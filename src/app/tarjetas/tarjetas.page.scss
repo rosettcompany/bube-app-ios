@@ -1,0 +1,161 @@
+
+ion-header{
+    ion-toolbar{
+        --background: #108b3c;
+
+    }
+}
+
+.title-toolbar{
+    color: #ffffff;
+    font-family: 'Gotham-Medium';
+    font-size: 23px;
+}
+
+.label-toolbar{
+    color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+ion-content{
+    --background: #121212;
+}
+ion-list{
+    background: #121212;
+}
+ion-item{
+    --background: #121212;
+    --border-color:#121212;
+}
+h3{
+    color: #f3f2ed;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Gotham-Medium';
+}
+#btn-anterior{
+    --color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 20px;
+    left: 0px;
+    height: 50px;
+
+}
+#btn-siguiente{
+    --color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 20px;
+    right: 0px;
+    height: 50px;
+ 
+}
+
+.iconos-inferiores{
+    color: #f3f2ed;
+
+}
+.chip{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+.tipo-tarjeta{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+div{
+    //background: $visa;
+    border-radius: 10px;
+    width: 100%;
+    height: 230px;
+}
+ion-row{
+    --padding: 0;
+    --margin: 0;
+}
+ion-col{
+    --padding: 0;
+    --margin: 0;
+}
+.numero-tarjeta{
+    font-family: 'Gotham-Medium';
+    color: #ffffff;
+    top: 45%;
+    font-size: 28px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+
+}
+.titular{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 16px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.titulo-titular{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+}
+.fecha{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 16px;
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+}
+.titulo-fecha{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+    
+}
+.select-tarjeta{
+    color: #ffffff;
+}
+.btn-add{
+    position: sticky;
+    left: 85%;
+    bottom: 30px;
+    --background: #108b3c;
+}
+ion-item-option {
+    --background: #121212;
+}
+
+ion-footer{
+    ion-toolbar{
+        --background: #121212;
+    }
+    
+}
+
+.div-spinner-style{
+
+    width: 100%; text-align: center; height: 50px;   display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  ion-spinner{
+    color: #108B3C;
+   }
+}

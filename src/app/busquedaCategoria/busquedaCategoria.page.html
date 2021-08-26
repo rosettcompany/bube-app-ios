@@ -1,0 +1,218 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+     <ion-buttons slot="start" style="color: #f3f2ed;">
+          <ion-back-button id="volver" (click) = "regresar()" ></ion-back-button>
+        </ion-buttons>
+      <ion-label joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton"   class="label-toolbar">{{categoria}}</ion-label>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content parallax-header>
+
+     <ng-template #customContent>
+               <ion-label class="label-tour" > Puedes incluir bebidas de otras categorías en tu selección principal, tu selección no se perderá</ion-label>
+      </ng-template> 
+
+      <ng-template #doneButton>
+          <ion-button class="button-tour" hidden>
+               Ok!
+          </ion-button>
+      </ng-template>
+
+     <app-aspect-ratio [ratio]="{w: 36, h: 20}">
+          <app-image-shell class="background-picture" animation="spinner" [src]="imagenCategoria" ></app-image-shell> <!-- [src]="friend.image"-->
+     </app-aspect-ratio>
+
+     <ion-segment [(ngModel)]="valueSegment" class="ion-segment" *ngIf="filtroVisible" (ionChange)="ionChangeSegment();">
+          <ion-segment-button value="Categorias" layout = "icon-start">
+                  <ion-icon name="apps-outline" style="color: #ffff;"></ion-icon>
+                  <ion-label class="text-ion-bar">Categorias</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Ordenar" layout = "icon-start">
+                  <ion-icon name="swap-vertical-outline" style="color: #ffff;" ></ion-icon>
+                  <ion-label class="text-ion-bar">Ordenar</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Filtrar" layout="icon-start">
+                  <ion-icon name="funnel-outline" style="color: #ffff;"></ion-icon>
+                  <ion-label class="text-ion-bar">Filtrar</ion-label>
+           </ion-segment-button>
+        </ion-segment>
+        <ion-radio-group  *ngIf="radio" [(ngModel)]="radioDefault" (ionChange) = "Ordenar($event);">
+          <ion-row class="ion-radio-row">
+               <ion-item class="ion-item-radio" lines="none">
+                    <ion-label class="ion-label-radio">Menor precio</ion-label>
+                    <ion-radio class = "ion-radio" slot = "start" mode="md" item-left value="1"></ion-radio>
+               </ion-item>
+                <ion-item class="ion-item-radio" lines="none">
+                    <ion-label class="ion-label-radio">Menor distancia</ion-label>
+                    <ion-radio class = "ion-radio" slot = "start" mode="md" item-left value="2"></ion-radio>
+               </ion-item>
+                <ion-item class="ion-item-radio" lines="none">
+                    <ion-label class="ion-label-radio">Recomendados</ion-label>
+                    <ion-radio  class = "ion-radio" slot = "start" mode="md" item-left value="3"></ion-radio>
+               </ion-item>
+        </ion-row>
+        </ion-radio-group>
+        <ion-radio-group class="ion-radio-row" *ngIf="filtroVisible">
+         <ion-item class="ion-item-radio" style="background-color: #17191c;">
+              <ion-label class="escoger-label">
+                   Escoge uno o más establecimientos
+              </ion-label>
+              <ion-button class="button-escoger" (click) = "filtrarEstablecimiento();">
+                   <ion-label class="label-button-escoger">Escoger</ion-label>
+                 </ion-button>
+         </ion-item>
+        </ion-radio-group>
+        <ion-row>
+          <ion-card class="ion-card">
+            <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let marca of marcasSeleccionadas; let i = index'>
+               <ion-label> {{marca.nombrefiltro}} </ion-label>
+              <ion-icon name="close-circle" (click)="removerFiltrosSeleccionadosMarcas(i,marca)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let pack of packsSeleccionados; let i = index'>
+               <ion-label> {{pack.nombrefiltro}} u. </ion-label>
+               <ion-icon name="close-circle"  (click)="removerFiltrosSeleccionadosPacks(i,pack)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let rango of rangosSeleccionados; let i = index'>
+               <ion-label> {{rango.nombrefiltro}} </ion-label>
+               <ion-icon name="close-circle" (click)="removerFiltrosSeleccionadosRangos(i)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let subcategoria of subCategoriasSeleccionadas; let i = index'>
+               <ion-label> {{subcategoria.nombrefiltro}} </ion-label>
+               <ion-icon name="close-circle"  (click)="removerFiltrosSeleccionadosSubCategoria(i)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let filtro of filtrosSeleccionados; let i = index'>
+               <ion-label> {{filtro.nombrefiltro}} </ion-label>
+               <ion-icon name="close-circle"  (click)="removerFiltroSeleccionadosRadio(i)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let establecimientos of establecimientosSeleccionados; let i = index'>
+               <ion-label> {{establecimientos.nombrefiltro}} </ion-label>
+               <ion-icon name="close-circle"  (click)="removerFiltrosSeleccionadosEstablecimientos(i,establecimientos)"></ion-icon>
+           </ion-chip>
+           <ion-chip #chip  outline color="success" class="chip" *ngFor = 'let radio of radiosSeleccionados; let i = index'>
+               <ion-label> {{radio.nombrefiltro}} </ion-label>
+               <ion-icon name="close-circle" (click)="removerFiltrosSeleccionadosRadios(i,radio)"></ion-icon>
+           </ion-chip>
+          </ion-card>
+        </ion-row> 
+
+ 
+    <ion-row class="cantidad-style">
+     <ion-label class="label-cantidad" *ngIf="cantidadLabel">
+          {{cantidadEncontrada}} Productos encontrados
+     </ion-label>
+    </ion-row>
+
+        <ion-list>
+          <ion-item class="ion-item-producto" *ngFor="let bebida of bebidasLista" lines="none">
+               <ion-col size="4.5">
+                 <ion-row>
+                     <app-aspect-ratio [ratio]="{w: 56, h: 56}">
+                          <app-image-shell class="producto-picture" animation="spinner" src = "{{bebida.rutaimagenbebida}}"></app-image-shell> <!-- [src]="friend.image"-->
+                     </app-aspect-ratio>
+                 </ion-row>
+
+                     <ion-row class="checkbox-tags rounded-checkbox-tags">
+                      <ion-item lines="none" class="checkbox-tag rounded-tag" style="margin: auto; padding-top: 2%;" (click) ="seleccionarChangeText(bebida)">
+                         <div class="div-border">
+                           <ion-label  class="tag-label label-button">{{bebida.esSeleccionadoInd}}</ion-label>
+                           <ion-checkbox [(ngModel)]="bebida.esSeleccionado" ></ion-checkbox>
+                         </div>
+                     </ion-item>
+                    </ion-row>
+               </ion-col>
+               <ion-col>
+                  <ion-row>
+                    <p class="tittle-product">{{bebida.nombremarca}}</p>
+                  </ion-row>
+                  <ion-row>
+                    <p class="description-product">{{bebida.nombrebebida}}</p> 
+                  </ion-row>
+                  
+                  <ion-row>
+                          <ion-label class="price-product">S/ {{bebida.preciobebidasocio.toFixed(2)}}</ion-label>
+                  </ion-row>
+               </ion-col>
+               <ion-col  size="2.5" >  <!-- *ngFor="let friend of profile.friends"-->
+                  <ion-row>
+                          <app-aspect-ratio [ratio]="{w: 56, h: 56}">
+                               <app-image-shell class="client-picture" [src]="bebida.rutafotosocio" ></app-image-shell> <!-- [src]="friend.image"-->
+                            </app-aspect-ratio>
+                  </ion-row>
+                  <ion-row>
+                       <div style=" width: 56px; text-align: center;">
+                          <ion-label class="label-dist-calificaion"> {{bebida.valoracion}} <ion-icon style="color: #ffc30b;"  name="star"></ion-icon></ion-label>
+                       </div>
+                  </ion-row>
+                  <ion-row>
+                       <div>
+                          <ion-label class="label-dist-calificaion"> <ion-icon style="color: #ffc30b;" name="location"> </ion-icon>A {{bebida.distancia.toFixed(1)}} km</ion-label>
+                       </div>
+                  </ion-row>
+                  <ion-row>
+                    <div style="width: 100%; text-align: center;">
+                         <p class="label-nombre-establecimiento">{{bebida.nombrecomercial}}</p>
+                    </div>
+               </ion-row>
+                </ion-col>
+           </ion-item>
+        </ion-list>
+    
+
+        <!-- Skeleton screen -->
+        <div *ngIf="Skeleton">
+          <ion-list> 
+             <ion-item class="ion-item-skeleton" *ngFor="let item of skeletonList" lines="none">
+                  <div>
+                    <ion-thumbnail slot="start" style="zoom: 2.6; margin-left: 2px; margin-top: 2px; background: #42464b;">
+                         <ion-skeleton-text animated></ion-skeleton-text>
+                       </ion-thumbnail>
+                       <h3 style="margin-left: 20px;">
+                         <ion-skeleton-text animated style="width: 80%; background: #42464b;"></ion-skeleton-text>
+                       </h3>
+                  </div>
+                    <ion-label style="margin-left: 4px;">
+                         <h3>
+                           <ion-skeleton-text animated style="width: 50%; background: #42464b;"></ion-skeleton-text>
+                         </h3>
+                         <p>
+                           <ion-skeleton-text animated style="width: 80%; background: #42464b;"></ion-skeleton-text>
+                         </p>
+                         <p>
+                           <ion-skeleton-text animated style="width: 60%; background: #42464b;"></ion-skeleton-text>
+                         </p>
+                         <p>
+                              <ion-skeleton-text animated style="width: 30%; background: #42464b;"></ion-skeleton-text>
+                            </p>
+                    </ion-label>
+     
+                    <div>
+                         <ion-avatar slot="end" style="zoom: 1.0; background: #42464b;">
+                              <ion-skeleton-text animated></ion-skeleton-text>
+                         </ion-avatar>
+                         <p style="margin-left: 15px;">
+                         <ion-skeleton-text animated style="width: 60%; background: #42464b;"></ion-skeleton-text>
+                         </p>
+                         <p style="margin-left: 15px;">
+                         <ion-skeleton-text animated style="width: 60%; background: #42464b;"></ion-skeleton-text>
+                         </p>
+                    </div>   
+             </ion-item>
+          </ion-list>
+     </div>
+         
+     <ion-infinite-scroll *ngIf="scrollActivo" threshold="100px" (ionInfinite)="loadData($event)">
+               <ion-infinite-scroll-content class="loadingSpinner"
+                 loadingSpinner="bubbles"
+                 loadingText="Cargando...">
+               </ion-infinite-scroll-content>
+     </ion-infinite-scroll>
+
+  </ion-content>
+
+  <ion-footer *ngIf="seleccionVisible" class="ion-no-border">
+     <ion-button disabled={{seleccionActiva}} style="margin-top: 10px;" expand="block" id="btn-agregar-carrito" (click)="irSeleccion();">
+          <ion-label id="txt-cantidad-btn">{{num_bebidas}}</ion-label>
+          <ion-label class="text-footer-seleccion"> Mi selección </ion-label>  
+          </ion-button>
+   </ion-footer>

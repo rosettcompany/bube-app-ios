@@ -1,0 +1,278 @@
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+@import "../../../theme/mixins/scrollbars";
+:host {
+    --page-margin: var(--app-broad-margin);
+    --page-background: var(--app-background);
+  
+    --page-swiper-pagination-space: 40px;
+    --page-swiper-pagination-height: 18px;
+    --page-pagination-bullet-size: 10px;
+  
+    --page-first-slide-background: #121212;
+    --page-second-slide-background: #121212;
+    --page-third-slide-background: #121212;
+    --page-last-slide-background: #121212;
+  
+    --page-vector-decoration-fill: var(--ion-color-light-shade);
+  }
+  
+  // Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+  ion-header {
+    ion-toolbar {
+      --ion-toolbar-background: transparent;
+  
+      // For the skip button
+      ion-button {
+        --color: var(--ion-color-lightest);
+      }
+    }
+  }
+  
+  ion-content{
+    --background: var(--page-first-slide-background);
+  }
+  
+  
+  ion-footer{
+        background: var(--page-first-slide-background);
+    ion-button{
+      --color: var(--ion-color-lightest);
+       text-transform: none;
+       --box-shadow: none !important;
+    }
+  
+  }
+  
+  
+  ion-content {
+    // To get the ion-content behind the ion-header
+    position: absolute;
+    top: 0;
+  
+  }
+ 
+
+  .user-friends-section {
+    margin: calc(var(--page-margin) * 2) var(--page-margin) var(--page-margin);
+  
+    .heading-row {
+      margin-bottom: var(--page-margin);
+      justify-content: space-between;
+      align-items: center;
+  
+      .heading-call-to-action {
+        padding: calc(var(--page-margin) / 2) calc(var(--page-margin) / 4);
+        text-decoration: none;
+        color: var(--ion-color-secondary);
+      }
+    }
+  
+ .friends-row {
+      --ion-grid-columns: 7; // We want to show three friends and a half. Each friend fills 2 cols => (3.5 * 2 = 7 cols)
+      --ion-grid-column-padding: 0px;
+  
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      will-change: scroll-position;
+      margin-left: calc(var(--page-margin) * -1);
+      margin-right: calc(var(--page-margin) * -1);
+      padding-left: 10px;
+      @include hide-scrollbars();
+  
+      &::before,
+      &::after {
+        content: '';
+        // .friend-item has 8px of side padding, we need an extra 4px at the beginning and end to fill the 12px side margin of the view
+        flex: 0 0 calc(var(--page-margin) - var(--page-friends-gutter));
+      }
+  
+      .friend-item {
+        padding: 0px var(--page-friends-gutter);
+        margin-left: 10px;
+        p{
+         
+          font-size: 11px;
+          color: #f3f2ed;
+          font-family: 'SFCompactText-Medium';
+        }
+
+        .friend-name {
+          display: block;
+          text-align: center;
+          margin: var(--page-margin) 0px;
+          font-size: 14px;
+        }
+      }
+
+      .friend-item-skeleton {
+        padding: 0px var(--page-friends-gutter);
+        margin-left: 10px;
+        
+      }
+
+    }
+  }
+
+.ion-categorias{
+   background-color: #17191c;
+   color: #f3f2ed;
+   width: 100%;
+   height: 40px;
+   align-content: center;
+   text-align: center;
+}
+
+
+
+  .ion-combo{
+    background-color: #f3f2ed!important;
+    border-radius: 8px;
+    font-family: 'SFUIDisplay-Regular';
+    color:rgb(2, 2, 2);
+    font-size: 14px;
+    width: 20%;
+    margin-left: 3%;
+    height: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+  }
+
+
+
+.ion-button{
+  --background: #f3f2ed !important;
+  --border-radius: 10px;
+  color:rgb(2, 2, 2);
+  text-transform: none;
+  width: 70%;
+  
+}
+
+.ion-button-gps{
+  --background: linear-gradient(to bottom, #32383e 0%, #17191c 100%);
+  text-transform: none;
+}
+
+.ion-content-button{
+    margin-bottom: 20px;
+}
+
+.input-item{
+  --background: #f3f2ed !important;
+  width: 77%;
+  height: 50px;
+  --box-shadow: none;
+  --border-radius: 8px;
+  padding: 0;
+  --color: #121212 !important;
+  font-family: 'SFUIDisplay-Regular';
+}
+
+.input-item2{
+  margin: 10px;
+  margin-top: -10px;
+  margin-bottom: -30px;
+  color: var(--ion-color-dark);
+  color: #121212!important;
+  --border-radius: 8px;
+  --background: #f3f2ed;
+  --highlight-background: black !important;
+  width: 95%;
+}
+
+.input-boton{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+  margin-bottom: -30px;
+  color: var(--ion-color-dark);
+  color: #6d7775!important;
+  text-transform: none;
+  --border-radius: 8px;
+  --background: #f3f2ed;
+  --highlight-background: black !important;
+  width: 90%;
+
+  .label-button{
+    position: absolute; left: 30px;
+    font-size: 16px;
+    font-family: 'SFUIDisplay-Regular';
+    color: #919291;
+  }
+}
+
+///////// TITULOS  ////////////////// 
+
+.titulo-secciones {
+  margin: 0px;
+  font-size: 22px;
+  color: #f3f2ed;
+  font-family: 'Gotham-Medium';
+}
+
+.text-categorias{
+  font-family: 'SFUIDisplay-Regular';
+  font-size: 16px;
+  color: #f3f2ed;
+}
+
+.text-gps{
+  font-family: 'SFCompactText-Medium';
+  letter-spacing: 0.25px;
+  font-size: 16px;
+}
+
+.titulo-establecimiento{
+  color: #f3f2ed;
+  font-size: 20px;
+  font-family: 'SFUIDisplay-Regular';
+  letter-spacing: 0.25px;
+}
+
+.titulo-sinresultados{
+  color: #12632e;
+  font-size: 16px;
+  font-family: 'SFUIDisplay-Regular';
+  letter-spacing: 0.25px;
+  margin-top: 10px;
+}
+
+
+
+//// COLOR TIPO ESTABLECIMIENTO
+.highlight-color {
+  color: #108b3c;
+  font-weight: 800;
+}
+
+
+.ion-list{
+  margin: auto;
+  border-radius: 8px !important;
+  background-color: #ffffff !important;
+  width: 75%;
+  position: absolute;
+  z-index: 1;
+  margin-left: 15px;
+  margin-top: -15px;
+
+
+  ion-item{
+    color: var(--ion-color-dark);
+    color: #121212!important;
+    --background: #ffffff;
+    font-size: 0.9rem;
+    margin-right: 10px;
+  }
+}
+
+ion-refresher ion-refresher-content {
+  --color:#f3f2ed !important;
+  
+  .refresher-pulling-text, .refresher-refreshing-text, .refresher-refreshing-icon, .refresher-pulling-icon {
+    color: #f3f2ed !important;
+  }
+}
+

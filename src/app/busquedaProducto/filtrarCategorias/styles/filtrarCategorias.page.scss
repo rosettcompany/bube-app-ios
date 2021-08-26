@@ -1,0 +1,38 @@
+
+ion-toolbar{
+    --background: #121212;
+}
+
+ion-content{
+    --background: #121212;
+}
+
+.tittle-categorias{
+    height: 30px;
+
+    .tittle{
+        margin: auto;
+        font-size: 22px;
+        font-family: 'SFUIDisplay-Regular';
+        letter-spacing: 0.50px;
+        color: #f3f2ed;
+    }
+}
+
+.list-categorias{
+    background-color:  #121212;
+
+    .item-categorias{
+        --background:  #121212;
+        border: none;
+        color: #f3f2ed;
+
+        .label-categoria{
+
+            font-size: 18px;
+            color: #f3f2ed;
+            font-family: 'SFUIDisplay-Regular';
+            letter-spacing: 0.50px;
+        }
+    }
+}

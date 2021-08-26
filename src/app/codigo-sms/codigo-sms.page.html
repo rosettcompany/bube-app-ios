@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="success"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-img src="./assets/Iconos/LogoBube_final.png"class="img-login" ></ion-img>
+</ion-row>
+<ion-row>
+  <div style="width: 100%; text-align: center; padding-top: 15%;">
+      <ion-label >
+          <h2 class="label-page"><b>Ingresa el código que te hemos enviado a tu celular {{usuario.telefono}}</b></h2>
+      </ion-label>
+  </div>
+</ion-row>
+<ion-row>
+  <div style="width: 100%; text-align: center;">
+      <ion-item class="input-login" lines="none">    
+          <ion-input #input1 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code1" (ionChange)="focusInput1()" ></ion-input>
+          <ion-input #input2 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code2" (ionChange)="focusInput2()" ></ion-input>
+          <ion-input #input3 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code3" (ionChange)="focusInput3()"></ion-input>
+          <ion-input #input4 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code4" (ionChange)="focusInput4()"></ion-input>
+          <ion-input #input5 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code5" (ionChange)="focusInput5()"></ion-input>
+          <ion-input #input6 type="tel" class="input-text" inputmode="numeric" pattern="[0-9]" maxlength="1" [(ngModel)]="code6"  (ionChange)="focusInput6()"></ion-input>
+        </ion-item>
+  </div>
+</ion-row>
+<ion-row>
+  <div style="width: 90%; text-align: right; padding-top: 3%;">
+      <ion-button (click) ="borrarCodigos()" class="button-back-letter">
+          <ion-icon slot="icon-only" name="backspace-outline"></ion-icon>
+      </ion-button>
+  </div>
+</ion-row>
+
+<ion-row>
+  <div style="width: 100%; text-align: center; padding-top: 3%;">
+      <ion-label >
+          <h3 class="label-page2">Te hemos enviado un código de seguridad. Si no encuentras el mensaje de texto haz clic en <ion-label style="color: #b8b7b7; text-decoration: underline;" (click)="reenviarCodigo()" [hidden]="desctividarContador">volver a enviar</ion-label>
+          <ion-label  [hidden]="!desctividarContador">Volver a enviar en:  {{contador}}</ion-label></h3>
+      </ion-label>
+  </div>
+</ion-row>
+
+
+</ion-content>
+

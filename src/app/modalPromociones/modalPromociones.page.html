@@ -1,0 +1,15 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <div class="contenedor">
+    <h3>Detalles de la promoción</h3>
+    <p>{{promocion.nombrecomercial}} </p>
+    <ion-label class="label-detalle">{{promocion.nombrebebida}}<br></ion-label>
+    <ion-label class="label-detalle">{{promocion.nombremarca}}<br></ion-label>
+    <ion-label class="label-detalle">S/. {{promocion.preciobebidasocio}}<br></ion-label>
+    <ion-button class="btn-promociones" (click)="comprarPromocion()"><ion-icon name="cart" slot="start"></ion-icon>Comprar promoción</ion-button>
+    <ion-button class="btn-promociones" (click)="irEstablecimiento()"><ion-icon name="walk" slot="start"></ion-icon>Ir al establecimiento<br>para más promociones</ion-button>
+  </div>
+
+</ion-content>

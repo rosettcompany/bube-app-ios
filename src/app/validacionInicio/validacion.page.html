@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons id="btnAtras" slot="start" style="color: #f3f2ed;">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="slide-inner-row">
+    <ion-img class="imagenLogo" [src]="'./assets/Iconos/LogoBube_final.png'"></ion-img>
+  </ion-row>
+ <ion-row style="margin-top: 5%;">
+  <ion-col class="info-col">
+        <div class="info-wrapper">
+          <h3 class="info-title">¿Cuál es tu bebida favorita?</h3>
+        </div>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col class="info-col">
+          <h5 class="info-paragraph">Puedes elegir más de una opción</h5>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-searchbar animated type="text" class="input-item" debounce="500" (ionChange)="getItems($event)" placeholder="Buscar"></ion-searchbar>
+</ion-row>
+<ion-row>
+  <ion-list class="ion-list" *ngIf="isItemAvailable">
+    <ion-item lines="none" (click)="add( bebida.idbebida, bebida.nombrebebida)" class="input-item-list" *ngFor="let bebida of bebidas">{{bebida.nombrebebida}}</ion-item>
+</ion-list>
+</ion-row>
+
+ <ion-row>
+   <ion-card class="ion-card">
+      <ion-chip #chip *ngFor="let tag of tagName; let i = index" class="chip" outline color="success">
+         <ion-label>{{tag.nombreBebida}}</ion-label>
+         <ion-icon name="close-circle" (click)="remove(i)"></ion-icon>
+     </ion-chip>
+   </ion-card>
+ </ion-row>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+      <ion-button *ngIf="isKeyboardHide"  id="btn-guardar" disabled={{buttonDisabled}} class="button-continuar" style="margin: 40px;" expand="block" (click) = "PostBebidasFavoritas()">Continuar</ion-button>
+</ion-footer>

@@ -1,0 +1,79 @@
+<ion-header class="ion-no-border">
+</ion-header>
+
+<ion-content>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+  <ion-row>
+    <div class="conteiner-titulo">
+      <ion-label class="titulo-login" style="font-size: 30px;">Registra tus datos<br></ion-label>
+    </div>
+  </ion-row>
+  
+  <ion-row>
+    <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Nombres</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input type="text" formControlName="nombres" name="nombres" id="nombres" class="input-text" maxlength=30></ion-input>
+    </ion-item>
+      <div style="width: 100%; margin-bottom: 5px;">
+        <span class="error ion-padding error-input" *ngIf="submitted && errorControl.nombres.errors?.required">
+            <ion-label class="label-error">nombre es requerido.</ion-label>
+          </span>
+      </div>
+   </div>
+  <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Apellidos</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input type="text" formControlName="apellidos" name="apellidos" id="apellidos" class="input-text"  maxlength=30></ion-input>
+    </ion-item>
+    <div style="width: 100%; margin-bottom: 5px;">
+      <span class="error ion-padding error-input" *ngIf="submitted && errorControl.apellidos.errors?.required">
+          <ion-label class="label-error">Apellido es requerido.</ion-label>
+        </span>
+   </div>
+  </div>
+    <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Email</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input type="email" formControlName="email" name="email" id="email" class="input-text" maxlength=60></ion-input>
+    </ion-item>
+    <div style="width: 100%; margin-bottom: 5px;">
+      <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.required">
+          <ion-label class="label-error">Email es requerido.</ion-label>
+        </span>
+        <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.pattern">
+          <ion-label class="label-error">Ingrese un email válido.</ion-label>
+        </span>
+  </div>
+  </div>
+  <div class="contenedor">
+    <ion-row>
+    <ion-label class="label-input">Contraseña</ion-label>
+  </ion-row>
+  <ion-item class="input-item" lines="none">
+    <ion-input type="password" formControlName="password" name="password" id="password" class="input-text" maxlength=30></ion-input>
+  </ion-item>
+  <div style="width: 100%; margin-bottom: 5px;">
+    <span class="error ion-padding error-input" *ngIf="submitted && errorControl.password.errors?.required">
+        <ion-label class="label-error">Contraseña es requerida.</ion-label>
+      </span>
+      <span class="error ion-padding error-input" *ngIf="submitted && errorControl.password.errors?.minlength">
+        <ion-label class="label-error">Minimo 8 caracteres.</ion-label>
+      </span>
+ </div>
+  </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="contenedor">
+      <ion-button expand="block" type="submit" class="btn-iniciar-sesion" >Registrar</ion-button>
+    </div>
+  </ion-row>
+</form>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "demobube",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,213 @@
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-broad-margin);
+  --page-background: var(--app-background);
+
+  --page-swiper-pagination-space: 40px;
+  --page-swiper-pagination-height: 18px;
+  --page-pagination-bullet-size: 10px;
+
+  --page-first-slide-background: #121212;
+  --page-second-slide-background: #121212;
+  --page-third-slide-background: #121212;
+  --page-last-slide-background: #121212;
+
+  --page-vector-decoration-fill: var(--ion-color-light-shade);
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
+
+    // For the skip button
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
+  }
+}
+
+ion-content{
+  --background: var(--page-first-slide-background);
+
+}
+
+
+ion-footer{
+      background: var(--page-first-slide-background);
+  ion-button{
+    --color: var(--ion-color-lightest);
+     text-transform: none;
+     --box-shadow: none !important;
+  }
+
+}
+
+
+ion-content {
+  // To get the ion-content behind the ion-header
+  position: absolute;
+  top: 0;
+}
+
+
+.illustration-and-decoration-slide {
+  .slide-inner-row {
+    --ion-grid-column-padding: 0px;
+
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .illustration-col {
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: auto;
+    min-height: fit-content;
+    max-width: 30vh;
+    padding: 0px;
+
+
+  }
+
+  .decoration-col {
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    // To prevent transparent line caused by pixel fractions
+    min-height: 12vh;
+    transform: translate3d(0px, 0px, 0px);
+
+    .vector-decoration {
+      fill: currentColor;
+      color: var(--page-vector-decoration-fill);
+      background-color: var(--page-background);
+      padding-bottom: 4px;
+
+      // To prevent transparent line caused by pixel fractions
+      transform: translate3d(0px, 0px, 0px);
+      shape-rendering: geometricprecision;
+      height: calc(100% + 1px);
+    }
+  }
+
+  .info-col {
+    flex-grow: 1;
+    flex-shrink: 0;
+    min-height: auto;
+    background-color: var(--page-background);
+
+    // To prevent transparent line caused by pixel fractions
+    margin-bottom: -1px;
+    // Prevent .info-wrapper text to blink as it's over the previous element (Safari issue)
+    transform: translate3d(0px, 0px, 0px);
+
+    .info-wrapper {
+      margin: calc(var(--page-margin) * -1) var(--page-margin) 0px;
+      text-align: left;
+    }
+  }
+}
+
+
+.info-paragraph {
+
+  margin: 0px;
+  margin-bottom: var(--page-margin);
+  color: #f3f2ed;
+  text-align: center;
+  font-family: 'SFCompactText-Medium';
+  font-size: 16px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.info-title {
+  margin: 0px;
+  margin-bottom: var(--page-margin);
+  color: #f3f2ed;
+  text-align: center;
+  font-family: 'Gotham-Medium';
+  font-size: 20px;
+
+}
+
+.imagenLogo{
+  width: 120px; 
+  height: 120px;
+  margin: auto;
+  margin-top: 5%;
+  display: block;
+}
+
+.button-continuar {
+    --background: #108b3c;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: none;
+    height: 50px;
+    --border-radius: 16px;
+    font-family: 'SFCompactText-Medium';
+    --color: #ffffff;
+    color: #ffffff;
+}
+
+.input-item{
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: var(--ion-color-dark);
+  color: #121212!important;
+  --border-radius: 8px;
+  --background: #f3f2ed;
+  --highlight-background: black !important;
+  width: 80%;
+}
+
+.ion-list{
+  margin: auto;
+  border-radius: 8px !important;
+  background-color: #f3f2ed !important;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  z-index: 1;
+  
+  .input-item-list{
+    color: var(--ion-color-dark);
+    color: #121212!important;
+    --background: #f3f2ed;
+    font-family: 'SFUIDisplay-Regular';
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+}
+
+.ion-card{
+  margin: auto;
+  box-shadow: none !important;
+  background-color: var(--page-first-slide-background) !important;
+  width: 80%;
+}
+
+.chip{
+  color: #f3f2ed;
+  font-size: 12px;
+  font-family: 'SFUIDisplay-Regular';
+  background-color: #108b3c;
+  border-radius: 15px;
+}
+
+
+
+

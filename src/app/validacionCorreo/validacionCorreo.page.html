@@ -1,0 +1,67 @@
+
+  <ion-content>
+      <ion-row>
+        <ion-img class="imagenLogo" [src]="'./assets/Iconos/LogoBube_final.png'"></ion-img>
+      </ion-row>
+     <ion-row style="margin-top: 5%;">
+      <ion-col class="info-col">
+            <div class="info-wrapper">
+              <h3 *ngIf="emailVisible" class="info-title">Confirma tu correo electrónico</h3>
+              <h3 *ngIf="telVisible" class="info-title">Confirma tu número de celular</h3>
+            </div>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+      <div *ngIf="emailVisible">
+        <ion-row>
+          <ion-col class="info-col">
+                  <h5 class="info-paragraph">Por favor, confirma que {{this.myForm.value.email}} es el correo que usas actualmente</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-item class="input-item" style="text-align:center;" lines="none">
+            <ion-input type="text"formControlName="email" text-right id="input" placeholder="usuario@example.com"></ion-input>
+          </ion-item>
+          <div style="width: 100%;">
+            <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.required" >
+                <ion-label class="label-error"><ion-icon name="alert-circle-outline"></ion-icon> Email es requerido</ion-label>
+              </span>
+              <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.pattern">
+                <ion-label class="label-error"><ion-icon name="alert-circle-outline"></ion-icon> Ingrese un email válido</ion-label>
+              </span>
+          </div>
+        </ion-row>
+      </div>
+
+      <div *ngIf="telVisible">
+        <ion-row>
+          <ion-col class="info-col">
+                  <h5 class="info-paragraph">N° de celular {{this.myForm.value.celular}}</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-item class="input-item" style="text-align:center;" lines="none">
+            <ion-input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  type="tel" formControlName="celular" maxlength=9 text-right id="input" placeholder="Celular"></ion-input>
+          </ion-item>
+          <div style="width: 100%;">
+            <span class="error ion-padding error-input" *ngIf="submitted && errorControl.celular.errors?.required" >
+                <ion-label class="label-error"> <ion-icon name="alert-circle-outline"></ion-icon>Celular es requerido (Solo números)</ion-label>
+              </span>
+              <span class="error ion-padding error-input" *ngIf="submitted && errorControl.celular.errors?.min">
+                <ion-label class="label-error"> <ion-icon name="alert-circle-outline"></ion-icon>Mínimo 9 dígitos (Solo números)</ion-label>
+              </span>
+              <span class="error ion-padding error-input" *ngIf="submitted && errorControl.celular.errors?.max">
+                <ion-label class="label-error"> <ion-icon name="alert-circle-outline"></ion-icon>Ingrese un número válido (Solo números)</ion-label>
+              </span>
+          </div>
+        </ion-row>
+      </div>
+
+      <ion-row>
+        <div style="width: 100%;">
+          <ion-button type="submit" class="button-continuar" expand="block">Confirmar y continuar</ion-button>
+        </div>
+      </ion-row>
+    </form>
+  </ion-content>
+  

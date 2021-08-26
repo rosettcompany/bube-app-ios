@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-amigos">
+    <ion-title>Amigos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="toolbar-invitar">
+    <ion-button slot="start" fill="clear" (click)="invitarAmigos()"><ion-icon name="share-social-sharp"></ion-icon></ion-button>
+    <ion-title class="ion-tittle">Invitar a amigos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <div id="contenedor-amigos" style="display: none;">
+    <ion-row>
+      <ion-searchbar animate type="text"  debounce="500" (ionChange)="buscarAmigo($event)" placeholder="Buscar..."></ion-searchbar>
+     </ion-row>
+     <ion-row>
+      <h5>Mis amigos</h5>
+     </ion-row>
+  
+    <ion-list>
+        <ion-item lines="none" *ngFor="let amigo of amigos | filtroamigo:textBuscar" >
+          <ion-avatar slot="start">
+            <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+              <app-image-shell class="user-avatar" animation="spinner" [src]="'https://graph.facebook.com/'+amigo.idfacebook+'/picture?type=large'"></app-image-shell>
+            </app-aspect-ratio>
+          </ion-avatar>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="col-nombre">
+                <ion-label class="nombre-apellido-amigo">{{amigo.nombresusuario}} {{amigo.apellidosusuario}}</ion-label>
+              </ion-col>         
+            </ion-row>
+            <ion-row>
+              <ion-col class="col-cumple">
+                <ion-label>{{amigo.cumple}}</ion-label>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col class="col-bebidas" size="auto" *ngFor = "let bebida of amigo.bebidas | slice:0:2; let i=index">
+                  <ion-chip #chip outline id="chip" (click)="buscarBebida(bebida.nombre_corto,bebida.idusuario,amigo.nombresusuario)"><ion-icon style="color: #ffffff;" name="gift-outline"></ion-icon>{{bebida.nombremarca}}</ion-chip> 
+            </ion-col> 
+            </ion-row>
+          </ion-grid>
+          <ion-row>
+            <ion-chip id="ver_mas" (click)="detalleAmigo(amigo)">Ver más</ion-chip>
+          </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+   <div id="contenedor-fb" style="display: none;">
+     <ion-row style="justify-content: center; margin-top: 10px;">
+      <ion-button class="facebook" (click)="conectarseFacebook()">
+        <ion-icon name="logo-facebook"></ion-icon><ion-label class="p1">Conectarse a<br>facebook</ion-label>
+      </ion-button>
+     </ion-row>
+     <ion-row  style="justify-content: center; margin-top: 50%; color: rgb(85, 84, 84); font-size: 25px;text-align: center;">
+       <ion-label>
+         Conecta con facebook para poder ver a tus amigos 
+       </ion-label>
+     </ion-row>
+    </div>
+</ion-content>

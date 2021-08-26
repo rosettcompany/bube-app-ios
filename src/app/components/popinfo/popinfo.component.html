@@ -1,0 +1,10 @@
+<ion-content>
+  <div>
+    <ion-icon (click)="cerrar()" size="large" name="close-circle-outline"></ion-icon>
+  </div>
+  <div>
+    <ion-label>Ingrese su Documento de identidad(DNI)</ion-label>
+    <ion-input type="tel" inputmode="numeric" pattern="[0-9]" maxlength="8" id="txt-numero" placeholder="DNI"></ion-input>
+    <ion-button (click)="pagar()">Pagar</ion-button>
+  </div>
+</ion-content>

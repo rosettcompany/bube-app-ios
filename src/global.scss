@@ -1,0 +1,176 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.popover{
+    --background: #ffffff;
+    --width: auto;
+    --height: auto;
+}
+
+.small-modal{
+    .modal-wrapper {
+        position: absolute;
+        bottom: 0;
+        min-height: initial;
+        top: initial;
+        height: 80%;
+        //--border-radius:30px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+}
+.center-modal{
+    .modal-wrapper {
+        position: absolute;
+        margin: auto;
+        min-height: initial;
+        top: initial;
+        height: 60%;
+        width: 90%;
+        --border-radius:30px;
+        --background: #2a7c53;
+    }
+}
+
+.modal-chico{
+    .modal-wrapper {
+        position: absolute;
+        bottom: 0;
+        min-height: initial;
+        top: initial;
+        height: 60%;
+        //--border-radius:30px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+}
+
+/// LOADING SPINNER
+
+.my-custom-class {
+    --background: #121212;
+    --spinner-color: #108b3c;
+    --color: #ffffff !important;
+      font-family: 'SFCompactText-Medium';
+      color: #ffffff !important;
+
+      .alert-title.sc-ion-alert-md, .alert-title.sc-ion-alert-ios {
+        color: #ffffff;
+    }  
+    .alert-sub-title.sc-ion-alert-md, .alert-title.sc-ion-alert-ios {
+        color: #ffffff;
+    }    
+
+      .alert-message.sc-ion-alert-md, .alert-message.sc-ion-alert-ios {
+        color: #ffffff;
+    }
+
+    .alert-button.sc-ion-alert-md, .alert-button.sc-ion-alert-ios {
+        color: #108b3c;
+    }
+  
+  }
+
+
+  .searchbarinput {
+    input{
+       font-size: 0.9rem!important;  
+    }
+}
+
+.joyride-step__container{
+    background: #FFFFFF !important;
+    border-radius: 15px !important;
+}
+
+.datetime-md .datetime-placeholder {
+    color: #f3f2ed !important;
+    font-family: 'SF-UI-Display-Black' !important;
+}
+
+
+    //PICKER
+    .picker-wrapper {
+        background: #121212 !important; // colors the highlight
+        // --border-width: 1px 0 0;
+        --border-width: 0;
+        color: #ffffff !important;
+        border-top-left-radius: 15px !important;
+        border-top-right-radius: 15px !important;
+    }
+  
+    .picker-button {
+      border: 0;
+      font-family: 'SF-UI-Display-Black' !important;
+      color: #108b3c !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+
+  }
+
+  .picker-prefix, .picker-suffix, .picker-opt.picker-opt-selected {
+    font-family: 'SF-UI-Display-Black' !important;
+    color: #108b3c !important;
+    font-size: 22px;
+  }
+  .picker-opt{
+    font-family: 'SF-UI-Display-Black' !important;
+    font-size: 18px;
+  }
+
+
+  
+  .picker-button.sc-ion-picker-md, .picker-button.ion-activated.sc-ion-picker-md {
+      content: 'Can' !important;
+  }
+
+  input:-webkit-autofill {
+    height: 0px;
+    -webkit-box-shadow:0 0 0 20px #0e692e inset;
+    font-weight: 500px;
+}
+
+
+.scroll-refresher .ionic-refresher-content.ionic-refresher-with-text{
+    color: red !important;
+  }
+
+.sc-ion-picker-ios-h{
+    --background: #121212 !important;
+}
+
+ion-back-button {
+    color: #fff !important;
+    --color-focused: #fff;
+    --color-hover: #fff;
+}
+
+ion-segment-button {
+    --background-checked: rgba(18, 88, 43, 0.301)!important;
+    --color-checked: #108B3C !important;
+    --indicator-color: rgba(18, 88, 43, 0.301)!important;
+  }

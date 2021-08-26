@@ -1,0 +1,87 @@
+ion-header{
+    ion-toolbar{
+        --background: #108b3c;
+
+        ion-title{
+            color: #ffffff;
+            font-family: 'Gotham-Medium';
+            font-size: 23px;
+        }
+        ion-label{
+            color: #ffffff;
+            font-family: 'SFCompactText-Medium';
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+ion-content{
+    --background: #121212;
+}
+ion-footer{
+    --background: #121212;
+    background: #121212;
+}
+ion-item{
+    
+    --background: #121212;
+    
+}
+h3{
+    color: #f3f2ed;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Gotham-Medium';
+    margin-top: 20px;
+}
+.descripcion-bebida{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.tienda{
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'SFUIDisplay-Regular';
+    font-weight: lighter;
+}
+.precio{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px; 
+}
+img{
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 90px;
+    height: 90px;
+}
+#btn-volver{
+    font-family: 'SFCompactText-Medium';
+    --color:#ffffff;
+    --background: #108b3c;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 50px;
+    --border-radius: 10px;
+
+  }
+  #btn-explorar{
+    font-family: 'SFCompactText-Medium';
+    --color:#ffffff;
+    --background: #222121;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 50px;
+    border: 3px solid #108b3c;
+    border-radius: 10px;
+  }

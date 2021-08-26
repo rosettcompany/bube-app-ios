@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    
+        <ion-button fill="clear" slot="start" (click) = "regresar()"><ion-icon name="arrow-back-outline" style="color: #f3f2ed;"></ion-icon></ion-button>
+  
+    <ion-title>Mis datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form action="#">
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked">Nombres</ion-label>
+        <ion-input id="idnombre" type="name" placeholder="Nombres" maxlength=30></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked">Apellidos</ion-label>
+        <ion-input id="idapellido" type="name" placeholder="Apellidos" maxlength=30></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked">Documento de identidad (DNI)</ion-label>
+        <ion-input id="iddni"type="tel" inputmode="numeric" pattern="[0-9]" placeholder="Dni" maxlength=8></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked">Correo electrónico</ion-label>
+        <ion-input id="idemail" type="email" placeholder="Correo electronico" maxlength=50></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked">Celular</ion-label>
+        <ion-input id="idcelular" type="tel" placeholder="Escribe tu número" maxlength=9></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked" >Fecha de nacimiento</ion-label>
+        <ion-input id="idfecha" type="date" placeholder="Fecha de nacimiento"><ion-icon size="large" style="position: absolute; right: 10px; color: #108b3c;" name="calendar-outline"></ion-icon></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="tex-input" position="stacked" >Mis favoritos 
+          <ion-chip #chip outline (click)="irBebidas()">
+          <img src="./assets/Iconos/Editar.svg" alt="editar">
+        </ion-chip>
+        <ion-chip outline style="background: transparent;margin-left: 20px;">
+          <ion-icon style="color: #fded0f; margin-right: 10px;" name="share-social" size="large" (click)="invitarAmigos()"></ion-icon>
+        </ion-chip>
+      </ion-label>
+        <ion-card class="ion-card">
+          <ion-chip #chip  *ngFor="let tag of tagName" outline color="success" (click)="buscarBebida(tag.nombreBebida)">
+            <ion-label>{{tag.nombremarca}}</ion-label>
+        </ion-chip>
+       </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</form>
+
+</ion-content>
+<ion-footer>
+  <ion-button disabled="{{btn}}" class="ion-button"  expand="block" (click)="botonGuardar()" >Guardar</ion-button>
+</ion-footer>

@@ -1,0 +1,128 @@
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-broad-margin);
+  --page-background: var(--app-background);
+
+  --page-swiper-pagination-space: 40px;
+  --page-swiper-pagination-height: 18px;
+  --page-pagination-bullet-size: 10px;
+
+  --page-first-slide-background: #121212;
+  --page-second-slide-background: #121212;
+  --page-third-slide-background: #121212;
+  --page-last-slide-background: #121212;
+
+  --page-background-image: #108b3c;
+  --border-image:  #f3f2ed;
+  --page-vector-decoration-fill: var(--ion-color-light-shade);
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
+
+    // For the skip button
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
+  }
+}
+
+ion-content{
+  --background: var(--page-first-slide-background);
+
+  .user-details-wrapper {
+    --ion-grid-column-padding: 0px;
+    padding: 0px var(--page-margin) var(--page-margin);
+    background-color: var(--page-background-image);
+    color: var(--ion-color-light);
+    height: 15%;
+
+
+  }
+  
+  .user-details-row{
+     position: relative;
+     justify-content: center;
+     margin-top: -15%;
+     
+    .ion-colum-avatar{
+      
+      .user-avatar {
+        border: solid 2px var(--border-image);  
+        
+      }
+    }
+  }
+
+
+   
+  .user-info-wrapper {
+    padding-left: calc(var(--page-margin) / 2);
+    justify-content: center;
+    text-align: center; 
+    .user-name {
+      margin: 0px 0px 5px;
+      color: #f3f2ed;
+    }
+
+  }
+
+  ion-label{
+    font-size: 20px;
+  }
+
+}
+
+
+.ion-label-menu{
+  font-size: 20px;
+  font-family: 'SFUIDisplay-Regular';
+  color: #f3f2ed;
+}
+
+
+ion-content {
+  // To get the ion-content behind the ion-header
+  position: absolute;
+  top: 0;
+}
+
+.ion-list{
+  margin: auto;
+  border-radius: 8px !important;
+  background-color: transparent !important;
+  width: 98%;
+  
+
+  .input-item-list{
+    color: var(--ion-color-dark);
+    color: #f3f2ed!important;
+    --background: transparent;
+    width: 98%;
+    font-size: 0.9rem;
+    --border-color: #f3f2ed;
+  }
+}
+.contenerdo-btn-editar-foto{
+  width: 100%;
+
+  text-align: right;
+  padding: 0;
+
+
+  .btn-cambiar-foto{
+    margin-top: -50px;
+    margin-right: -20px;
+    z-index: 9;
+    ion-icon{
+      color: #fff;
+    }
+  }
+
+}
+
+
+

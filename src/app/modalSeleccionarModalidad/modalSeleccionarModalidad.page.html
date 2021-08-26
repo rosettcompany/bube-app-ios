@@ -1,0 +1,85 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+
+    <div class="row contenedor">
+       
+      <ion-list class="list-modalidad">
+        <ion-item class="item-close" lines="none" >
+          <ion-button  class="btn-salir" fill="clear" (click)="cerrarModal()"><ion-icon name="close"></ion-icon></ion-button>
+       </ion-item>
+          <ion-item class="item-list" lines="none">
+            <div slot="start" class="container-cantidad">
+              <ion-label class="label-cantidad">
+                {{cantidad}}
+              </ion-label>
+            </div>
+            <ion-label class="label-item">Mi selección</ion-label>
+            <p slot="end"  class="label-item">S/ {{precioSubTotal.toFixed(2)}}</p>
+          </ion-item>
+
+        <ion-radio-group [(ngModel)] = "modalidad" (ionChange) ="cambiarModalidad()">
+          <ion-item class="item-list" lines="none">
+            <ion-radio id ="radio1"  class="radio-style" slot="start" value="1" disabled></ion-radio>
+            <ion-col>
+              <ion-label  class="label-item">Delivery</ion-label>
+              <ion-label *ngIf="DeliveryDisponible" class="label-item-delivery">({{horarioDeliveryInicio}} a {{horarioDeliveryFin}})</ion-label>
+            </ion-col>
+            <p class="label-item" slot="end">S/ {{precioDelivery.toFixed(2)}} </p>
+          </ion-item>
+
+          <div class="contenedor" *ngIf='camposUbicacion'>
+            <ion-row>
+              <ion-label class="label-input">Dirección</ion-label>
+            </ion-row>
+            <ion-item class="input-item" lines="none">
+              <ion-input disabled = "true" [(ngModel)] ='direccion' id="direccion" type="text" class="input-text" maxlength=100></ion-input>
+            </ion-item>
+
+            <ion-row>
+              <ion-label class="label-input">Piso/departamento</ion-label>
+            </ion-row>
+            <ion-item class="input-item" lines="none">
+              <ion-input [(ngModel)] ='piso_departamento' id="piso_departamento" type="text" class="input-text" maxlength=30></ion-input>
+            </ion-item>
+
+            <ion-row>
+              <ion-label class="label-input">Referencia</ion-label>
+            </ion-row>
+            <ion-item class="input-item" lines="none">
+              <ion-input [(ngModel)] ='referencia' id="referencia" type="text" class="input-text" maxlength=100></ion-input>
+            </ion-item>
+          </div>
+          <ion-item class="item-list" lines="none">
+            <ion-radio class="radio-style" slot="start" value="2" id="rd_tienda"></ion-radio>
+            <ion-label class="label-item">Recojo en tienda</ion-label>
+          </ion-item>
+         
+        </ion-radio-group>
+    
+        <div style="height: 4px; width: 90%; background-color: #108b3c; border-radius: 30px; margin-left: auto; margin-right: auto; box-shadow: 0px 2px black;"></div>
+   
+          <ion-item  class="item-list" lines="none">
+            <ion-label slot="start"  class="label-item">Total pedido</ion-label>
+            <p class="label-item" slot="end">S/ {{precioTotal.toFixed(2)}}</p>
+          </ion-item>
+      </ion-list>
+      <ion-label *ngIf="infoRecojoTienda" class="error-recojo-tienda">Establecimiento sin opción de recojo en tienda</ion-label>
+      <div *ngIf="infoModalidad" style="width: 76%; text-align: left; margin-left: auto; margin-right: auto;">
+       
+        <p class="info-modalidad">
+          Solo podrás retirar en la tienda seleccionada en el horario de {{horarioAtencionInicio}} a {{horarioAtencionFin}}.
+        </p>
+      </div>
+
+      <div *ngIf="rango_entrega_visible" style="width: 76%; text-align: left; margin-left: auto; margin-right: auto;">
+        <p class="info-modalidad">
+          Entrega estimada en un rango de: {{rango_entrega}} horas.
+        </p>
+      </div>
+      <ion-button [disabled] = "botonHabilitado" id="botonPagar" expand="block" class="btn-promociones" (click)="procesarPago()">Procesar pago <ion-spinner *ngIf="botonHabilitado" name="crescent"></ion-spinner></ion-button>
+      <ion-button *ngIf="esPromocion" expand="block" class="btn-promociones2" (click)="modalDismiss()">Seguir explorando</ion-button>
+    </div>
+  
+  </ion-content>

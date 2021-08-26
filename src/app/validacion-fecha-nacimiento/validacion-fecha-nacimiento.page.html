@@ -1,0 +1,28 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <div class="conteiner-titulo">
+      <ion-label class="titulo-login">Ingresa tu fecha de cumpleaños<br></ion-label>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="container-date">
+      <ion-item lines="none">
+        <ion-datetime [(ngModel)] ="fechaNacimiento"  [pickerOptions]="options" class="date-time"  placeholder="Seleccione"></ion-datetime>
+      </ion-item>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="contenedor">
+      <ion-button (click) ="irValidacionBebidas()" [disabled] ="botonContinuar" class="btn-inicio-sesion">Continuar</ion-button>
+    </div>
+    <div class="contenedor-edad">
+      <ion-label class="text-edad">Debe ser 18+</ion-label>
+    </div>
+  </ion-row>
+
+</ion-content>

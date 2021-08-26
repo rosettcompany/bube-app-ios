@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: #f3f2ed;">
+      <ion-back-button id="volver1" (click) = "regresar()" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #ffff;">Mapa</ion-title>
+    <ion-button id="carrito" slot="end" fill="clear" (click)="abrirCarrito()">
+      <img src="./assets/Iconos/maps/shop.png">
+      <ion-badge color="warning" mode="ios">{{num_bebidas}}</ion-badge>
+    </ion-button>
+    <!-- <ion-searchbar id="buscarDireccion" animated type="text" class="input-item controls" debounce="500" placeholder="Buscar direccion"></ion-searchbar> -->
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content >
+  <div id="map"></div>
+  <div id="content"></div>
+</ion-content>
+<ion-footer >
+  <ion-toolbar class="ion-no-border" translucent fill="clear">
+    <ion-button id="btn-volver" expand="block" (click)="volver()" ><ion-label class="label-button2">Volver a mi selección</ion-label></ion-button>
+    <ion-button id="btn-explorar" expand="block" (click)="seguir()"><ion-label class="label-button">Seguir explorando</ion-label></ion-button>
+  </ion-toolbar>
+</ion-footer>

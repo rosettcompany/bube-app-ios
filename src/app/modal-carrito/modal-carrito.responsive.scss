@@ -1,0 +1,443 @@
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Portrait and Landscape */
+/* ----------- Galaxy S6 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
+  and (orientation: portrait) {
+
+
+    .cabezera{
+    
+        h3{
+            font-size: 22px;
+
+        }
+        p{
+
+            font-size: 16px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 18px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 12px;
+  }
+
+  .ion-label-precio{
+    font-size: 18px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 28px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 18px;
+}
+#txt-total{
+    font-size: 18px;
+}
+  
+    
+    
+}
+
+/* ----------- HTC One ----------- */
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+    .cabezera{
+    
+        h3{
+            font-size: 20px;
+
+        }
+        p{
+
+            font-size: 14px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 16px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 10px;
+  }
+
+  .ion-label-precio{
+    font-size: 16px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 26px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 16px;
+}
+#txt-total{
+    font-size: 16px;
+}
+  
+
+    
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+
+    .cabezera{
+    
+        h3{
+            font-size: 20px;
+
+        }
+        p{
+
+            font-size: 14px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 16px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 10px;
+  }
+
+  .ion-label-precio{
+    font-size: 16px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 26px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 16px;
+}
+#txt-total{
+    font-size: 16px;
+}
+  
+
+}
+
+/* ----------- Galaxy S1 ----------- */
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 1) 
+  and (orientation: portrait) {
+
+    .cabezera{
+    
+        h3{
+            font-size: 19px;
+
+        }
+        p{
+
+            font-size: 15px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 15px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 9px;
+  }
+
+  .ion-label-precio{
+    font-size: 15px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 25px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 15px;
+}
+#txt-total{
+    font-size: 15px;
+}
+  
+
+
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .cabezera{
+    
+        h3{
+            font-size: 20px;
+
+        }
+        p{
+
+            font-size: 14px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 16px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 10px;
+  }
+
+  .ion-label-precio{
+    font-size: 16px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 26px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 16px;
+}
+#txt-total{
+    font-size: 16px;
+}
+  
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .cabezera{
+    
+        h3{
+            font-size: 21px;
+
+        }
+        p{
+
+            font-size: 15px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 17px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 11px;
+  }
+
+  .ion-label-precio{
+    font-size: 17px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 27px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 17px;
+}
+#txt-total{
+    font-size: 17px;
+}
+  
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+    .cabezera{
+    
+        h3{
+            font-size: 21px;
+
+        }
+        p{
+
+            font-size: 15px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 17px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 11px;
+  }
+
+  .ion-label-precio{
+    font-size: 17px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 27px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 17px;
+}
+#txt-total{
+    font-size: 17px;
+}
+  
+    
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    .cabezera{
+    
+        h3{
+            font-size: 21px;
+
+        }
+        p{
+
+            font-size: 15px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 17px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 11px;
+  }
+
+  .ion-label-precio{
+    font-size: 17px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 27px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 17px;
+}
+#txt-total{
+    font-size: 17px;
+}
+  
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    .cabezera{
+    
+        h3{
+            font-size: 22px;
+
+        }
+        p{
+
+            font-size: 16px;
+        }
+    
+    }
+
+  .ion-label-nombreMarca{
+    font-size: 18px;
+  }
+
+  .ion-label-nombreBebida{
+    font-size: 12px;
+  }
+
+  .ion-label-precio{
+    font-size: 18px;
+  }
+
+  .btn-cantidad{ 
+
+    font-size: 28px;
+  }
+
+  #txt-cantidad-btn{
+    font-size: 18px;
+}
+#txt-total{
+    font-size: 18px;
+}
+  
+  
+}

@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class = "toolbar-ahorros">
+    <ion-title  class="ion-tittle"> <h3>Mis ahorros</h3></ion-title>
+  </ion-toolbar>
+</ion-header>  
+
+  <ion-content>
+         
+        <ion-card class="welcome-card ion-card-content" >
+          <ion-card-content>
+            <canvas  #barChart></canvas>
+          </ion-card-content>
+        </ion-card>
+        
+        <ion-row class="ion-total-ahorros">
+          <ion-item class="ion-item-ahorros" lines ="none">
+            <p class="label-item-ahorros" slot="start">Ahorros hasta la fecha</p>
+            <p class="label-item-ahorros" slot="end">S/ {{ahorroTotal}} </p> 
+          </ion-item>
+        </ion-row>
+        <ion-row style="margin-top: 10px;" *ngIf = "mesVisible">
+          <ion-col>
+            <ion-button (click) = "ocultarDetalle()" style = " --background: transparent; margin-left: 4.5%; margin-bottom: 4%; zoom: 0.9;" > <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon></ion-button>
+            <ion-label  class="label-title-list"> {{mes}} </ion-label>
+          </ion-col>
+        </ion-row> 
+        <ion-row style="margin-top: 10px;" *ngIf = "tituloVisible">
+          <ion-col>
+            <ion-label style="margin-left: 4.5%;"  class="label-title-list">Últimos 12 meses</ion-label>
+          </ion-col>
+        </ion-row>
+          <ion-card class="card-list" *ngIf="ahorrosVisible">
+            <ion-list class="ion-list">
+              <ion-item class="input-item-list" (click) = "verDetalle(ahorro)" *ngFor="let ahorro of ahorrosMes">
+                <ion-label style="color: black;"><b>{{getMeses(ahorro.mes)}} </b><br> {{ahorro.anio}}  </ion-label>
+                <ion-note slot="end" color="dark" style="font-size: 15px;">S/. {{ahorro.ahorro.toFixed(2)}}</ion-note>
+              </ion-item>
+            </ion-list>
+          </ion-card>
+          <ion-card class="card-list" *ngIf="detalleVisible">
+            <ion-list class="ion-list">
+              <ion-item  class="input-item-list" *ngFor="let ahorro of ahorros; let i = index">
+                <ion-label  style="color: black;">{{ahorro.fechacompra}}</ion-label>
+                <ion-note slot="end" color="dark"  style="font-size: 15px;" >S/. {{ahorro.ahorrocompra.toFixed(2)}}</ion-note>
+              </ion-item>
+            </ion-list>
+            <ion-item  class="input-item-list">
+              <ion-label  style="color: black;"><b>Total Acumulado</b></ion-label>
+              <ion-note slot="end" color="dark"  style="font-size: 15px;" ><b>S/. {{totalMes.toFixed(2)}} </b></ion-note>
+            </ion-item>
+          </ion-card>
+  </ion-content>

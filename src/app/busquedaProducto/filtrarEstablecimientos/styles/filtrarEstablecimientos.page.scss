@@ -1,0 +1,126 @@
+@import "../../../../theme/mixins/inputs/checkbox-tag";
+@import "../../../../theme/mixins/inputs/radio-tag";
+@import "../../../../theme/mixins/inputs/color-radio";
+:host {
+    --page-margin: var(--app-fair-margin);
+    --page-background: var(--app-background-shade);
+  
+    --page-tags-gutter: 5px;
+  
+    --page-color-radio-items-per-row: 5;
+    --page-color-radio-gutter: 2%;
+    --page-color-radio-width: calc((100% - (2 * var(--page-color-radio-gutter) * var(--page-color-radio-items-per-row))) / var(--page-color-radio-items-per-row));
+  }
+
+ion-toolbar{
+    --background: #121212;
+}
+
+ion-content{
+    --background: #121212;
+}
+ion-footer{
+    background: #121212;
+}
+
+.item-radio{
+    --background: #121212;
+     min-height: 38px;
+     max-height: 38px;
+     align-content: center;
+     align-items: center;
+}
+
+
+
+.ion-button-toolbar{
+    text-transform: none;
+}
+
+
+.ion-list-checkbox{
+    margin-left: 20px;
+    background-color:#121212;
+}
+.label-error{
+  margin-left: 20px;
+  font-family: 'SFCompactText-Medium';
+  font-size: 16px;
+  color: #108B3C;
+}
+
+.ion-checkbox{
+  --checkmark-color: #121212;
+  --background-checked:#108B3C;
+  --border-color:#108B3C;
+  --border-color-checked: #108B3C;
+  --background: #121212;
+}
+
+.button-aplicar {
+      --background: #108b3c;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      text-transform: none;
+      height: 50px;
+      --border-radius: 16px;
+      font-family: 'SFCompactText-Medium';
+      --color: #ffffff;
+      color: #ffffff;
+
+  }
+
+.ion-label{
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    color: #f3f2ed;
+    font-family: 'SFCompactText-Medium';
+}
+
+.ion-label-title{
+    font-size: 22px;
+    color: #f3f2ed;
+    letter-spacing: 0.25px;
+    font-family: 'Gotham-Medium';
+}
+
+.ion-label-subtittle{
+    font-size: 14px;
+    color: #f3f2ed;
+    letter-spacing: 1px;
+    font-family: 'SFUIDisplay-Regular';
+}
+
+.tag-label{
+  font-size: 22px;
+  letter-spacing: 0.25px;
+  font-family: 'SFUIDisplay-Regular';
+}
+
+.label-range-price{
+  font-size: 16px;
+  color: #f3f2ed;
+  letter-spacing: 0.5px;
+  font-family: 'SFCompactText-Medium';
+}
+
+.label-button-header{
+  color: #f3f2ed; 
+  font-size: 18px;
+  letter-spacing: 0.25px;
+  font-family: 'SFCompactText-Medium';
+}
+
+.ion-button-expandir{
+    width: 80%;
+    height: 80%;
+    --background: var(--ion-color-botonNuevo);
+}
+
+.custom-skeleton ion-skeleton-text {
+  margin-left: 20px;
+  line-height: 13px;
+}

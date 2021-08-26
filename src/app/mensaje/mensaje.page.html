@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+</ion-header>
+<ion-content [fullscreen]="true">
+      <ion-row>
+            <div class="conteiner-logo">
+              <ion-img src="./assets/Iconos/LogoBube_final.png" alt="logo bube" class="img-logo"></ion-img>
+              <ion-label class="titulo-login"></ion-label>
+            </div>
+      </ion-row> 
+      <div id="container">
+            <!-- boton para logearse con facebook -->
+            <ion-row>
+               <ion-col>
+                     <ion-label class="titulo">Versión desactualizada</ion-label>
+               </ion-col>
+            </ion-row>
+            <ion-row style="margin-top: 20px;">
+               <ion-col>
+                  <ion-label class="descrip">Hay una nueva versión de BUBE porfavor actualice para poder seguir comprando tus tragos favoritos</ion-label>
+               </ion-col>
+            </ion-row>
+            <ion-row *ngIf="android == true" style="justify-content: center; margin-top: 40px;">
+                  <a href="https://play.google.com/store/apps/details?id=com.rosettcompany.bube">
+                      <ion-button class="actualizar" >
+                            Actualizar
+                      </ion-button>
+                  </a>
+                </ion-row>
+                <ion-row *ngIf="ios== true" style="justify-content: center; margin-top: 40px;">
+                      <a href="https://apps.apple.com/pe/app/bube-buscador-de-bebidas/id1580449502?l=en">
+                          <ion-button class="actualizar" >
+                                Actualizar
+                          </ion-button>
+                      </a>
+            </ion-row>
+      </div>
+    
+</ion-content>

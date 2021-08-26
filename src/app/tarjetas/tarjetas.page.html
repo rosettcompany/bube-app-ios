@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: #f3f2ed;">
+      <ion-back-button id="volver2" (click) = "regresar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-toolbar">Método de pago</ion-title>
+    <ion-icon style="color: #ffff; margin-right: 10px;" size="large" slot="end" name="help-circle-outline" (click)="tutorial()"></ion-icon>
+    <ion-label class="label-toolbar" slot="end" >S/ {{total.toFixed(2)}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>{{hayTarjetas}}</h3>
+
+  <ion-row *ngIf="spinner">
+    <div class="div-spinner-style">
+      <ion-spinner name="circles"></ion-spinner>
+    </div>
+  </ion-row>
+
+  <ion-list *ngIf="!spinner" no-border #lista [@visibilityChanged]="animation" style="opacity: 0">
+
+    <ion-radio-group [(ngModel)] = "tarjetaSeleccionada" (ionChange)="seleccionar($event)">
+
+      <ion-item-sliding *ngFor="let tarjeta of tarjetas[0];let i = index">
+        <ion-item >
+          <ion-row>
+            <ion-col>
+              <div style="{{tarjeta.color}}">
+                <img src="./assets/Iconos/chip.png" class="chip">
+                <img src="./assets/Iconos/{{tarjeta.tipo}}.png" class="tipo-tarjeta" id="tipo-tarjeta">
+                <ion-label class="numero-tarjeta">{{n1(tarjeta.numero)}} {{n2(tarjeta.numero)}}*** **** {{n3(tarjeta.numero)}}</ion-label>
+                <ion-label class="titulo-titular">Nombre titular</ion-label>
+                <ion-label class="titular">{{tarjeta.titular}}</ion-label>
+                <ion-label class="titulo-fecha">Fecha vencimiento</ion-label>
+                <ion-label class="fecha">{{tarjeta.fecha}}</ion-label>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label class="select-tarjeta">Usar como método de pago</ion-label>
+                <ion-radio slot="start" color = "success" value="{{tarjeta.numero}}" (click) ="EvnetotarjetaSeleccionada(tarjeta.numero)"></ion-radio>
+              </ion-item>
+            </ion-col>      
+          </ion-row> 
+        </ion-item>
+  
+        <ion-item-options  side="start">
+          <ion-item-option (click)="editar(tarjeta)">
+            <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
+          </ion-item-option>  
+        </ion-item-options>
+  
+        <ion-item-options side="end">
+          <ion-item-option (click)="eliminar(tarjeta)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+    
+  
+      </ion-item-sliding>
+
+    </ion-radio-group>
+
+
+    
+  </ion-list>
+  <ion-fab-button class="btn-add" (click)="nuevaTarjeta()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button slot="end" fill="clear" id="btn-siguiente" mode="ios" (click)="siguiente()" disabled="{{oculto}}">Siguiente<ion-icon class="icono-inferiores" name="chevron-forward-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+  <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+</ion-footer>
+

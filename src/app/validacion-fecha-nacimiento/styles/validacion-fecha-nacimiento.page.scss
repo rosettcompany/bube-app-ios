@@ -1,0 +1,89 @@
+ion-content{
+    --background: #121212;
+
+    
+  .conteiner-titulo{
+    text-align: center;
+    align-content: center;
+    left: 0;
+    right: 0;
+    margin-top: 40%;
+    width: 100%;
+    margin-bottom: 20px;
+    .titulo-login{
+        color: #f3f2ed;
+        font-family: 'SF-UI-Display-Black';
+        font-size: 20px;
+        margin-top: 20px;
+     }
+
+  }
+
+  .container-date{
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      ion-item{
+          margin: auto;
+          --border-color: #108b3c;
+          --background: #121212 !important;
+          --border-width: 1px 0px 1px 0px;
+          width: 45%;
+      }
+
+  }
+
+  .date-time{
+    margin: auto;
+    &::part(text){
+        color: #f3f2ed !important;
+        font-family: 'SF-UI-Display-Black' !important;
+    }
+
+    &::part(placeholder){
+        color: #f3f2ed !important;
+        text-align: center;
+        font-family: 'SF-UI-Display-Black' !important;
+    }
+  }
+
+  .contenedor{
+    margin-top: 100px;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+
+    .btn-inicio-sesion{
+        --background: #121212;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        height: 50px;
+        width: 200px;
+        text-transform: none;
+        --border-color: #108b3c;
+        --border-style: solid;
+        --border-width: 2px;
+        font-family: 'SFUIDisplay-Regular';
+        --border-radius: 25px;
+        letter-spacing: 0.25px;
+        --background-activated: #383838;
+      }
+
+
+    }
+
+    .contenedor-edad{
+        align-content: center;
+        text-align: center;
+        width: 100%;
+
+        .text-edad{
+            color: #f3f2ed !important;
+            font-family: 'SFUIDisplay-Regular';
+            letter-spacing: 0.25px;
+        }
+    }
+
+}

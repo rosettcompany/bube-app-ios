@@ -1,0 +1,23 @@
+app-image-shell.producto-picture {
+  --image-shell-border-radius: 10px;
+  --image-shell-loading-background: transparent;
+  --image-shell-spinner-color: var(--ion-color-dark-shade);
+  background-color: #ffffff;
+}
+
+app-image-shell.background-picture {
+  --image-shell-loading-background: transparent;
+  --image-shell-spinner-color: var(--ion-color-dark-shade);
+  background-color: #ffffff;
+}
+
+app-image-shell.client-picture {
+  --image-shell-border-radius: 50%;
+  --image-shell-loading-background: transparent;
+  --image-shell-spinner-color: var(--ion-color-dark-shade);
+}
+
+app-image-shell.illustration-image {
+  --image-shell-loading-background: transparent;
+  --image-shell-spinner-color: var(--ion-color-dark-shade);
+}

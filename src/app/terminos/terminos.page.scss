@@ -1,0 +1,64 @@
+ion-header{
+    border-color: #121212;
+    border-style: none;
+    border-width:0;
+    background: #121212;
+}
+ion-toolbar{
+    --background: #121212;
+    --border-color: #121212;
+    --border-style: none;
+    --border-width:0;
+}
+ion-content{
+    --background: #121212;
+    scroll-behavior: smooth;
+}
+ion-title{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#btnAtras {
+    border-radius: 50px;
+  }
+  .contenedor-titulo{
+      text-align: center;
+      .titulo2{
+        margin: auto;
+        margin-top: 20px;
+        font-size: 22px;
+        text-align: center;
+        font-family: 'Gotham-Medium';
+        color: #ffffff;
+    }
+  }
+  div{
+      padding: 20px;
+      .titulo2{
+        margin: auto;
+        margin-top: 20px;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Gotham-Medium';
+        color: #ffffff;
+    }
+  }
+
+
+.container {
+   text-align: justify;
+   left: 0;
+   right: 0;
+   padding: 20px;
+  }
+ p{
+    font-family: 'SFUIDisplay-Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5em;
+    text-align: justify;
+    letter-spacing: 0.25px;
+    color: #ffffff;
+ }

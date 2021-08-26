@@ -1,0 +1,27 @@
+ion-toolbar{
+    --background: #108b3c;
+
+    ion-title{
+        color: #ffffff;
+        font-family: 'Gotham-Medium';
+    }
+}
+ion-content{
+    --background: #121212;
+
+}
+.conteiner{
+ 
+    text-align: center;
+    margin-top: 70px;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    p{
+        margin: auto;
+        color: #ffffff;
+        font-family: 'SFUIDisplay-Regular';
+        font-size: large;
+    }
+}

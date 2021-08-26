@@ -1,0 +1,19 @@
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+:host {
+
+
+  --page-color-tab: #f0343434;
+  --page-color-selected: #108b3c;
+  --page-tab-background: #32383e;
+
+
+}
+
+ion-tab-button {
+  --color: var(--ion-color-medium-shade);
+  --color-selected: var(--page-color-selected);
+}
+
+ion-tab-bar{
+  --background: var(--page-tab-background);
+}

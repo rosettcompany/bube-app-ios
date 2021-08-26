@@ -1,0 +1,75 @@
+
+ion-content{
+  --background: #121212;
+  color: white;
+}
+.conteiner-logo{
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+}
+
+.img-logo{
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#container {
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.actualizar{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  --padding-bottom: 15px;
+  --padding-top:15px;
+  text-transform: none;
+  height: max-content;
+  font-size: 16px;
+  --background: #12632e;
+
+}
+
+.btn-terminos {
+  --color: rgb(252, 172, 25);
+  background: transparent;
+  font-size: 14px;
+  text-decoration: underline;
+  height: fit-content;
+  text-transform: none;
+  width: min-content;
+  &:hover {
+    background: transparent;
+    color: rgb(252, 189, 72);
+  }
+}
+
+.titulo-login{
+   color: #f3f2ed;
+   font-family: 'SF-UI-Display-Black';
+   font-size: 20px;
+   margin-top: 20px;
+}
+
+.titulo{
+  color: #fff;
+  font-family: 'Gotham-Medium';
+  font-size: 22px;
+}
+.descrip{
+  color: #fff;
+  font-family: 'Gotham-Medium';
+  
+}
+
+

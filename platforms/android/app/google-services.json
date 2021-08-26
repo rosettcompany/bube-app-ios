@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "939851346641",
+    "firebase_url": "https://bubeapp.firebaseio.com",
+    "project_id": "bubeapp",
+    "storage_bucket": "bubeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939851346641:android:56d2511e719c1d55cccbf0",
+        "android_client_info": {
+          "package_name": "com.rosettcompany.bube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939851346641-2jkanhlivnqoqe4loou6lmlfjuqu83fk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rosettcompany.bube",
+            "certificate_hash": "1021daeddc6d3ba71e56ef37d5fad1afb0ef3b0e"
+          }
+        },
+        {
+          "client_id": "939851346641-9fpklfdmk85fdsb8bis6io4gnij1mal9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rosettcompany.bube",
+            "certificate_hash": "fbcaf96bb4b877e081358f198426db3c1c96e410"
+          }
+        },
+        {
+          "client_id": "939851346641-82v90lqb5r4csmgqtjh7g7ttke3900ru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEXy2m0JEIOS1YIFzs48NztFRE-ZV-nqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939851346641-82v90lqb5r4csmgqtjh7g7ttke3900ru.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "939851346641-31co4gincieobo0pdc8bqs6k0g72hlm5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rosettcompany.bube"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

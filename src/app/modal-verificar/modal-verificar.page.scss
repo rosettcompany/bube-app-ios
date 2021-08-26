@@ -1,0 +1,42 @@
+ion-content{
+    --background: #121212;
+}
+ion-header{
+    --background: #121212;
+}
+#contenedor{
+    align-content: center;
+    text-align: center  ;
+}
+
+h3{
+    color: #ffffff;
+    font-family: 'Gotham-Medium';
+    margin-top: 70px;
+}
+p{
+    color: #ffffff;
+    font-family: 'SFCompactText-Medium';
+    font-size: 18px;
+    
+}
+.label-dire{
+    color: #ffffff;
+    font-family: 'Gotham-Medium';
+    font-size: 13px;
+    text-justify: auto;
+}
+
+#btn-cancelar{
+    --background: #121212;
+    color: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    font-family: 'SFCompactText-Medium';
+   
+    width: 90%;
+    text-transform: none;
+    height: 50px;
+    margin-top: 20px;
+
+}

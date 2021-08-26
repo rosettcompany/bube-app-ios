@@ -1,0 +1,30 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <div class="conteiner-titulo">
+      <ion-label class="titulo-login" style="font-size: 30px;">Elige<br></ion-label>
+      <ion-label class="titulo-login">tu inicio de sesión</ion-label>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="contenedor">
+      <ion-button [disabled] = "botonGoogle" expand="block" (click) ="irInicioTelefono()" class="btn-inicio-sesion">Iniciar sesión con número de teléfono</ion-button>
+    </div>
+    <div class="contenedor"> 
+      <ion-button [disabled] = "botonGoogle" expand="block" (click) ="irInicioCorreo()" class="btn-inicio-sesion">Iniciar sesión con correo electrónico</ion-button>
+    </div>
+    <div class="contenedor">
+      <ion-button [disabled] = "botonGoogle" expand="block"  (click) ="cargarLoginGoogle()" class="btn-inicio-google">
+         <ion-icon slot="start" name="logo-google"></ion-icon>
+         <ion-label class="text-google"> Iniciar sesión con Google </ion-label>
+         <ion-spinner *ngIf="botonGoogle" name="crescent"></ion-spinner>
+      </ion-button>
+    </div>
+  </ion-row>
+
+</ion-content>

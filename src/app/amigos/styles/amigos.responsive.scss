@@ -1,0 +1,290 @@
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+
+/* ----------- Galaxy S6 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
+  and (orientation: portrait) {
+
+    .ion-tittle{
+        font-size: 18px;
+      }
+
+      h5{
+        font-size: 18px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 10px;
+        }
+       }
+       #chip{
+        font-size: 12px;
+       }
+       #ver_mas{
+        font-size: 11px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 14px;
+       }
+       
+    
+}
+
+/* ----------- HTC One ----------- */
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+    .ion-tittle{
+        font-size: 16px;
+      }
+
+      h5{
+        font-size: 16px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 8px;
+        }
+       }
+       #chip{
+        font-size: 10px;
+       }
+       #ver_mas{
+        font-size: 9px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 12px;
+       }
+
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+  
+  
+    .ion-tittle{
+        font-size: 16px;
+      }
+
+      h5{
+        font-size: 16px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 8px;
+        }
+       }
+       #chip{
+        font-size: 10px;
+       }
+       #ver_mas{
+        font-size: 9px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 12px;
+       }
+
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+
+ 
+    .ion-tittle{
+        font-size: 16px;
+      }
+
+      h5{
+        font-size: 16px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 8px;
+        }
+       }
+       #chip{
+        font-size: 10px;
+       }
+       #ver_mas{
+        font-size: 9px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 12px;
+       }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .ion-tittle{
+        font-size: 16px;
+      }
+
+      h5{
+        font-size: 16px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 8px;
+        }
+       }
+       #chip{
+        font-size: 10px;
+       }
+       #ver_mas{
+        font-size: 9px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 12px;
+       }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+
+    .ion-tittle{
+        font-size: 17px;
+      }
+
+      h5{
+        font-size: 17px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 9px;
+        }
+       }
+       #chip{
+        font-size: 11px;
+       }
+       #ver_mas{
+        font-size: 10px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 13px;
+       }
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+ 
+    .ion-tittle{
+        font-size: 17px;
+      }
+
+      h5{
+        font-size: 17px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 9px;
+        }
+       }
+       #chip{
+        font-size: 11px;
+       }
+       #ver_mas{
+        font-size: 10px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 13px;
+       }
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+  
+    .ion-tittle{
+        font-size: 18px;
+      }
+
+      h5{
+        font-size: 18px;
+       }
+
+       .col-cumple{
+
+        ion-label{
+          font-size: 10px;
+        }
+       }
+       #chip{
+        font-size: 12px;
+       }
+       #ver_mas{
+        font-size: 11px; 
+       }
+    
+       .nombre-apellido-amigo{
+        font-size: 14px;
+       }
+}

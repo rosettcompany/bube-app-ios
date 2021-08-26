@@ -1,0 +1,88 @@
+ion-content{
+  --background: #121212;
+
+  .conteiner-titulo{
+    text-align: center;
+    align-content: center;
+    left: 0;
+    right: 0;
+    margin-top: 40%;
+    width: 100%;
+    margin-bottom: 20px;
+    .titulo-login{
+        color: #f3f2ed;
+        font-family: 'SF-UI-Display-Black';
+        font-size: 20px;
+        margin-top: 20px;
+     }
+
+  }
+
+.contenedor{
+    align-content: center;
+    text-align: center;
+    width: 100%;
+
+    .btn-inicio-sesion{
+        --background: #121212;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        height: 50px;
+        text-transform: none;
+        --border-color: #108b3c;
+        --border-style: solid;
+        --border-width: 2px;
+        font-family: 'SFUIDisplay-Regular';
+        --border-radius: 16px;
+        --background-activated: #383838;
+      }
+
+      .btn-inicio-google{
+        --background: #d54c3e;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        height: 50px;
+        text-transform: none;
+        --border-color: #d54c3e;
+        --border-style: solid;
+        --border-width: 2px;
+        --border-radius: 16px;
+        --background-activated: #383838;
+
+        .text-google{
+          font-family: 'SFUIDisplay-Regular';
+          color: #f3f2ed;
+          font-size: 16px;
+        }
+      }
+
+      .btn-inicio-apple{
+        --background: #ffffff;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        height: 50px;
+        text-transform: none;
+        --border-color: #ffffff;
+        --border-style: solid;
+        --border-width: 2px;
+        --border-radius: 16px;
+        --background-activated: #383838;
+
+        .text-google{
+          font-family: 'SFUIDisplay-Regular';
+          color: #000000;
+          font-size: 16px;
+        }
+      }
+    
+}
+
+}
+
+
+
+

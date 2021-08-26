@@ -1,0 +1,165 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+   
+      <ion-refresher style="z-index: 3; position: absolute;" slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+  <div style=" position: relative;" class="user-friends-section"> 
+     <ion-slides (ionSlideTouchEnd) = "slideChanged()">
+           <ion-slide *ngFor="let item of slide">
+            <app-aspect-ratio [ratio]="{w: 330, h: 200}">
+                  <app-image-shell class="slide-picture" animation="spinner" [src]="item.p_descripcion" ></app-image-shell> <!-- [src]="friend.image"-->
+            </app-aspect-ratio>
+           </ion-slide>
+     </ion-slides>
+  </div>
+
+   <div>
+      <ion-button locate-outline expand = "full" class="ion-button-gps" (click) = "irModalUbicacion();">
+            <ion-label class="text-gps">
+             Usar GPS para una localización mas precisa
+            </ion-label>
+            <ion-icon name="locate-outline" style="zoom:1.0;" slot="end" color = "warning"></ion-icon>
+      </ion-button>
+            
+   </div>
+
+    <ion-row class="ion-content-button">
+            <div style="width: 90%; margin-left: auto; margin-right: auto; height: 50px;">
+                  <ion-row>
+                        <ion-searchbar searchIcon="location" type="text" id="buscarDireccion" class="input-item searchbarinput" [(ngModel)]= "direccion" (ionChange)="buscarDireccion()" (ionFocus)="escribiendo()"  (ionClear)="ClearAutocomplete()" placeholder="Buscar"></ion-searchbar>
+                        <ion-select class="ion-combo" [(ngModel)]="km" interface="popover" (ionChange) = "guardarKm()">
+                              <ion-select-option value="1">1km</ion-select-option>
+                              <ion-select-option value="3">3km</ion-select-option>
+                              <ion-select-option value="5">5km</ion-select-option>
+                              <ion-select-option value="10">10km</ion-select-option>
+                        </ion-select>
+                  </ion-row>
+
+            </div>
+      </ion-row>
+      <ion-list [hidden]="ocultarlista == true" class="ion-list">
+            <ion-item *ngFor="let item of autocompleteItems" tappable (click)="seleccionarDireccion(item)">
+              {{ item.description }}
+            </ion-item>
+      </ion-list>
+      <ion-row>
+            <ion-button class="input-boton" expand="block" (click) = "busquedaProducto()"> 
+                  <ion-icon name="search-outline" style="position: absolute; left: 0;" slot="start"></ion-icon> 
+                  <ion-label class="label-button">Buscar vino, cerveza, etc...</ion-label>
+            </ion-button>
+      </ion-row>
+
+   <div class="user-friends-section" style="z-index: 0;"> 
+      <ion-row class="heading-row">
+            <ion-label class="titulo-secciones">Categorias</ion-label> 
+      </ion-row>
+      <ion-row class="friends-row">
+            <ion-col class="friend-item" size="2" style="z-index: 0;">  <!-- *ngFor="let friend of profile.friends"-->
+              <app-aspect-ratio [ratio]="{w: 184, h: 150}">
+                  <app-image-shell  [src]="'./assets/CategoriasImagenes/Cervezas.png'" (click) = "busquedaCategoria('Cervezas');" ></app-image-shell> <!-- [src]="friend.image"-->
+              </app-aspect-ratio>
+            </ion-col>
+            <ion-col class="friend-item" size="2" style="z-index: 0;" >  <!-- *ngFor="let friend of profile.friends"-->
+              <app-aspect-ratio [ratio]="{w: 184, h: 150}">
+                  <app-image-shell  [src]="'./assets/CategoriasImagenes/Espumante.png'"  (click) = "busquedaCategoria('Espumantes');"></app-image-shell> <!-- [src]="friend.image"-->
+              </app-aspect-ratio>
+            </ion-col>
+            <ion-col class="friend-item" size="2" style="z-index: 0;" >  <!-- *ngFor="let friend of profile.friends"-->
+              <app-aspect-ratio [ratio]="{w: 184, h: 150}">
+                  <app-image-shell  [src]="'./assets/CategoriasImagenes/Vinos.png'"  (click) = "busquedaCategoria('Vinos');"></app-image-shell> <!-- [src]="friend.image"-->
+              </app-aspect-ratio>
+            </ion-col>
+            <ion-col class="friend-item" size="2" style="z-index: 0;" >  <!-- *ngFor="let friend of profile.friends"-->
+              <app-aspect-ratio [ratio]="{w: 184, h: 150}">
+                   <app-image-shell  [src]="'./assets/CategoriasImagenes/Licor.png'"  (click) = "busquedaCategoria('Licores');"></app-image-shell> <!-- [src]="friend.image"-->
+              </app-aspect-ratio>
+            </ion-col>
+      
+      </ion-row>
+  </div>
+
+      <ion-row class="ion-categorias">
+
+        <ion-col [ngClass]="getTextColor('text1')">
+             <ion-label class="text-categorias" (click) = "getEstablecimientoTipo(1);">Tiendas</ion-label>
+       </ion-col>
+       <ion-col [ngClass]="getTextColor('text2')">
+            <ion-label class="text-categorias" (click) = "getEstablecimientoTipo(2);">Licorerías</ion-label>
+       </ion-col>
+       <ion-col [ngClass]="getTextColor('text3')">
+             <ion-label class="text-categorias" (click) = "getEstablecimientoTipo(3);">Supermercados</ion-label>
+       </ion-col>
+       <ion-col [ngClass]="getTextColor('text4')">
+            <ion-label class="text-categorias" (click) = "getEstablecimientoTipo(4);">Online</ion-label>
+       </ion-col>
+
+      </ion-row>
+
+      <div class="user-friends-section" style="margin-top: 10px;"> 
+      <ion-row>
+            <ion-col> 
+                  <ion-label class="titulo-establecimiento">
+                        {{tituloEstablecimientos}} 
+                  </ion-label>
+            </ion-col>
+      </ion-row>
+       
+      <ion-row class="friends-row" *ngIf="conEstablecimientos">
+            <ion-col class="friend-item" size="1" *ngFor = "let establecimiento of Establecimientos" >  <!-- *ngFor="let friend of profile.friends"-->
+                  <app-aspect-ratio [ratio]="{w: 56, h: 56}">
+                    <app-image-shell class="establecimiento-picture" [src]="establecimiento.rutafotosocio"  (click) = "busquedaEstablecimiento(establecimiento);"></app-image-shell> <!-- [src]="friend.image"-->
+                  </app-aspect-ratio>
+                  <div style="width: 100%; text-align: center;">
+                        <ion-label> <p>A {{establecimiento.distancia}} KM</p> </ion-label>
+                  </div>
+            </ion-col>
+     </ion-row>
+      <ion-row *ngIf="sinEstablecimientos">
+            <ion-col  >
+                  <ion-label class="titulo-sinresultados">
+                        Sin establecimientos cercanos
+                  </ion-label>
+            </ion-col>
+      </ion-row>
+      <ion-row class="friends-row" *ngIf="Skeleton2">
+                  <ion-col class="friend-item-skeleton"  size = "1" *ngFor="let item of skeletonList2">
+                        <ion-avatar style="zoom: 1.0;">
+                              <ion-skeleton-text animated></ion-skeleton-text>
+                        </ion-avatar>
+                  </ion-col>          
+            </ion-row>
+      </div>
+     <div class="user-friends-section"> 
+      <ion-row class="heading-row">
+            <h3 class="titulo-secciones">Promociones</h3>
+      </ion-row>
+      <ion-row class="friends-row" *ngIf="conPromociones">
+            <ion-col class="friend-item" size="3" *ngFor = "let promocion of promociones" (click) = "irPromocion(promocion)"> 
+              <app-aspect-ratio [ratio]="{w: 181, h: 71}">
+                  <app-image-shell class="promocion-picture" [src]="promocion.rutapostpromocion" ></app-image-shell> 
+              </app-aspect-ratio>
+            </ion-col>   
+      </ion-row>
+      <ion-row *ngIf="sinPromociones">
+            <ion-col >
+                  <ion-label class="titulo-sinresultados">
+                        Sin promociones
+                  </ion-label>
+            </ion-col>
+      </ion-row>
+      <ion-row class="friends-row" *ngIf="Skeleton">
+            <ion-col class="friend-item-skeleton" size = "3" *ngFor="let item of skeletonList">
+                  <ion-thumbnail style="width: 175px; height: 71px;" >
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                  </ion-thumbnail>  
+            </ion-col>          
+      </ion-row>
+  </div>
+
+</ion-content>

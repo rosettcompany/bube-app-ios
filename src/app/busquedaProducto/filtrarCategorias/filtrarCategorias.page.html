@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button style="color: #ffff;" ></ion-back-button>
+        </ion-buttons>
+        <ion-button fill="clear" slot="start" (click) = "closeModal()"><ion-icon style="zoom:1.5; color:aliceblue;" name="close-outline"></ion-icon>  </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+ 
+     <ion-row class="tittle-categorias">
+         <ion-label class="tittle">
+             Seleccione Categoria
+         </ion-label>
+     </ion-row>
+
+     <ion-list class="list-categorias">
+            <ion-item class="item-categorias" *ngFor="let subcategoria of subcategorias" (click) = "clickCategoria(subcategoria)">
+                <ion-label class="label-categoria"> {{subcategoria.nombre}} </ion-label>
+            </ion-item>
+     </ion-list>
+
+</ion-content>

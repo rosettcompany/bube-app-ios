@@ -1,0 +1,143 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button style="color: #ffff;"><ion-icon name="close-outline"></ion-icon></ion-back-button>
+        </ion-buttons>
+        <ion-button fill="clear" slot="start" (click) = "closeModal()"><ion-icon style="zoom:1.5; color:aliceblue;" name="close-outline"></ion-icon>  </ion-button>
+        <ion-button class="ion-button-toolbar" (click) = "Limpiar()" fill="clear" slot="end"> <ion-label class="label-button-header"> Limpiar</ion-label></ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-row style="margin: 26px;">
+        <ion-label class="ion-label-title">Establecimientos</ion-label>
+    </ion-row>
+    <ion-row style="margin: 26px; margin-top: -15px;">
+        <ion-label class="ion-label-subtittle"> Compara precios entre dos o más establecimientos</ion-label>
+    </ion-row>
+
+    <ion-item-divider style="background-color: transparent; margin-left: 15px;">
+        <div>
+            <ion-label class="ion-label">Tiendas</ion-label>
+        </div>
+        <div style="margin: auto; margin-right: 10%;">
+                <ion-button class="ion-button-expandir" (click) = "expandir1(1);">
+                    <ion-icon slot = "icon-only" [name]="icon1"></ion-icon>
+                </ion-button>
+        </div>
+    </ion-item-divider>
+
+    <div class="ion-padding custom-skeleton" *ngIf="skeleton1">
+        <ion-row>
+            <ion-skeleton-text animated style="width: 5%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-row>
+    </div>
+
+    <ion-item lines="none" class="item-radio" *ngIf="error1">
+        <ion-label class="label-error"> Sin resultados </ion-label>
+    </ion-item>
+
+    <ion-list class="ion-list-checkbox" *ngIf="lista1" [@visibilityChanged]="animation1" style="opacity: 0">
+        <ion-item lines="none" class="item-radio" *ngFor="let bodega of ListaBodegas">
+            <ion-label class="label-range-price"> {{bodega.nombrecomercial}} </ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="bodega.isChecked" slot="start" (ionChange) = "ItemsEstablecimiento(bodega,1)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-item-divider style="background-color: transparent; margin-left: 15px;">
+        <div>
+            <ion-label class="ion-label">Licorerias</ion-label>
+        </div>
+        <div style="margin: auto; margin-right: 10%;">
+            <ion-button class="ion-button-expandir" (click) = "expandir2(2);">
+                <ion-icon slot = "icon-only" [name]="icon2"></ion-icon>
+            </ion-button>
+        </div>
+    </ion-item-divider>
+
+    <div class="ion-padding custom-skeleton"  *ngIf="skeleton2">
+        <ion-row>
+            <ion-skeleton-text animated style="width: 5%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-row>
+    </div>
+
+    <ion-item lines="none" class="item-radio" *ngIf="error2">
+        <ion-label class="label-error"> Sin resultados </ion-label>
+    </ion-item>
+    
+    <ion-list class="ion-list-checkbox" *ngIf="lista2" [@visibilityChanged]="animation2" style="opacity: 0">
+        <ion-item lines="none" class="item-radio" *ngFor="let licoreria of ListaLicorerias" >
+            <ion-label class="label-range-price"> {{licoreria.nombrecomercial}} </ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="licoreria.isChecked" slot="start" (ionChange) = "ItemsEstablecimiento(licoreria,2)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-item-divider style="background-color: transparent; margin-left: 15px;">
+        <div>
+            <ion-label class="ion-label">Supermercados</ion-label>
+        </div>
+        <div style="margin: auto; margin-right: 10%;">
+            <ion-button class="ion-button-expandir" (click) = "expandir3(3);">
+                <ion-icon slot = "icon-only" [name]="icon3"></ion-icon>
+            </ion-button>
+        </div>
+    </ion-item-divider>
+
+    <div class="ion-padding custom-skeleton"  *ngIf="skeleton3">
+        <ion-row>
+            <ion-skeleton-text animated style="width: 5%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-row>
+    </div>
+
+    <ion-item lines="none" class="item-radio" *ngIf="error3">
+        <ion-label class="label-error"> Sin resultados </ion-label>
+    </ion-item>
+    
+    <ion-list class="ion-list-checkbox" *ngIf="lista3" [@visibilityChanged]="animation3" style="opacity: 0">
+        <ion-item lines="none" class="item-radio" *ngFor="let supermercado of ListaSupermercados">
+            <ion-label class="label-range-price"> {{supermercado.nombrecomercial}} </ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="supermercado.isChecked" slot="start"  (ionChange) = "ItemsEstablecimiento(supermercado,3)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-item-divider style="background-color: transparent; margin-left: 15px;">
+        <div>
+              <ion-label class="ion-label">Online</ion-label>
+        </div>
+
+        <div style="margin: auto; margin-right: 10%;">
+            <ion-button class="ion-button-expandir" (click) = "expandir4(4);">
+                <ion-icon slot = "icon-only" [name]="icon4"></ion-icon>
+            </ion-button>
+        </div>
+    </ion-item-divider>
+
+    <div class="ion-padding custom-skeleton"  *ngIf="skeleton4">
+        <ion-row>
+            <ion-skeleton-text animated style="width: 5%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-row>
+    </div>
+
+    <ion-item lines="none" class="item-radio" *ngIf="error4">
+        <ion-label class="label-error"> Sin resultados </ion-label>
+    </ion-item>
+    
+    <ion-list class="ion-list-checkbox" *ngIf="lista4" [@visibilityChanged]="animation4" style="opacity: 0">
+
+        <ion-item lines="none" class="item-radio" *ngFor="let online of ListaOnline">
+            <ion-label class="label-range-price"> {{online.nombrecomercial}} </ion-label>
+            <ion-checkbox class="ion-checkbox" [(ngModel)]="online.isChecked" slot="start"  (ionChange) = "ItemsEstablecimiento(online,4)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-button  class="button-aplicar" (click) = "Aplicar()" style="margin: 40px;" expand="block">Aplicar</ion-button>
+</ion-footer>

@@ -1,0 +1,59 @@
+ion-content{
+    --background: #121212;
+}
+ion-toolbar{
+    --background: #108b3c;
+}
+ion-title{
+    color: #ffffff;
+    font-family: 'Gotham-Medium';
+}
+ion-list{
+    background: #121212;
+}
+.contenedor-card{
+    border-radius: 30px;
+    --background: #1d2024;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+ 
+}
+ion-card-header{
+    padding: 0;
+}
+.div-spinner{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+    ion-spinner{
+        transform: scale(2);
+    }
+  }
+
+
+span{
+    text-transform: uppercase;
+}
+.fecha-noti{
+    position: absolute;
+    right: 0;
+    font-family: 'SFUIDisplay-Regular'; 
+    font-size: 14px;
+    color: #ffffff;
+}
+.titulo-noti{
+    font-family: 'SFUIDisplay-Regular';
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 20px;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+.descri-noti{
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 17px;
+    margin-top: 3px;
+    color: #ffffff;
+}

@@ -1,0 +1,150 @@
+ion-header{
+    ion-toolbar{
+        --background: #108b3c;
+
+        ion-title{
+            color: #ffffff;
+            font-family: 'Gotham-Medium';
+            font-size: 23px;
+        }      
+    }
+}
+ion-content{
+    --background: #121212;
+
+    ion-icon{
+        position: absolute;
+        right: 10px;
+        --color: #919291;
+        width: 20px;
+        height: 20px;
+    }
+}
+ion-footer{
+    --background: #121212;
+}
+ion-item{
+    --background: #121212;
+    --border-color:#121212;
+}
+h3{
+    color: #f3f2ed;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Gotham-Medium';
+}
+div{
+    background: #464545;
+    border-radius: 10px;
+    width: 100%;
+    height: 230px;
+}
+.chip{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+#tipo-tarjeta{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+#tipo-tarjeta2{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    right: 70px;
+    top: 10px;
+}
+.numero-tarjeta{
+    font-family: 'Gotham-Medium';
+    color: #ffffff;
+    top: 45%;
+    font-size: 28px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+
+}
+.titular{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 16px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.titulo-titular{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+}
+.fecha{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 16px;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+}
+.titulo-fecha{
+    color: #ffffff;
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    
+}
+ion-input{
+    height: 50px;
+    color: #121212;
+    --background: #ffffff;
+    border-radius: 10px;
+    font-size: 20px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+}
+#txt-numero,#txt-nombre{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+#txt-fecha{
+    width: 10px;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+#txt-cvv{
+    width: 10px;
+    margin-right: 20px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+#btn-agregar{
+    width: 90%;
+    --background: #108b3c;
+    --border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    color: #ffffff;
+    height: 50px;
+    border-radius: 50x;
+}
+
+ion-row{
+    ion-label{
+        color: #ffffff;
+    }
+}

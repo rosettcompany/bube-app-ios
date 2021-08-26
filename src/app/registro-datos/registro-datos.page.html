@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+</ion-header>
+
+<ion-content>
+<form action="#">
+  <ion-row>
+    <div class="conteiner-titulo">
+      <ion-label class="titulo-login" style="font-size: 30px;">Registra tus datos<br></ion-label>
+    </div>
+  </ion-row>
+  
+  <ion-row>
+    <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Nombres</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input type="text" name="nombres" class="input-text" [(ngModel)]="nombres" (ionChange)="verificarInputs()" maxlength=30></ion-input>
+    </ion-item>
+    <ion-label class="label-input-error" [hidden]="error_nombres"><ion-icon name="alert-circle-outline"></ion-icon>Campo requerido</ion-label>
+    </div>
+  <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Apellidos</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input type="text" name="apellidos" class="input-text" [(ngModel)]="apellidos" (ionChange)="verificarInputs()" maxlength=30></ion-input>
+    </ion-item>
+    <ion-label class="label-input-error" [hidden]="error_apellidos"><ion-icon name="alert-circle-outline"></ion-icon>Campo requerido</ion-label>
+  </div>
+    <div class="contenedor">
+      <ion-row>
+      <ion-label class="label-input">Celular</ion-label>
+    </ion-row>
+    <ion-item class="input-item" lines="none">
+      <ion-input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="tel" name="telefono" class="input-text" [(ngModel)]="celular" (ionChange)="verificarCelular()" maxlength=9></ion-input>
+    </ion-item>
+    <ion-label class="label-input-error" [hidden]="error_celular"><ion-icon name="alert-circle-outline"></ion-icon>Mínimo 9 dígitos (Solo números)</ion-label>
+  </div>
+  <div class="contenedor">
+    <ion-row>
+    <ion-label class="label-input">Contraseña</ion-label>
+  </ion-row>
+  <ion-item class="input-item" lines="none">
+    <ion-input type="password" name="password" class="input-text" [(ngModel)]="contrasenia" (ionChange)="verificarContrasenia()"></ion-input>
+  </ion-item>
+  <ion-label class="label-input-error" [hidden]="error_contra"><ion-icon name="alert-circle-outline"></ion-icon>Mínimo 8 caracteres.</ion-label>
+  </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="contenedor">
+      <ion-button expand="block" class="btn-iniciar-sesion" (click)="postVerificarLoginTelefono()" [disabled]="activar_boton">Registrar</ion-button>
+    </div>
+  </ion-row>
+</form>
+</ion-content>
