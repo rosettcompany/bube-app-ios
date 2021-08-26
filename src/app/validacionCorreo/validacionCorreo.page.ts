@@ -51,10 +51,19 @@ export class validacionCorreoPage{
 
 
     ngOnInit(){
+
+      if(this.tipoRegistro == 'apple'){
+        this.myForm = this.formBuilder.group({
+          email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+          celular: ['', [Validators.max(999999999),Validators.min(111111111)]]
+        });
+      }else{
         this.myForm = this.formBuilder.group({
           email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
           celular: ['', [Validators.required, Validators.max(999999999),Validators.min(111111111)]]
         });
+      }
+
     }
   // Disable side menu for this page
   ionViewDidEnter(): void {
@@ -153,7 +162,11 @@ export class validacionCorreoPage{
     .then((val) => {
 
          idusuario = val;
-         this.tagCorreo = {"idUsuario": idusuario, "emailUsuario": this.myForm.value.email, "telefonoUsuario":String(this.myForm.value.celular)};
+         if(this.tipoRegistro == 'apple'){
+          this.tagCorreo = {"idUsuario": idusuario, "emailUsuario": this.myForm.value.email, "telefonoUsuario":"0"};
+         }else{
+          this.tagCorreo = {"idUsuario": idusuario, "emailUsuario": this.myForm.value.email, "telefonoUsuario":String(this.myForm.value.celular)};
+         }
          this.estado = {"idUsuario": idusuario, "estado": 2};
          console.log(this.tagCorreo);
          this.PutCorreo();
@@ -162,10 +175,9 @@ export class validacionCorreoPage{
 
   PutCorreo(){
         this.apiService.PutCorreo(this.tagCorreo)
-        .then( res =>{
+        .then(res =>{
 
           console.log('CORREO ACTUALIZADO');
-          console.log(this.tagCorreo);
           this.PutEstado();
           
         })
