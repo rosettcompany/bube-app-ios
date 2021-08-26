@@ -93,7 +93,7 @@ export class ValidacionFechaNacimientoPage implements OnInit {
                       "gender":this.nuevoUsuario.genero,
                       "birthday":this.nuevoUsuario.fechaNacimiento,
                       "password":this.nuevoUsuario.password,
-                      "telefono":this.nuevoUsuario.telefono,
+                      "telefono":(this.nuevoUsuario.telefono == '' || this.nuevoUsuario.telefono == null) ? '0':this.nuevoUsuario.telefono,
                       "viene_de":this.tipoRegistro,
                       "idapple":this.nuevoUsuario.idapple
                       }
