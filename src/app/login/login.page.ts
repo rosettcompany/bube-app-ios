@@ -26,7 +26,7 @@ export class LoginPage{
   showSingApple: boolean = false;
   botonApple = false;
 
-  private Usuario = {"id":'',"nombreCompleto": '',"apellidos":'', "telefono": '0', "email": '', "rutaFoto": '', "fechaNacimiento":'',"genero":'',"password":'',"idapple":''};
+  private Usuario = {"id":'',"nombreCompleto": '',"apellidos":'', "telefono": '', "email": '', "rutaFoto": '', "fechaNacimiento":'',"genero":'',"password":'',"idapple":''};
 
         
   constructor(
