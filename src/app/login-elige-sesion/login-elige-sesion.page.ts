@@ -15,7 +15,7 @@ declare var cordova: any;
 })
 export class LoginEligeSesionPage implements OnInit {
 
-  private Usuario = {"id":'',"nombreCompleto": '',"apellidos":'', "telefono": '0', "email": '', "rutaFoto": '', "fechaNacimiento":'',"genero":'',"password":'',"idapple":''};
+  private Usuario = {"id":'',"nombreCompleto": '',"apellidos":'', "telefono": '', "email": '', "rutaFoto": '', "fechaNacimiento":'',"genero":'',"password":'',"idapple":''};
 
   loading:any;
   subscription;
