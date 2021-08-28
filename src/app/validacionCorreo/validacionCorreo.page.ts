@@ -185,6 +185,7 @@ export class validacionCorreoPage{
     this.apiService.PutEstado(this.estado)
     .then( res => {
 
+            this.storage.remove('datos_validos');
             console.log('ESTADO ACTUALIZADO');
             this.apiService.setStorage('ind_user',2);
             this.router.navigate(['app/inicio']);
