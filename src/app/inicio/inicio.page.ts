@@ -51,7 +51,7 @@ export class inicioPage implements OnInit{
       conPromociones = false;
       conEstablecimientos = false;
       selecteTextId :string;
-      tipoTiendaActiva = 1;
+      tipoTiendaActiva = 4;
       longitud:any;
       latitud: any;
       km = "5";
