@@ -1,0 +1,139 @@
+ion-header{
+    ion-toolbar{
+        --background: #108b3c;
+    
+        ion-title{
+            color: #ffffff;
+            font-family: 'Gotham-Medium';
+            font-size: 23px;
+        }
+        ion-label{
+            color: #ffffff;
+            font-family: 'SFCompactText-Medium';
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+ion-footer{
+
+    ion-toolbar{
+        --background: #121212;
+        .contenedor{
+            align-content: center;
+            width: 100%;
+    
+            .btn-iniciar-sesion{
+                --background: #108b3c;
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                letter-spacing: 0.25px;
+                text-transform: none;
+                height: 50px;
+                --border-radius: 16px;
+
+                --background-activated: #1ab952;
+
+                ion-label{
+                    --color: #ffffff;
+                    font-family: 'SFCompactText-Medium';
+                    color: #ffffff;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+ion-content{
+    --background: #121212;
+
+
+    .conteiner-titulo{
+        text-align: center;
+        align-content: center;
+        left: 0;
+        right: 0;
+        margin-top: 15%;
+        width: 100%;
+        margin-bottom: 20px;
+        .titulo-login{
+            color: #f3f2ed;
+            font-family: 'SF-UI-Display-Black';
+            font-size: 20px;
+            margin-top: 20px;
+         }
+    
+      }
+    
+      .contenedor{
+        align-content: center;
+        width: 100%;
+    
+        
+        .label-input{
+            color: #515252;
+            margin-left: 10%;
+            font-family: 'SFUIDisplay-Regular';
+            font-style: Regular;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 19px;
+            color: #f3f2ed;
+           
+        }
+    
+        .input-item{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 86%;
+            height: 50px;
+           --background: transparent !important;
+           border: 2px solid #108b3c;
+           box-sizing: border-box;
+           border-radius: 16px !important; 
+           --highlight-color-focused: none;
+    
+           .input-text{
+               color: #8F9090;
+               font-family: 'SFUIDisplay-Regular';
+               font-style: Regular;
+               color: #f3f2ed;
+               font-weight: 400;
+           }
+        }
+    
+        
+    }
+
+    .info-paragraph {
+        margin-bottom: var(--page-margin);
+        color: #b8b7b7;
+        text-align: left;
+        margin-left: 30px;
+        text-decoration: underline;
+        font-family: 'SFCompactText-Medium';
+        font-size: 14px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+
+      .error-input{
+        margin-left: 8%;
+        .label-error{
+            font-family: 'SFUIDisplay-Regular';
+            font-style: Regular;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: red;
+        }
+    }
+}

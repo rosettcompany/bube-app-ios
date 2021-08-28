@@ -134,6 +134,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
   },  {
     path: 'codigo-email',
     loadChildren: () => import('./codigo-email/codigo-email.module').then( m => m.CodigoEmailPageModule)
+  },
+  {
+    path: 'validacion-datos-compra',
+    loadChildren: () => import('./validacion-datos-compra/validacion-datos-compra.module').then( m => m.ValidacionDatosCompraPageModule)
   }
 
 

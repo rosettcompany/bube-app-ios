@@ -5,6 +5,7 @@ import { ApiServiceService } from '../api-service.service';
 import { ModalTutorialTarjetasPage } from '../modalTutorialTarjetas/modalTutorialTarjetas.page';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Storage } from '@ionic/storage';
 // declare var mercadoPago;
 import { ServicioAesService } from '../servicio-aes/servicio-aes.service';
 
@@ -50,6 +51,7 @@ export class TarjetasPage{
     private servicioAES: ServicioAesService,
     private firebaseAnalytics: FirebaseAnalytics,
     private modalController: ModalController,
+    public storage: Storage,
     public route: ActivatedRoute
     ) {
       this.route.queryParams.subscribe(params => {
@@ -239,6 +241,21 @@ EvnetotarjetaSeleccionada(evento){
       this.apiServicio.setStorage('ahorro',0);
       }
  
+     this.comprobarValidacionDatos()
+  }
+
+  comprobarValidacionDatos(){
+    this.storage.get('datos_validos').then(res =>{
+      let indicador = res;
+      if(indicador != null || indicador != undefined){
+        this.irFinalizarCompra()
+      }else{
+        this.irValidarDatos()
+      }
+    });
+  }
+
+  irFinalizarCompra(){
 
     let navigationExtras: NavigationExtras = {
       state: {
@@ -249,6 +266,18 @@ EvnetotarjetaSeleccionada(evento){
       }
     };
    this.router.navigate(['finalizar-compra'],navigationExtras);
+  }
+
+  irValidarDatos(){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        carrito:this.carrito,
+        total:this.total,
+        tarjeta:this.tarjet,
+        delivery: this.delivery
+      }
+    };
+   this.router.navigate(['validacion-datos-compra'],navigationExtras);
   }
 
   editar(t){

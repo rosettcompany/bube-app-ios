@@ -26,11 +26,7 @@ export class MetodopagoPage{
       if (this.router.getCurrentNavigation().extras.state) {
         this.carrito = this.router.getCurrentNavigation().extras.state.carrito;
         this.total=this.router.getCurrentNavigation().extras.state.total;
-        this.establecimientosCoincidencia = this.router.getCurrentNavigation().extras.state.establecimientosCoincidencia;
-        console.log(this.carrito);
-        console.log(this.total);
-        console.log(this.establecimientosCoincidencia);
-        
+        this.establecimientosCoincidencia = this.router.getCurrentNavigation().extras.state.establecimientosCoincidencia; 
       }
       
     });
@@ -45,8 +41,6 @@ export class MetodopagoPage{
        cantidad += c.preciobebidasocio;
     }
     this.t = cantidad;
-    console.log('CANTIDAD SUMADA')
-    console.log(cantidad);
   }
 
   regresar(){
@@ -55,28 +49,19 @@ export class MetodopagoPage{
 
   pagoTarjetas(){
     //calcular ahorro
-    
-    console.log("t"+this.t);
-    console.log("coincidencias tiendas");
-    console.log(this.establecimientosCoincidencia);
-   let prom:number = 0;
 
+   let prom:number = 0;
    for(let e of this.establecimientosCoincidencia){
-     
     if(e.idsociocomercial != this.carrito.bebidas[0].idsociocomercial){
-      console.log(e);
-      console.log(e.total);
       prom += Math.abs(e.total - this.t);
     } 
    }
 
-   console.log("prom"+prom);
    var promedio = prom/this.establecimientosCoincidencia.length-1;
 
    if(promedio < 0){
      promedio  = 0;
    }
-   console.log("ahorro"+promedio);
    this.apiService.setStorage('ahorro',promedio.toFixed(2));
                       ///
     let navigationExtras: NavigationExtras = {

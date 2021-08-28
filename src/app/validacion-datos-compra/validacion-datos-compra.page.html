@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: #f3f2ed;">
+      <ion-back-button id="volver5" (click) = "regresar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>verificación de datos</ion-title>
+    <ion-label slot="end" >S/ {{total}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <ion-row>
+      <div class="conteiner-titulo">
+        <ion-label class="titulo-login" style="font-size: 30px;">Verifica tus datos<br></ion-label>
+      </div>
+    </ion-row>
+  
+    <ion-row>
+      <div class="contenedor">
+          <ion-row>
+          <ion-label class="label-input">Correo electrónico</ion-label>
+        </ion-row>
+        <ion-item class="input-item" lines="none">
+          <ion-input formControlName="email" type="email" class="input-text"></ion-input>
+        </ion-item>
+        <div style="width: 100%; margin-bottom: 5px;">
+          <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.required">
+              <ion-label class="label-error">Email es requerido.</ion-label>
+            </span>
+            <span class="error ion-padding error-input" *ngIf="submitted && errorControl.email.errors?.pattern">
+              <ion-label class="label-error">Ingrese un email válido.</ion-label>
+            </span>
+      </div>
+      </div>
+      <div class="contenedor">
+        <ion-row>
+          <ion-label class="label-input">N° de celular</ion-label>
+        </ion-row>
+        <ion-item class="input-item" lines="none">
+          <ion-input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  formControlName="celular" maxlength=9 type="tel" class="input-text"></ion-input>
+        </ion-item>
+      <div style="width: 100%; margin-bottom: 5px;">
+        <span class="error ion-padding error-input" *ngIf="submitted && errorControl.celular.errors?.required">
+            <ion-label class="label-error">Celular es requerido.</ion-label>
+          </span>
+          <span class="error ion-padding error-input" *ngIf="submitted && errorControl.celular.errors?.minlength">
+            <ion-label class="label-error">Minimo 9 caracteres.</ion-label>
+          </span>
+     </div>
+      </div>
+      <div class="contenedor">
+        <ion-row>
+          <ion-label class="label-input">DNI</ion-label>
+        </ion-row>
+        <ion-item class="input-item" lines="none">
+          <ion-input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  formControlName="dni" maxlength=8 type="tel" class="input-text"></ion-input>
+        </ion-item>
+      <div style="width: 100%; margin-bottom: 5px;">
+        <span class="error ion-padding error-input" *ngIf="submitted && errorControl.dni.errors?.required">
+            <ion-label class="label-error">DNI es requerido.</ion-label>
+          </span>
+          <span class="error ion-padding error-input" *ngIf="submitted && errorControl.dni.errors?.minlength">
+            <ion-label class="label-error">Minimo 8 caracteres.</ion-label>
+          </span>
+     </div>
+      </div>
+    </ion-row>
+
+    <ion-row hidden>
+        <ion-button type="submit" expand="block" id="btnSubmit" #btnSubmit>
+        </ion-button>
+    </ion-row>
+
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <div class="contenedor">
+        <ion-button [disabled] = "botonContinuar" type="submit" (click)="clickSubmit()" expand="block" class="btn-iniciar-sesion">
+          <ion-label>
+            Continuar
+          </ion-label>
+          <ion-spinner *ngIf="botonContinuar" name="crescent"></ion-spinner>
+        </ion-button>
+      </div>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
