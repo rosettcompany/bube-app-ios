@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rosettcompany.bube" version="0.0.15" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.rosettcompany.bube" version="0.0.30" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
@@ -55,6 +55,11 @@
         <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAuthenticationPlugin" />
         <param name="onload" value="false" />
     </feature>
+    <feature name="GooglePlus">
+        <param name="android-package" value="nl.xservices.plugins.GooglePlus" />
+        <param name="onload" value="true" />
+    </feature>
+    <access origin="https://accounts.google.com/*" />
     <feature name="CDVIonicKeyboard">
         <param name="android-package" onload="true" value="io.ionic.keyboard.CDVIonicKeyboard" />
     </feature>
@@ -63,6 +68,38 @@
     <allow-navigation href="ionic://*" />
     <feature name="IonicWebView">
         <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
+    </feature>
+    <feature name="Diagnostic">
+        <param name="android-package" value="cordova.plugins.Diagnostic" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_Location">
+        <param name="android-package" value="cordova.plugins.Diagnostic_Location" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_Bluetooth">
+        <param name="android-package" value="cordova.plugins.Diagnostic_Bluetooth" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_Wifi">
+        <param name="android-package" value="cordova.plugins.Diagnostic_Wifi" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_Camera">
+        <param name="android-package" value="cordova.plugins.Diagnostic_Camera" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_Notifications">
+        <param name="android-package" value="cordova.plugins.Diagnostic_Notifications" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_NFC">
+        <param name="android-package" value="cordova.plugins.Diagnostic_NFC" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Diagnostic_External_Storage">
+        <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage" />
+        <param name="onload" value="true" />
     </feature>
     <name>Bube</name>
     <description>El mundo de las bebidas.</description>
@@ -115,41 +152,4 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="10000" />
-    <feature name="GooglePlus">
-        <param name="android-package" value="nl.xservices.plugins.GooglePlus" />
-        <param name="onload" value="true" />
-    </feature>
-    <access origin="https://accounts.google.com/*" />
-    <feature name="Diagnostic">
-        <param name="android-package" value="cordova.plugins.Diagnostic" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_Location">
-        <param name="android-package" value="cordova.plugins.Diagnostic_Location" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_Bluetooth">
-        <param name="android-package" value="cordova.plugins.Diagnostic_Bluetooth" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_Wifi">
-        <param name="android-package" value="cordova.plugins.Diagnostic_Wifi" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_Camera">
-        <param name="android-package" value="cordova.plugins.Diagnostic_Camera" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_Notifications">
-        <param name="android-package" value="cordova.plugins.Diagnostic_Notifications" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_NFC">
-        <param name="android-package" value="cordova.plugins.Diagnostic_NFC" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Diagnostic_External_Storage">
-        <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>

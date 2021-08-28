@@ -70,8 +70,6 @@ export class FinalizarCompraPage implements OnInit {
 
     let t = String(this.tarjeta.tipo).substring(0,1);
     let tip = String(this.tarjeta.tipo).substring(1);
-    console.log(t);
-    console.log(tip);
     this.tipo=t.toLocaleUpperCase()+tip;
     this.num_tarjeta = String(this.tarjeta.numero).substring(String(this.tarjeta.numero).length-4,String(this.tarjeta.numero).length);
     console.log(this.num_tarjeta);
