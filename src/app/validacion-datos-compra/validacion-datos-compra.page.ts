@@ -47,7 +47,7 @@ export class ValidacionDatosCompraPage implements OnInit {
   ngOnInit() {
     this.myForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-      celular: ['', [Validators.required,Validators.max(999999999),Validators.min(111111111)]],
+      celular: ['', [Validators.required,Validators.minLength(9)]],
       dni: ['', [Validators.required,Validators.minLength(8)]]
     });
 

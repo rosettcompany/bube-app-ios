@@ -54,7 +54,7 @@ export class inicioPage implements OnInit{
       tipoTiendaActiva = 1;
       longitud:any;
       latitud: any;
-      km = "3";
+      km = "5";
 
   constructor(public menu: MenuController, public router: Router, 
               private splashScreen: SplashScreen,
