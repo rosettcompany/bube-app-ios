@@ -109,7 +109,8 @@ export class ComprobantePage{
     this.storage.get('total').then(res =>{
      let t = Number(res).toFixed(2);
      this.total = t;
-     this.igv = (this.total * 0.18).toFixed(2);
+     let A = Number(this.total / 1.18);
+     this.igv = (this.total - A).toFixed(2);
     });
 
 
@@ -436,14 +437,11 @@ export class ComprobantePage{
   enviarCorreoSocio(user,dire){
    
     let  i;
-
-      
-      console.log(this.delivery);
     
     var cuerpo = "<div style='background: #f3f1f1;'><label ><b>Hola "+this.car.nombrecomercial+"</b></label><br><label >Esta es la constancia del pedido:</label><table style='background: #ffffff; margin: auto; margin-top: 10px; margin-bottom: 10px; border: 1px solid #000000; padding: 10px; border-radius: 10px;'>";
         cuerpo += "<tr align='center'><td colspan=3 style='font-size: 20px;border-bottom: 1px solid #000000; padding-bottom: 5px;'><b>Orden # "+this.idcompra+"</b></td></tr><tr align='center'><td colspan=3 style='font-size: 16;font-weight: bold;'>Datos del pedido</td>";
-        cuerpo += "</tr><tr align='center'><td colspan=3 style='font-size: 15;font-weight: bold;margin-top: 10px;'>"+this.car.nombrecomercial+"</td><tr><td colspan=3><b>Comprador: </b>"+user.nombresusuario+' '+user.apellidosusuario+"</td></tr><tr><td><b>Teléfono:</b>"+user.telefonousuario+"</td></tr>";
-        cuerpo += "<tr><td colspan=3 style='border-bottom: 1px solid #000000; padding-bottom: 5px'><b>Dirección:</b> "+dire+"</td>";
+        cuerpo += "</tr><tr align='center'><td colspan=3 style='font-size: 15;font-weight: bold;margin-top: 10px;'>"+this.car.nombrecomercial+"</td><tr><td colspan=3><b>Comprador: </b>"+user.nombresusuario+' '+user.apellidosusuario+"</td></tr><tr><td><b>DNI: </b>"+user.dni+"</td></tr><tr><td><b>Teléfono: </b>"+user.telefonousuario+"</td></tr>";
+        cuerpo += "<tr><td><b>Dirección: </b> "+dire+"</td></tr><tr><td colspan=3 style='border-bottom: 1px solid #000000; padding-bottom: 5px'><b>Referencia: </b> "+user.referencia+"</td>";
         cuerpo += "</tr><tr><td><b>Producto</b></td><td><b>Cantidad</b></td><td><b>Subtotal</b></td></tr>";
         for(i= 0; i < this.car.bebidas.length; i++ ){
           cuerpo += "</tr><tr><td>"+this.car.bebidas[i].nombrebebida+"</td><td>"+this.car.bebidas[i].cantidad+"</td><td style='font-size: 14px;'>S/ "+this.car.bebidas[i].preciobebidasocio.toFixed(2)+"</td></tr>";
@@ -452,7 +450,7 @@ export class ComprobantePage{
           cuerpo +="<tr><td style='border-top: 1px solid #000000; padding-top: 2px;'>IGV</td><td style='border-top: 1px solid #000000; padding-top: 3px;'> </td><td style='font-size: 13px; font-weight: bold; border-top: 1px solid #000000; padding-top: 3px;'>S/ "+this.igv+"</td></tr>";
           cuerpo += "<tr><td style='border-top: 1px solid #000000; padding-top: 5px;'><b>Total</b></td><td style='border-top: 1px solid #000000; padding-top: 5px;'> </td><td style='font-size: 18px; font-weight: bold; border-top: 1px solid #000000; padding-top: 5px;'>S/ "+this.total+"</td></tr></table><label><b>Muchas gracias por ser socio de BUBE</b></label><br><br><label>Nota: Mensaje automático, por favor no responder</label><br><br></div><label>Aviso de confidencialidad</label><br><p style = 'text-align: justify; text-justify: inter-word;'>Este correo electrónico y/o el material adjunto es para uso exclusivo de la persona o entidad a la que expresamente se le ha enviado, y puede contener información confidencial o material privilegiado. Si usted no es el destinatario legítimo del mismo, por favor repórtelo inmediatamente al remitente del correo y bórrelo. Cualquier revisión, retransmisión, difusión o cualquier otro uso de este correo, por personas o entidades distintas a las del destinatario legítimo, queda expresamente prohibido. Este correo electrónico no pretende ni debe ser considerado como constitutivo de ninguna relación legal, contractual o de otra índole similar, en consecuencia, no genera obligación alguna a cargo de su emisor o su representada. En tal sentido, nada de lo señalado en esta comunicación o en sus anexos podrá ser interpretado como una recomendación sobre los riesgos o ventajas económicas, legales, contables o tributarias, o sobre las consecuencias de realizar o no determinada transacción.</p>";
          
-        let suject = "Constancia del pedido #"+String(this.idcompra);
+        let suject = "Constancia del pedido #"+String(this.idcompra); 
         var email = {"email": this.compra[0].emailsocio,"content": cuerpo,"subject":suject}; 
         console.log(email);
         this.apiService.enviarCorreo(email)

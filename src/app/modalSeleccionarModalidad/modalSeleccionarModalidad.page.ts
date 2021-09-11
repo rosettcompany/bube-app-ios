@@ -196,6 +196,12 @@ export class modalSeleccionarModalidadPage{
 
     }
   }
+  agregarDia(){
+    var today = new Date();
+    var tomorrow = new Date();
+    tomorrow.setDate(today.getDate()+1);
+    return tomorrow;
+  }
 
   verificarDisponibilidadDelivery(){
     this.horarioDeliveryInicio = this.convert(this.carrito.hora_inicio_delivery);
@@ -204,6 +210,14 @@ export class modalSeleccionarModalidadPage{
     var jdt1=Date.parse(this.dateNow+' '+this.horarioDeliveryInicio);
     var jdt2=Date.parse(this.dateNow+' '+this.horarioDeliveryFin);
     var jdt3=Date.parse(this.dateNow+' '+this.timeNow);
+
+    
+    if(jdt2 < jdt1){
+      let fechaSumada = this.agregarDia();
+      let fechaParceada = this.dateAsYYYYMMDDHHNNSS(fechaSumada);
+      jdt2 = Date.parse(fechaParceada+' '+this.horarioDeliveryFin);
+
+    }
 
     if(jdt3>jdt1 && jdt3<jdt2){
       console.log('DENTRO DEL RANGO')
