@@ -21,7 +21,7 @@
 
         <ion-radio-group [(ngModel)] = "modalidad" (ionChange) ="cambiarModalidad()">
           <ion-item class="item-list" lines="none">
-            <ion-radio id ="radio1"  class="radio-style" slot="start" value="1" disabled></ion-radio>
+            <ion-radio id ="radio1" mode="md" class="radio-style" slot="start" value="1" disabled></ion-radio>
             <ion-col>
               <ion-label  class="label-item">Delivery</ion-label>
               <ion-label *ngIf="DeliveryDisponible" class="label-item-delivery">({{horarioDeliveryInicio}} a {{horarioDeliveryFin}})</ion-label>
@@ -52,7 +52,7 @@
             </ion-item>
           </div>
           <ion-item class="item-list" lines="none">
-            <ion-radio class="radio-style" slot="start" value="2" id="rd_tienda"></ion-radio>
+            <ion-radio class="radio-style" mode="md" slot="start" value="2" id="rd_tienda"></ion-radio>
             <ion-label class="label-item">Recojo en tienda</ion-label>
           </ion-item>
          
