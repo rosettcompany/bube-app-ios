@@ -764,5 +764,9 @@ postRegistrarLoginApple(data){
   });
 }
 
+getFechaActual(){
+  return this.http.get('https://bube.com.pe/bube/api/obtener/fecha/actual');
+}
+
 
 }
