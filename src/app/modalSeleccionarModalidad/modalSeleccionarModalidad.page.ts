@@ -207,15 +207,24 @@ export class modalSeleccionarModalidadPage{
     this.horarioDeliveryInicio = this.convert(this.carrito.hora_inicio_delivery);
     this.horarioDeliveryFin = this.convert(this.carrito.hora_fin_delivery);
 
-    var jdt1=Date.parse(this.dateNow+' '+this.horarioDeliveryInicio);
-    var jdt2=Date.parse(this.dateNow+' '+this.horarioDeliveryFin);
-    var jdt3=Date.parse(this.dateNow+' '+this.timeNow);
+    var dateString1 = this.dateNow+' '+this.horarioDeliveryInicio;
+    var dateString2 = this.dateNow+' '+this.horarioDeliveryFin;
+    var dateString3 = this.dateNow+' '+this.timeNow;
 
+    var jdt1 = new Date(dateString1.replace(" ", "T"));
+    var jdt2 = new Date(dateString2.replace(" ", "T"));
+    var jdt3 = new Date(dateString3.replace(" ", "T"));
+
+    console.log("H inicio"+jdt1);
+    console.log("H fin "+jdt2);
+    console.log("H now"+ jdt3);
     
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
       let fechaParceada = this.dateAsYYYYMMDDHHNNSS(fechaSumada);
-      jdt2 = Date.parse(fechaParceada+' '+this.horarioDeliveryFin);
+
+      var dateString4 = fechaParceada+' '+this.horarioDeliveryFin;
+      var jdt2 = new Date(dateString4.replace(" ", "T"));
 
     }
 
@@ -236,10 +245,7 @@ export class modalSeleccionarModalidadPage{
         this.modalidad = '2';
       }
     }
-
-
   }
-
 
   getTimeNow(){
     this.service.getFechaActual()
@@ -254,12 +260,9 @@ export class modalSeleccionarModalidadPage{
     });
   }
   
-  
-  
  convert(input) {
   return moment(input, 'HH:mm:ss').format('h:mm A');
 }
-
 
   dateAsYYYYMMDDHHNNSS(date): string {
     return date.getFullYear()
