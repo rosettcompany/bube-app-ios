@@ -207,13 +207,11 @@ export class modalSeleccionarModalidadPage{
     this.horarioDeliveryInicio = this.convert(this.carrito.hora_inicio_delivery);
     this.horarioDeliveryFin = this.convert(this.carrito.hora_fin_delivery);
 
-    var dateString1 = this.dateNow+' '+this.horarioDeliveryInicio;
-    var dateString2 = this.dateNow+' '+this.horarioDeliveryFin;
-    var dateString3 = this.dateNow+' '+this.timeNow;
 
-    var jdt1 = new Date(dateString1.replace(" ", "T"));
-    var jdt2 = new Date(dateString2.replace(" ", "T"));
-    var jdt3 = new Date(dateString3.replace(" ", "T"));
+    var jdt1 = new Date(String(this.dateNow)+' '+String(this.horarioDeliveryInicio));
+    var jdt2 = new Date(String(this.dateNow)+' '+String(this.horarioDeliveryFin));
+    var jdt3 = new Date(String(this.dateNow)+' '+String(this.timeNow));
+
 
     console.log("H inicio"+jdt1);
     console.log("H fin "+jdt2);
@@ -222,9 +220,7 @@ export class modalSeleccionarModalidadPage{
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
       let fechaParceada = this.dateAsYYYYMMDDHHNNSS(fechaSumada);
-
-      var dateString4 = fechaParceada+' '+this.horarioDeliveryFin;
-      var jdt2 = new Date(dateString4.replace(" ", "T"));
+      var jdt2 = new Date(String(fechaParceada)+' '+String(this.horarioDeliveryFin));
 
     }
 
