@@ -248,9 +248,16 @@ export class modalSeleccionarModalidadPage{
   }
 
   getTimeNow(){
-    var today = new Date();
-    this.timeNow = this.dateAsHHNNSS(today);
-    this.verificarDisponibilidadDelivery();
+    this.service.getFechaActual()
+    .subscribe(data=>{
+
+      let today = new Date();  
+      today.setTime(Date.parse(data[0].fecha));          
+      this.timeNow = this.dateAsHHNNSS(today);
+      this.verificarDisponibilidadDelivery();
+    },(error)=>{
+      console.log(error)
+    });
   }
   
   
