@@ -93,7 +93,7 @@ export class modalSeleccionarModalidadPage{
         this.storage.get('latitud')
         .then((val) =>{
           this.latitud = parseFloat(val);
-          this.getDateNow();
+          this.getTimeNow();
         });
       });
   }
@@ -241,24 +241,19 @@ export class modalSeleccionarModalidadPage{
   }
 
 
-  getDateNow(){
-    var today = new Date();
-    this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
-    this.getTimeNow();
-  }
-
   getTimeNow(){
     this.service.getFechaActual()
     .subscribe(data=>{
-
       let today = new Date();  
       today.setTime(Date.parse(data[0].fecha));          
       this.timeNow = this.dateAsHHNNSS(today);
+      this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
       this.verificarDisponibilidadDelivery();
     },(error)=>{
       console.log(error)
     });
   }
+  
   
   
  convert(input) {
