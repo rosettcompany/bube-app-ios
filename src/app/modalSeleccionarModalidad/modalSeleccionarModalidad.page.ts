@@ -223,8 +223,11 @@ export class modalSeleccionarModalidadPage{
     
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
-      let fechaParceada = fechaSumada.toISOString().slice(0, 10);
-      jdt2 = Date.parse(fechaParceada+'T'+this.carrito.hora_inicio_delivery.replace(/\s/, 'T')+'Z');
+      let fechaParceada = new Date(fechaSumada.getTime() - (fechaSumada.getTimezoneOffset() * 60000 ))
+                          .toISOString()
+                          .split("T")[0];
+                          
+      jdt2 = Date.parse(fechaParceada+'T'+this.carrito.hora_inicio_delivery.replace(/\s/, 'T'));
     }
 
     if(jdt3>jdt1 && jdt3<jdt2){
@@ -253,7 +256,10 @@ export class modalSeleccionarModalidadPage{
       today.setTime(Date.parse(data[0].fecha));          
       this.timeNow = this.dateAsHHNNSS(today);
       //this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
-      this.dateNow  = today.toISOString().slice(0, 10);
+      this.dateNow  = new Date(today.getTime() - (today.getTimezoneOffset() * 60000 ))
+                    .toISOString()
+                    .split("T")[0];
+
       this.verificarDisponibilidadDelivery();
     },(error)=>{
       console.log(error)
