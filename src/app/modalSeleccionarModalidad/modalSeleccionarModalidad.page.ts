@@ -252,7 +252,8 @@ export class modalSeleccionarModalidadPage{
     this.service.getFechaActual()
     .subscribe(data=>{
       let today = new Date();  
-      today.setTime(Date.parse(data[0].fecha));
+
+      today.setTime(Date.parse(data[0].fecha.replace('-','/','g')));
       console.log(today)          
       this.timeNow = this.dateAsHHNNSS(today);
       //this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
