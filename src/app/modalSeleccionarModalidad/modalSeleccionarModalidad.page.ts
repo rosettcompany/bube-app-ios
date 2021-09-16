@@ -219,7 +219,7 @@ export class modalSeleccionarModalidadPage{
     
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
-      let fechaParceada = this.dateAsYYYYMMDDHHNNSS(fechaSumada);
+      let fechaParceada = this.dateAsYYYYMMDDHHNNSSIos(fechaSumada);
       var jdt2 = new Date(String(fechaParceada)+' '+String(this.horarioDeliveryFin));
 
     }
@@ -249,7 +249,7 @@ export class modalSeleccionarModalidadPage{
       let today = new Date();  
       today.setTime(Date.parse(data[0].fecha));          
       this.timeNow = this.dateAsHHNNSS(today);
-      this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
+      this.dateNow = this.dateAsYYYYMMDDHHNNSSIos(today);
       this.verificarDisponibilidadDelivery();
     },(error)=>{
       console.log(error)
