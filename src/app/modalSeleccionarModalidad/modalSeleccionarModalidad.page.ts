@@ -38,7 +38,7 @@ export class modalSeleccionarModalidadPage{
 
   public dateNow;
   public timeNow;  
-  
+  public today;
 
   public direccion;
   public piso_departamento;
@@ -197,10 +197,15 @@ export class modalSeleccionarModalidadPage{
     }
   }
   agregarDia(){
-    var today = new Date();
-    var tomorrow = new Date();
-    tomorrow.setDate(today.getDate()+1);
+    var tomorrow = this.today;
+    tomorrow.setDate(this.today.getDate()+1);
     return tomorrow;
+  }
+
+  restarDia(){
+    var Ayer = this.today;
+    Ayer.setDate(this.today.getDate()-1);
+    return Ayer;
   }
 
   verificarDisponibilidadDelivery(){
@@ -214,20 +219,36 @@ export class modalSeleccionarModalidadPage{
     var dateString3 = String(this.dateNow)+' '+String(this.timeNow);
     var jdt3 = moment(dateString3, "DD/MM/YYYY HH:mm:ss A").toDate();
 
-    console.log("Date "+this.dateNow);
-    console.log(this.timeNow)
-    console.log(this.carrito.hora_fin_delivery)
-    console.log(this.carrito.hora_inicio_delivery)
+    
+    if(jdt2 < jdt1 && jdt3 < jdt2){
+
+        let fechaRestada = this.restarDia();
+        let fechaParceadaRestada = this.dateAsYYYYMMDDHHNNSSIos(fechaRestada);
+        fechaParceadaRestada = this.converFecha(fechaParceadaRestada);
+    
+        var dateString4 = String(fechaParceadaRestada)+' '+String(this.carrito.hora_inicio_delivery);
+        jdt1 = moment(dateString4, "DD/MM/YYYY HH:mm:ss A").toDate();
+    
+    }else{
+
+      if(jdt3 > jdt2){
+
+        var dateString5 = String(this.dateNow)+' '+String(this.carrito.hora_inicio_delivery);
+        jdt1 = moment(dateString5, "DD/MM/YYYY HH:mm:ss A").toDate();
+
+        let fechaSumada = this.agregarDia();
+        let fechaParceadaSumada = this.dateAsYYYYMMDDHHNNSSIos(fechaSumada);
+        fechaParceadaSumada = this.converFecha(fechaParceadaSumada);
+    
+        var dateString6 = String(fechaParceadaSumada)+' '+String(this.carrito.hora_fin_delivery);
+        jdt2 = moment(dateString6, "DD/MM/YYYY HH:mm:ss A").toDate();
+        console.log("SUMA"+jdt2)
+      }
+    }
+
     console.log("H inicio"+jdt1);
     console.log("H fin "+jdt2);
     console.log("H now"+ jdt3);
-    
-    if(jdt2 < jdt1){
-      let fechaSumada = this.agregarDia();
-      let fechaParceada = this.dateAsYYYYMMDDHHNNSSIos(fechaSumada);
-      fechaParceada = this.converFecha(fechaParceada);
-      jdt2 = moment(dateString2, "DD/MM/YYYY HH:mm:ss A").toDate();
-    }
 
     if(jdt3>jdt1 && jdt3<jdt2){
       console.log('DENTRO DEL RANGO')
@@ -252,9 +273,8 @@ export class modalSeleccionarModalidadPage{
     this.service.getFechaActual()
     .subscribe(data=>{
       let today = new Date();  
-
       today.setTime(Date.parse(data[0].fecha.replace(' ', 'T')));
-      console.log(today)          
+      this.today = today;        
       this.timeNow = this.dateAsHHNNSS(today);
       //this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
       this.dateNow = this.dateAsYYYYMMDDHHNNSSIos(today);
