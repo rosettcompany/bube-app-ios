@@ -223,7 +223,7 @@ export class modalSeleccionarModalidadPage{
     
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
-      let fechaParceada = this.dateAsYYYYMMDDHHNNSS(fechaSumada);
+      let fechaParceada = fechaSumada.toISOString().slice(0, 10);
       jdt2 = Date.parse(fechaParceada+'T'+this.carrito.hora_inicio_delivery.replace(/\s/, 'T')+'Z');
     }
 
@@ -252,7 +252,8 @@ export class modalSeleccionarModalidadPage{
       let today = new Date();  
       today.setTime(Date.parse(data[0].fecha));          
       this.timeNow = this.dateAsHHNNSS(today);
-      this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
+      //this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
+      this.dateNow  = today.toISOString().slice(0, 10);
       this.verificarDisponibilidadDelivery();
     },(error)=>{
       console.log(error)
