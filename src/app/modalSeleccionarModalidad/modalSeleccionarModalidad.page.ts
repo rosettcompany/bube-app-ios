@@ -204,30 +204,29 @@ export class modalSeleccionarModalidadPage{
   }
 
   verificarDisponibilidadDelivery(){
-    this.horarioDeliveryInicio = this.convert(this.carrito.hora_inicio_delivery);
-    this.horarioDeliveryFin = this.convert(this.carrito.hora_fin_delivery);
-  
 
-
-    var jdt1=Date.parse(this.dateNow+'T'+this.carrito.hora_inicio_delivery.replace(/\s/, 'T'));
-    var jdt2=Date.parse(this.dateNow+'T'+this.carrito.hora_fin_delivery.replace(/\s/, 'T'));
-    var jdt3=Date.parse(this.dateNow+'T'+this.timeNow.replace(/\s/, 'T'));
+    var dateString1 = String(this.dateNow)+' '+String(this.carrito.hora_inicio_delivery);
+    var jdt1 = moment(dateString1, "DD/MM/YYYY HH:mm:ss A").toDate();
+ 
+    var dateString2 = String(this.dateNow)+' '+String(this.carrito.hora_fin_delivery);
+    var jdt2 = moment(dateString2, "DD/MM/YYYY HH:mm:ss A").toDate();
+ 
+    var dateString3 = String(this.dateNow)+' '+String(this.timeNow);
+    var jdt3 = moment(dateString3, "DD/MM/YYYY HH:mm:ss A").toDate();
 
     console.log("Date "+this.dateNow);
     console.log(this.timeNow)
-    console.log(this.horarioDeliveryFin)
-    console.log(this.horarioAtencionInicio)
+    console.log(this.carrito.hora_fin_delivery)
+    console.log(this.carrito.hora_inicio_delivery)
     console.log("H inicio"+jdt1);
     console.log("H fin "+jdt2);
     console.log("H now"+ jdt3);
     
     if(jdt2 < jdt1){
       let fechaSumada = this.agregarDia();
-      let fechaParceada = new Date(fechaSumada.getTime() - (fechaSumada.getTimezoneOffset() * 60000 ))
-                          .toISOString()
-                          .split("T")[0];
-                          
-      jdt2 = Date.parse(fechaParceada+'T'+this.carrito.hora_inicio_delivery.replace(/\s/, 'T'));
+      let fechaParceada = this.dateAsYYYYMMDDHHNNSSIos(fechaSumada);
+      fechaParceada = this.converFecha(fechaParceada);
+      jdt2 = moment(dateString2, "DD/MM/YYYY HH:mm:ss A").toDate();
     }
 
     if(jdt3>jdt1 && jdt3<jdt2){
@@ -256,9 +255,8 @@ export class modalSeleccionarModalidadPage{
       today.setTime(Date.parse(data[0].fecha));          
       this.timeNow = this.dateAsHHNNSS(today);
       //this.dateNow = this.dateAsYYYYMMDDHHNNSS(today);
-      this.dateNow  = new Date(today.getTime() - (today.getTimezoneOffset() * 60000 ))
-                    .toISOString()
-                    .split("T")[0];
+      this.dateNow = this.dateAsYYYYMMDDHHNNSSIos(today);
+      this.dateNow = this.converFecha(this.dateNow);
 
       this.verificarDisponibilidadDelivery();
     },(error)=>{
