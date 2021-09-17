@@ -210,47 +210,49 @@ export class modalSeleccionarModalidadPage{
 
   verificarDisponibilidadDelivery(){
 
+    // CONVERSION FECHA INICIO DELIVERY
     var dateString1 = String(this.dateNow)+' '+String(this.carrito.hora_inicio_delivery);
-    var jdt1 = moment(dateString1, "DD/MM/YYYY HH:mm:ss A").toDate();
- 
+    var horaInicio = moment(dateString1, "DD/MM/YYYY HH:mm:ss A").toDate();
+
+    // CONVERSION FECHA FIN DELIVERY
     var dateString2 = String(this.dateNow)+' '+String(this.carrito.hora_fin_delivery);
-    var jdt2 = moment(dateString2, "DD/MM/YYYY HH:mm:ss A").toDate();
+    var horaFin = moment(dateString2, "DD/MM/YYYY HH:mm:ss A").toDate();
  
+    // CONVERSION FECHA ACTUAL 
     var dateString3 = String(this.dateNow)+' '+String(this.timeNow);
-    var jdt3 = moment(dateString3, "DD/MM/YYYY HH:mm:ss A").toDate();
+    var horaActual = moment(dateString3, "DD/MM/YYYY HH:mm:ss A").toDate();
 
-    
-    if(jdt2 < jdt1 && jdt3 < jdt2){
+    // COMPARACION CUANDO FECHA FIN MENOR A FECHA INICIO Y FECHA ACTUAL ES MENOR A FECHA FIN
+    if(horaFin < horaInicio && horaActual < horaFin){
 
+      // RESTADO UN DIA A LA FECHA DE INICIO
         let fechaRestada = this.restarDia();
         let fechaParceadaRestada = this.dateAsYYYYMMDDHHNNSSIos(fechaRestada);
         fechaParceadaRestada = this.converFecha(fechaParceadaRestada);
     
         var dateString4 = String(fechaParceadaRestada)+' '+String(this.carrito.hora_inicio_delivery);
-        jdt1 = moment(dateString4, "DD/MM/YYYY HH:mm:ss A").toDate();
+        horaInicio = moment(dateString4, "DD/MM/YYYY HH:mm:ss A").toDate();
     
     }else{
 
-      if(jdt3 > jdt2){
+      // COMPARACION SI FECHA ACTUAL ES MAYOR A LA FECHA FIN
+      if(horaActual > horaFin && horaFin < horaInicio){
 
+        // FECHA INICIO POR DEFECTO
         var dateString5 = String(this.dateNow)+' '+String(this.carrito.hora_inicio_delivery);
-        jdt1 = moment(dateString5, "DD/MM/YYYY HH:mm:ss A").toDate();
+        horaInicio = moment(dateString5, "DD/MM/YYYY HH:mm:ss A").toDate();
 
+        // AGREGANDO UN DIA A LA FECHA FIN
         let fechaSumada = this.agregarDia();
         let fechaParceadaSumada = this.dateAsYYYYMMDDHHNNSSIos(fechaSumada);
         fechaParceadaSumada = this.converFecha(fechaParceadaSumada);
     
         var dateString6 = String(fechaParceadaSumada)+' '+String(this.carrito.hora_fin_delivery);
-        jdt2 = moment(dateString6, "DD/MM/YYYY HH:mm:ss A").toDate();
-        console.log("SUMA"+jdt2)
+        horaFin = moment(dateString6, "DD/MM/YYYY HH:mm:ss A").toDate();
       }
     }
-
-    console.log("H inicio"+jdt1);
-    console.log("H fin "+jdt2);
-    console.log("H now"+ jdt3);
-
-    if(jdt3>jdt1 && jdt3<jdt2){
+    
+    if(horaActual>horaInicio && horaActual<horaFin){
       console.log('DENTRO DEL RANGO')
       this.DeliveryDisponible = false;
       this.modalidad = '1';
@@ -272,7 +274,7 @@ export class modalSeleccionarModalidadPage{
   getTimeNow(){
     this.service.getFechaActual()
     .subscribe(data=>{
-      let today = new Date();  
+      let today = new Date();
       today.setTime(Date.parse(data[0].fecha.replace(' ', 'T')));
       this.today = today;        
       this.timeNow = this.dateAsHHNNSS(today);
