@@ -111,7 +111,8 @@ interval;
 
   filtroSubCategoria = {"subcategoria": " "};
 
-
+  indSoloComprar = false;
+  botonSoloComprar = false;
   ///// FILTROS A ENVIAR
   filtrosEnviar = {nombrebebida: this.categoriaID, 
                    establecimiento: ' ',
@@ -121,7 +122,8 @@ interval;
                    subCategoria: '',
                    lat: 0,
                    lng:0,
-                   km: 0};
+                   km: 0,
+                   ind_delivery: 0};
 
   // TOUR ACTIVO 
   tourActivo = false;
@@ -303,7 +305,6 @@ getLongitudLatitud(){
 }
 
 llenarFiltrosAenviar(){
-  this.filtrosEnviar.tipoCompra = this.filtro.tipoCompra;
   this.filtrosEnviar.nombrebebida = this.filtro.nombrebebida;
   this.filtrosEnviar.marca = this.filtro.marca;
   this.filtrosEnviar.pack = this.filtro.pack;
@@ -582,7 +583,6 @@ getBebidasFiltroCategorias(val){
   this.cantidadLabel = false;
   this.scrollActivo = false;
   this.seleccionActiva = true;
-  
   this.apiService.getBebidasConFiltroCategoria(val)
   .then(data => {
 
@@ -593,7 +593,7 @@ getBebidasFiltroCategorias(val){
       this.chipPropagacion = true;
       this.filtroVisible = true;
       this.seleccionActiva = false;
-      
+      this.botonSoloComprar = false;
 
       if(data != null || data != undefined){
         this.bebidas = data;
@@ -1072,6 +1072,7 @@ removerFiltrosSeleccionadosRadios(id:number,radio){
         filtrollenado.radio = '';
         this.storage.set('filtrollenado',filtrollenado);
         this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio IN(1,2)';
+        this.filtrosEnviar.ind_delivery = 0;
         console.log(this.filtrosEnviar);
         this.getBebidasFiltroCategorias(this.filtrosEnviar);
  
@@ -1220,6 +1221,18 @@ verificarPrueba(){
    }
 
   }
+}
+SoloComprar(){
+  console.log(this.indSoloComprar)
+  this.botonSoloComprar = true;
+  if(this.indSoloComprar){
+      this.filtrosEnviar.ind_delivery = 1;
+      this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio = 1';
+  }else{
+    this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio IN(1,2)';
+    this.filtrosEnviar.ind_delivery = 0;
+  }
+  this.getBebidasFiltroCategorias(this.filtrosEnviar);
 }
 
  //GoogleAnalytics

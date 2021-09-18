@@ -280,3 +280,28 @@ ion-content{
     box-shadow: none !important;
     background-color: transparent !important;
   }
+
+  
+  .item-filtro{
+    --border-radius: 14px;
+    --background: #464545;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  
+    ion-label{
+      color: #f3f2ed;
+      font-size: 14px;
+      font-family: 'SFCompactText-Medium';
+      letter-spacing: 0.25px;
+    }
+  
+    ion-checkbox{
+      --border-color: #ffffff;
+      --border-color-checked: #ffffff;
+      --border-radius: 50%;
+      --border-width: 1px;
+      --background-checked: #108b3c;
+      --transition	: 280ms;
+    }
+  }
