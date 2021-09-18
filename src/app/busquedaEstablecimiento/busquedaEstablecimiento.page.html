@@ -90,6 +90,14 @@
       </ion-chip>
      </ion-card>
    </ion-row> 
+
+   <ion-row *ngIf="establecimiento.estadosocio == 2">
+     <div style="width: 100%;">
+          <ion-item class="item-filtro" lines ="none">
+               <ion-label>Establecimiento sin opción de compra</ion-label>
+          </ion-item>
+     </div>
+  </ion-row>
     <ion-row class="cantidad-style">
      <ion-label class="label-cantidad" *ngIf="cantidadLabel">
           {{cantidadEncontrada}} Productos encontrados
