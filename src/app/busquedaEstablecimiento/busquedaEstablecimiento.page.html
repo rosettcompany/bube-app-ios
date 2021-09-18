@@ -94,7 +94,7 @@
    <ion-row *ngIf="establecimiento.estadosocio == 2">
      <div style="width: 100%;">
           <ion-item class="item-filtro" lines ="none">
-               <ion-label>Establecimiento sin opción de compra</ion-label>
+               <ion-label>Establecimiento sin opción de compra<br> por el momento</ion-label>
           </ion-item>
      </div>
   </ion-row>
@@ -122,15 +122,13 @@
                    </ion-item>
                   </ion-row>
                </ion-col>
-               <ion-col >
+               <ion-col  size="7.2">
                     <ion-row>
+                      <div style="height: auto; width: 100%;">
                            <p class="tittle-product">{{bebida.nombremarca}}</p>
-                       
+                           <p class="description-product">{{bebida.nombrebebida}}</p> 
+                      </div>
                     </ion-row>
-                    <ion-row>
-                         <p class="description-product">{{bebida.nombrebebida}}</p> 
-                    </ion-row>
-                    
                     <ion-row>
                             <ion-label class="price-product">S/ {{bebida.preciobebidasocio.toFixed(2)}}</ion-label>
                     </ion-row>
