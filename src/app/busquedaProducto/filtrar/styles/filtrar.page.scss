@@ -87,11 +87,12 @@ ion-footer{
     }
 }
 .ion-checkbox{
-  --checkmark-color: #121212;
-  --background-checked:#108B3C;
-  --border-color:#108B3C;
-  --border-color-checked: #108B3C;
-  --background: #121212;
+  --border-color: #ffffff;
+  --border-color-checked: #ffffff;
+  --border-radius: 50%;
+  --border-width: 1px;
+  --background-checked: #108b3c;
+  --transition	: 280ms;
 }
 
 .verticalLine {

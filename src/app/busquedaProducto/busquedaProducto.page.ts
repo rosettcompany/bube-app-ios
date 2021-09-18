@@ -119,9 +119,10 @@ export class busquedaProductoPage{
     
     filtroSubCategoria = {"subcategoria": " "};
   
-  
+    indSoloComprar = false;
+    botonSoloComprar = false;
     ///// FILTROS A ENVIAR
-    filtrosEnviar = {nombrebebida: '', establecimiento: ' ', tipoCompra: 'AND SO.estadosocio IN(1,2)', marca: ' ', pack: ' ', subCategoria: '', lat: 0, lng:0, km: 0};
+    filtrosEnviar = {nombrebebida: '', establecimiento: ' ', tipoCompra: 'AND SO.estadosocio IN(1,2)', marca: ' ', pack: ' ', subCategoria: '', lat: 0, lng:0, km: 0,ind_delivery: 0};
 
   /// BOTONES ANTIPROPAGACION
   chipPropagacion = true;
@@ -297,7 +298,6 @@ async presentToast() {
 }
 
 llenarFiltrosAenviar(){
-  this.filtrosEnviar.tipoCompra = this.filtro.tipoCompra;
   this.filtrosEnviar.nombrebebida = this.filtro.nombrebebida;
   this.filtrosEnviar.marca = this.filtro.marca;
   this.filtrosEnviar.pack = this.filtro.pack;
@@ -659,7 +659,7 @@ getBebidasFiltro(val){
         this.cantidadLabel = true;
         this.Skeleton = false;
         this.chipPropagacion = true;
- 
+        this.botonSoloComprar = false;
          console.log(data);
         if(data != null){
           this.bebidas = data;
@@ -706,7 +706,7 @@ getItems(ev: any) {
          this.restablecerMinMax();
          let envio = {nombrebebida:val,lat: this.latitud, lng: this.longitud, km: this.km}
          this.getBebidas(envio);
-         this.filtrosEnviar = {nombrebebida: val, establecimiento: ' ', tipoCompra: 'AND SO.estadosocio IN(1,2)', marca: ' ', pack: ' ', subCategoria: '', lat: this.latitud, lng: this.longitud, km: this.km};
+         this.filtrosEnviar = {nombrebebida: val, establecimiento: ' ', tipoCompra: 'AND SO.estadosocio IN(1,2)', marca: ' ', pack: ' ', subCategoria: '', lat: this.latitud, lng: this.longitud, km: this.km,ind_delivery: 0};
          this.inputSearchbar = val;
          this.limpiarFiltro();       
      } else {
@@ -1152,6 +1152,7 @@ removerFiltrosSeleccionadosRadios(id:number,radio){
         filtrollenado.radio = '';
         this.storage.set('filtrollenado',filtrollenado);
         this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio IN(1,2)';
+        this.filtrosEnviar.ind_delivery = 0;
         console.log(this.filtrosEnviar);
         this.getBebidasFiltro(this.filtrosEnviar);
   
@@ -1252,6 +1253,19 @@ verificarPrueba(){
    }
 
   }
+}
+
+SoloComprar(){
+  console.log(this.indSoloComprar)
+  this.botonSoloComprar = true;
+  if(this.indSoloComprar){
+      this.filtrosEnviar.ind_delivery = 1;
+      this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio = 1';
+  }else{
+    this.filtrosEnviar.tipoCompra = 'AND SO.estadosocio IN(1,2)';
+    this.filtrosEnviar.ind_delivery = 0;
+  }
+  this.getBebidasFiltro(this.filtrosEnviar);
 }
 
  // googleAnalytics

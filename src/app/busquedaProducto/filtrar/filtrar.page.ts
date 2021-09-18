@@ -193,12 +193,21 @@ Aplicar(): void{
   if(this.establecimiento != null)
   nombre_O_categoria_O_establecimiento = this.establecimiento;
 
+  /*
   let tipoCompra:String
-  if(this.radio1 == 'comprar') tipoCompra = "AND SO.estadosocio = "+this.valorRadio;
-  else tipoCompra = "AND SO.estadosocio IN(1,2)";
+  let ind_delivery;
+  if(this.radio1 == 'comprar'){
+    tipoCompra = "AND SO.estadosocio = "+this.valorRadio;
+    ind_delivery = 1;
+  } 
+  else{
+    tipoCompra = "AND SO.estadosocio IN(1,2)";
+    ind_delivery = 0;
+  } 
+  */
   
   let filtro = {nombrebebida: nombre_O_categoria_O_establecimiento, establecimiento: ' ', 
-                tipoCompra: tipoCompra, marca: this.cadenaFiltroMarca, pack: this.cadenaFiltroPack};
+                 marca: this.cadenaFiltroMarca, pack: this.cadenaFiltroPack};
 
   let rangoSeleccionado = this.rangoSeleccionado();
   let radio = this.radio1;

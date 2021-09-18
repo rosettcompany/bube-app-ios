@@ -116,6 +116,9 @@
                     <app-image-shell class="establecimiento-picture" [src]="establecimiento.rutafotosocio"  (click) = "busquedaEstablecimiento(establecimiento);"></app-image-shell> <!-- [src]="friend.image"-->
                   </app-aspect-ratio>
                   <div style="width: 100%; text-align: center;">
+                        <img style="margin-left: auto; margin-right: auto; width: 30px; height: 30px;" [src] = " (establecimiento.disponibilidad == 1) ? './assets/icon/open.svg':'./assets/icon/closed.svg'">
+                  </div>
+                  <div style="width: 100%; text-align: center;">
                         <ion-label> <p>A {{establecimiento.distancia}} KM</p> </ion-label>
                   </div>
             </ion-col>
