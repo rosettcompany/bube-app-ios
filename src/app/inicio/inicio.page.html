@@ -115,7 +115,7 @@
                   <app-aspect-ratio [ratio]="{w: 56, h: 56}">
                     <app-image-shell class="establecimiento-picture" [src]="establecimiento.rutafotosocio"  (click) = "busquedaEstablecimiento(establecimiento);"></app-image-shell> <!-- [src]="friend.image"-->
                   </app-aspect-ratio>
-                  <div style="width: 100%; text-align: center;">
+                  <div style="width: 100%; text-align: center;" *ngIf="tipoTiendaActiva == 2 || tipoTiendaActiva == 4">
                         <img style="margin-left: auto; margin-right: auto; width: 30px; height: 30px;" [src] = " (establecimiento.disponibilidad == 1) ? './assets/icon/open.svg':'./assets/icon/closed.svg'">
                   </div>
                   <div style="width: 100%; text-align: center;">
