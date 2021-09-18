@@ -130,18 +130,17 @@
                      </ion-item>
                     </ion-row>
                </ion-col>
-               <ion-col>
-                  <ion-row>
-                    <p class="tittle-product">{{bebida.nombremarca}}</p>
-                  </ion-row>
-                  <ion-row>
-                    <p class="description-product">{{bebida.nombrebebida}}</p> 
-                  </ion-row>
-                  
-                  <ion-row>
-                          <ion-label class="price-product">S/ {{bebida.preciobebidasocio.toFixed(2)}}</ion-label>
-                  </ion-row>
-               </ion-col>
+               <ion-col  size="5">
+                    <ion-row>
+                      <div style="height: auto; width: 100%;">
+                           <p class="tittle-product">{{bebida.nombremarca}}</p>
+                           <p class="description-product">{{bebida.nombrebebida}}</p> 
+                      </div>
+                    </ion-row>
+                    <ion-row>
+                            <ion-label class="price-product">S/ {{bebida.preciobebidasocio.toFixed(2)}}</ion-label>
+                    </ion-row>
+                 </ion-col>
                <ion-col  size="2.5" >  <!-- *ngFor="let friend of profile.friends"-->
                   <ion-row>
                           <app-aspect-ratio [ratio]="{w: 56, h: 56}">
