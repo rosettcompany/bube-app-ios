@@ -317,3 +317,21 @@ background-color: var(--page-background);
   box-shadow: none !important;
   background-color: transparent !important;
 }
+
+.item-filtro{
+  --border-radius: 14px;
+  --background: #108B3C;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  ion-label{
+    color: #f3f2ed;
+    font-size: 15px;
+    font-family: 'SFCompactText-Medium';
+    letter-spacing: 0.25px;
+    justify-content: center;
+    text-align: center;
+  }
+
+}
