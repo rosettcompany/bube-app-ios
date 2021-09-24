@@ -125,7 +125,7 @@ interval;
 
   // TOUR ACTIVO 
   tourActivo = false;
-
+  intro:any;
   // Disable side menu for this page
   ionViewWillEnter(): void {
     this.menu.enable(false);
@@ -190,8 +190,8 @@ interval;
   }
 
   introTour() {
-    const intro = introJs();
-    intro.setOptions({
+    this.intro = introJs();
+    this.intro .setOptions({
     nextLabel: ">>",
     prevLabel: "<<",
     doneLabel: "Aceptar",
@@ -206,7 +206,7 @@ interval;
       }
     ]
     });
-    intro.start();
+    this.intro.start();
   }
   
  deshabilitarback(){
@@ -214,9 +214,10 @@ interval;
  }
 
   // Restore to default when leaving this page
-ionViewDidLeave(): void {
+  ionViewDidLeave(): void {
     this.menu.enable(true);
-}
+    this.intro.exit(true);
+  }
 
 regresar(){
    let backbutton = document.getElementById('volver') as HTMLIonBackButtonElement;

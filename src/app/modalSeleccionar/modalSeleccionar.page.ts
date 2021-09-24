@@ -39,7 +39,7 @@ export class ModalSeleccionarPage implements OnInit {
      listatemporal = [];
      listaDisponibles = [];
      listaNoDisponibles = [];
-
+     intro:any;
      
     constructor(private modalControler: ModalController,
                 public apiService:ApiServiceService,
@@ -82,12 +82,12 @@ validarInicioTour(){
 }
 
 ionViewDidLeave(): void {
-
+  this.intro.exit(true);
 }
 
 introTour() {
-  const intro = introJs();
-  intro.setOptions({
+  this.intro = introJs();
+  this.intro.setOptions({
   nextLabel: ">>",
   prevLabel: "<<",
   doneLabel: "Aceptar",
@@ -102,7 +102,7 @@ introTour() {
     }
   ]
   });
-  intro.start();
+  this.intro.start();
 }
 
 

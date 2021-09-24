@@ -18,7 +18,7 @@ export class DetalleamigoPage {
  
   // TOUR ACTIVO 
   tourActivo = false;
-
+  intro:any;
   constructor(
 
     public router:Router,
@@ -53,10 +53,9 @@ export class DetalleamigoPage {
     }
   }
 
-
   introTour() {
-    const intro = introJs();
-    intro.setOptions({
+    this.intro  = introJs();
+    this.intro .setOptions({
     nextLabel: ">>",
     prevLabel: "<<",
     doneLabel: "Aceptar",
@@ -71,17 +70,14 @@ export class DetalleamigoPage {
       }
     ]
     });
-    intro.start();
+    this.intro .start();
   }
   
-
   ionViewDidLeave(){
     let backbutton = document.getElementById('volverAmigo') as HTMLIonBackButtonElement;
     backbutton.disabled = false;
+    this.intro.exit(true);
   }
-
-  
-
 
    obtenerFecha(){
     if(this.amigo.anionacimiento != '2099' || this.amigo.anionacimiento != '2100'){

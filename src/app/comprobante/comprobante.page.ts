@@ -46,7 +46,7 @@ export class ComprobantePage{
 
   public alertModal;
   public alertIndicador = false;
-
+  intro:any;
   @ViewChild('gestionEntrega', {read: ElementRef}) div: ElementRef;
 
   constructor(
@@ -81,6 +81,7 @@ export class ComprobantePage{
 
   ionViewWillEnter(): void {
     this.subscription = this.platform.backButton.subscribeWithPriority(9999, () => {
+      this.intro.exit(true);
       if(this.alertIndicador == true){
         this.alertModal.dismiss();
         this.alertIndicador = false;
@@ -158,8 +159,8 @@ export class ComprobantePage{
   }
 
   introTour() {
-    const intro = introJs();
-    intro.setOptions({
+    this.intro  = introJs();
+    this.intro .setOptions({
     nextLabel: ">>",
     prevLabel: "<<",
     doneLabel: "Aceptar",
@@ -174,8 +175,9 @@ export class ComprobantePage{
       }
     ]
     });
-    intro.start();
+    this.intro .start();
   }
+
   scrollDiv(){
     this.div.nativeElement.scrollIntoView({behavior: 'auto', block: 'start'});
   }
