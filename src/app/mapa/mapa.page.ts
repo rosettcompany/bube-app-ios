@@ -493,6 +493,15 @@ export class MapaPage {
     console.log("firebase no");
   });
 }
+
+cerrarMensaje(){
+  console.log("asdasd");
+  let m = document.getElementById('mensaje') as HTMLIonChipElement;
+  let map = document.getElementById('map') as HTMLDivElement;
+  m.hidden = true;
+  map.style.marginTop = "0px";
+
+}
    
 }
 

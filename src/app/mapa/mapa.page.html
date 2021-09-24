@@ -13,8 +13,12 @@
  
 </ion-header>
 
-<ion-content >
-  <div id="map"></div>
+<ion-content  style="text-align: center;" >
+  <ion-chip id="mensaje" style="z-index: 3; margin-top: 70px;">
+    <ion-label>Selecciona tu opción en el mapa</ion-label>
+    <ion-icon name="close" style="color: #000;" (click)="cerrarMensaje();"></ion-icon>
+  </ion-chip>
+  <div id="map" style="z-index: 1; margin-top: -108px;"></div>
   <div id="content"></div>
 </ion-content>
 <ion-footer >
