@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage';
 import { JoyrideService } from 'ngx-joyride';
 import { JoyrideOptions } from 'ngx-joyride/lib/models/joyride-options.class';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
+import introJs from 'intro.js/intro.js';
 
 @Component({
   selector: 'app-inicio',
@@ -144,10 +145,10 @@ interval;
 
 
   ionViewDidEnter(): void{
-
+    this.intro();
     if(this.platform.is("android")){
       if(this.tourActivo == false){
-        this.validarInicioTour();
+        //this.validarInicioTour();
         this.tourActivo = true;
       }
     }else{
@@ -217,6 +218,26 @@ interval;
       }
     };
     this.joyrideService.startTour(options);
+  }
+
+  intro() {
+    const intro = introJs();
+    intro.setOptions({
+    nextLabel: ">>",
+    prevLabel: "<<",
+    doneLabel: "OK!",
+    hidePrev: true,
+    steps: [
+
+      {
+        element: '#step1',
+        intro: "Puedes incluir bebidas de otras categorías en tu selección principal, tu selección no se perderá",
+        position: 'bottom'
+  
+      }
+    ]
+    });
+    intro.start();
   }
   
 

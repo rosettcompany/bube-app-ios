@@ -46,6 +46,7 @@
     "cordova-plugin-googleplus": "8.5.2",
     "crypto-js": "^3.3.0",
     "firebase": "^8.7.0",
+    "intro.js": "^4.2.2",
     "ngx-joyride": "^2.4.0",
     "pdfmake": "^0.1.68",
     "release": "6.3.0",
