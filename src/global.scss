@@ -150,7 +150,7 @@
 
   input:-webkit-autofill {
     height: 0px;
-    -webkit-box-shadow:0 0 0 20px #0e692e inset;
+    --webkit-box-shadow:0 0 0 20px #0e692e inset;
     font-weight: 500px;
 }
 
@@ -174,3 +174,38 @@ ion-segment-button {
     --color-checked: #108B3C !important;
     --indicator-color: rgba(18, 88, 43, 0.301)!important;
   }
+
+    /// TOLTIP
+    .introjs-tooltiptext{
+        font-family: 'SFCompactText-Medium' !important;
+        color: #108b3c !important;
+        font-size: 13px !important;
+        justify-content: center;
+        text-justify: auto;
+      }
+    
+      .introjs-tooltip-header{
+        font-family: 'SFCompactText-Medium' !important;
+        color: #108b3c !important;
+        font-size: 12px !important;
+        display: none !important;
+        
+      }
+      .introjs-helperLayer {
+        background-color: rgba(255, 255, 255, 0.507) !important;
+      }
+    
+      .introjs-donebutton{
+          background: #108b3c !important;
+          color: #ffffff !important;
+          border: none !important;
+          border-radius: 3px !important;
+      }
+    
+      .introjs-bullets{
+          display: none !important;
+       } 
+    
+       .introjs-tooltip{
+           border-radius: 8px;
+       }
