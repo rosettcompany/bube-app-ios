@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
      <ion-buttons slot="start" style="color: #f3f2ed;">
-          <ion-back-button id="volver" (click) = "regresar()"></ion-back-button>
+          <ion-back-button mode="md" id="volver" (click) = "regresar()"></ion-back-button>
         </ion-buttons>
       <ion-searchbar id="buscarBebida" animated type="text" class="input-item" debounce="500"  [(ngModel)]="searchQuery" (ionChange)="searchList();" placeholder="Buscar"></ion-searchbar>
     </ion-toolbar>

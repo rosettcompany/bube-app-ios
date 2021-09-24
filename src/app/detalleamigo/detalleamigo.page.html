@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start" style="color: #f3f2ed;">
-      <ion-back-button id="volverAmigo" (click) = "regresar()" ></ion-back-button>
+      <ion-back-button mode="md" id="volverAmigo" (click) = "regresar()" ></ion-back-button>
     </ion-buttons>
    <ion-title style="color: #ffff;" >Amigo</ion-title>
   </ion-toolbar>
@@ -34,7 +34,7 @@
           <ion-icon style="margin-left: 5px;" name="heart" size="large"></ion-icon>
         </ion-col>
         <ion-col  style="margin-top: 7px;">
-          <ion-label joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton" class="favoritas"> Tragos Favoritos</ion-label>
+          <ion-label id="bebidasFavoritas" class="favoritas"> Tragos Favoritos</ion-label>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -51,16 +51,6 @@
       <div></div>
     </ion-grid>
   </div>
-
-  <ng-template #customContent>
-    <ion-label class="label-tour" >Selecciona la bebida favorita de {{amigo.nombresusuario}} y obsequiasela con Bube compartiendole el voucher de compra o enviandole el delivery</ion-label>
-</ng-template> 
-
-<ng-template #doneButton>
-<ion-button class="button-tour" hidden>
-    Ok!
-</ion-button>
-</ng-template>
 </ion-content>
 
 

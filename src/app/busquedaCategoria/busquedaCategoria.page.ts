@@ -8,8 +8,6 @@ import { filtrarCategoriasPage } from '../busquedaProducto/filtrarCategorias/fil
 import { ModalSeleccionarPage} from './../modalSeleccionar/modalSeleccionar.page';
 import {filtrarBean} from './../busquedaProducto/filtrosBean/filtrosBean.component';
 import { Storage } from '@ionic/storage';
-import { JoyrideService } from 'ngx-joyride';
-import { JoyrideOptions } from 'ngx-joyride/lib/models/joyride-options.class';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import introJs from 'intro.js/intro.js';
 
@@ -38,7 +36,6 @@ interval;
               public filtrarbean: filtrarBean,
               private navCtrl: NavController,
               private platform: Platform,
-              private readonly joyrideService: JoyrideService,
               public apiService:ApiServiceService,
               private modalCtrl:ModalController) {
 
@@ -145,24 +142,10 @@ interval;
 
 
   ionViewDidEnter(): void{
-    this.intro();
-    if(this.platform.is("android")){
       if(this.tourActivo == false){
-        //this.validarInicioTour();
+        this.validarInicioTour();
         this.tourActivo = true;
       }
-    }else{
-  
-      if (this.platform.is("ios")){
-        
-      }else{
-        console.log("nada");
-        if(this.tourActivo == false){
-          this.validarInicioTour();
-          this.tourActivo = true;
-        }
-      }
-    } 
     this.googleAnalytics();
   }
 
@@ -172,10 +155,10 @@ interval;
       let tour = res;
       if(tour != null || tour != undefined){
         if(tour < 2){
-          this.IniciarTour();
+          this.introTour();
         }
       }else{
-        this.IniciarTour();
+        this.introTour();
       }
     });
   }
@@ -206,26 +189,12 @@ interval;
     });
   }
 
-  IniciarTour(){
-    const options: JoyrideOptions = {
-      steps: ['firstStep'],
-      themeColor: '#212f23',
-      showCounter: false,
-      customTexts: {
-        next: '>>',
-        prev: '<<',
-        done: 'Ok'
-      }
-    };
-    this.joyrideService.startTour(options);
-  }
-
-  intro() {
+  introTour() {
     const intro = introJs();
     intro.setOptions({
     nextLabel: ">>",
     prevLabel: "<<",
-    doneLabel: "OK!",
+    doneLabel: "Aceptar",
     hidePrev: true,
     steps: [
 
@@ -240,8 +209,6 @@ interval;
     intro.start();
   }
   
-
-
  deshabilitarback(){
   this.backButtonDisabled = true;
  }
@@ -249,8 +216,7 @@ interval;
   // Restore to default when leaving this page
 ionViewDidLeave(): void {
     this.menu.enable(true);
-    this.joyrideService.closeTour();
-  }
+}
 
 regresar(){
    let backbutton = document.getElementById('volver') as HTMLIonBackButtonElement;

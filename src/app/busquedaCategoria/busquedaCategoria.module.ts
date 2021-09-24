@@ -10,7 +10,6 @@ import { filtrarEstablecimientosPage} from '../busquedaProducto/filtrarEstableci
 import { filtrarPage} from '../busquedaProducto/filtrar/filtrar.page';
 import { ModalSeleccionarPage} from './../modalSeleccionar/modalSeleccionar.page'
 import { filtrarBean } from './../busquedaProducto/filtrosBean/filtrosBean.component';
-import { JoyrideModule } from 'ngx-joyride';
 const routes: Routes = [
   {
     path: '',
@@ -23,7 +22,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    JoyrideModule.forChild(),
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule

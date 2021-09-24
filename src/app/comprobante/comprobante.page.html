@@ -97,7 +97,7 @@
   <div style="height: 4px; width: 90%; background-color: #108b3c; border-radius: 30px; margin-left: auto; margin-right: auto; box-shadow: 0px 2px black;"></div>
   
   <ion-row>
-        <div #gestionEntrega joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton" style="width: 100%;  margin-top: 2%; text-align: center; align-content: center;">
+        <div #gestionEntrega id="gestionEntrega" style="width: 100%;  margin-top: 2%; text-align: center; align-content: center;">
             <ion-label class="label-gestion">Gestiona tu entrega</ion-label>
         </div>
         
@@ -131,15 +131,4 @@
     <ion-button  class="btn-seguir-comprando" expand="block" (click)="irInicio()">Seguir comprando</ion-button>
     <ion-button class="btn-ver-ahorros" expand="block"  (click)="irAhorro()">Ver mis ahorros</ion-button>
   </div>
-
-  <ng-template #customContent>
-    <ion-label class="label-tour" >Genera el primer contacto con el establecimiento para la entrega o recojo de tu pedido</ion-label>
-</ng-template> 
-
-  <ng-template #doneButton>
-  <ion-button class="button-tour" hidden>
-      Ok!
-  </ion-button>
-  </ng-template>
-
 </ion-content>

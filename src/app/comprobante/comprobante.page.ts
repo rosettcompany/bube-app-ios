@@ -7,10 +7,8 @@ import pdfFonts from "pdfmake/build/vfs_fonts";
 import { File } from '@ionic-native/file/ngx';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { JoyrideService } from 'ngx-joyride';
-import { JoyrideOptions } from 'ngx-joyride/lib/models/joyride-options.class';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
-
+import introJs from 'intro.js/intro.js';
 import { AlertController, ModalController, LoadingController } from '@ionic/angular';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -58,7 +56,6 @@ export class ComprobantePage{
     private firebaseAnalytics: FirebaseAnalytics,
     public alertController: AlertController,
     private file: File,
-    private readonly joyrideService: JoyrideService,
     private socialSharing:SocialSharing,
     private platform:Platform,
     public storage: Storage,
@@ -84,7 +81,6 @@ export class ComprobantePage{
 
   ionViewWillEnter(): void {
     this.subscription = this.platform.backButton.subscribeWithPriority(9999, () => {
-      this.joyrideService.closeTour();
       if(this.alertIndicador == true){
         this.alertModal.dismiss();
         this.alertIndicador = false;
@@ -142,17 +138,7 @@ export class ComprobantePage{
   }
  
   ionViewDidEnter(): void{
-    if(this.platform.is("android")){
-      this.validarInicioTour();
-    }else{
-  
-      if (this.platform.is("ios")){
-        
-      }else{
-        console.log("nada");
-          this.validarInicioTour();
-      }
-    } 
+    this.validarInicioTour();
     this.googleAnalytics();
   }
 
@@ -165,25 +151,30 @@ export class ComprobantePage{
         tour = 1;
       }
       if(tour < 3){
-        this.IniciarTour();
+        this.introTour();
       }
       this.storage.set('tour',tour);
     });
   }
 
-  IniciarTour(){
-    const options: JoyrideOptions = {
-      steps: ['firstStep'],
-      themeColor: '#212f23',
-      showCounter: false,
-      customTexts: {
-        next: '>>',
-        prev: '<<',
-        done: 'Ok'
+  introTour() {
+    const intro = introJs();
+    intro.setOptions({
+    nextLabel: ">>",
+    prevLabel: "<<",
+    doneLabel: "Aceptar",
+    hidePrev: true,
+    steps: [
+  
+      {
+        element: '#gestionEntrega',
+        intro: "Genera el primer contacto con el establecimiento para la entrega o recojo de tu pedido",
+        position: 'top'
+  
       }
-    };
-    this.joyrideService.startTour(options);
-    this.scrollDiv();
+    ]
+    });
+    intro.start();
   }
   scrollDiv(){
     this.div.nativeElement.scrollIntoView({behavior: 'auto', block: 'start'});
