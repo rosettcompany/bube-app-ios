@@ -3,8 +3,7 @@ import { Component} from '@angular/core';
 import { Router,ActivatedRoute,NavigationExtras } from '@angular/router';
 import { LoadingController, ToastController, NavController, Platform} from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { JoyrideService } from 'ngx-joyride';
-import { JoyrideOptions } from 'ngx-joyride/lib/models/joyride-options.class';
+import introJs from 'intro.js/intro.js';
 
 @Component({
   selector: 'app-detalleamigo',
@@ -19,7 +18,7 @@ export class DetalleamigoPage {
  
   // TOUR ACTIVO 
   tourActivo = false;
-
+  intro:any;
   constructor(
 
     public router:Router,
@@ -27,7 +26,6 @@ export class DetalleamigoPage {
     public route: ActivatedRoute,
     private navCtrl: NavController,
     private platform: Platform,
-    private readonly joyrideService: JoyrideService,
     public toastController: ToastController,
     public loadingController: LoadingController
     ) {
@@ -49,50 +47,37 @@ export class DetalleamigoPage {
 
   
   ionViewDidEnter(): void{
-
-    if(this.platform.is("android")){
-      if(this.tourActivo == false){
-        this.IniciarTour();
-        this.tourActivo = true;
-      }
-    }else{
-  
-      if (this.platform.is("ios")){
-        
-      }else{
-        console.log("nada");
-        if(this.tourActivo == false){
-          this.IniciarTour();
-          this.tourActivo = true;
-        }
-      }
-    } 
-   
+    if(this.tourActivo == false){
+      this.introTour();
+      this.tourActivo = true;
+    }
   }
 
-  IniciarTour(){
-    const options: JoyrideOptions = {
-      steps: ['firstStep'],
-      themeColor: '#212f23',
-      showCounter: false,
-      customTexts: {
-        next: '>>',
-        prev: '<<',
-        done: 'Ok'
+  introTour() {
+    this.intro  = introJs();
+    this.intro .setOptions({
+    nextLabel: ">>",
+    prevLabel: "<<",
+    doneLabel: "Aceptar",
+    hidePrev: true,
+    steps: [
+  
+      {
+        element: '#bebidasFavoritas',
+        intro: "Selecciona la bebida favorita de "+String(this.amigo.nombresusuario)+"y obsequiasela con Bube compartiendole el voucher de compra o enviandole el delivery",
+        position: 'top'
+  
       }
-    };
-    this.joyrideService.startTour(options);
+    ]
+    });
+    this.intro .start();
   }
   
-
   ionViewDidLeave(){
     let backbutton = document.getElementById('volverAmigo') as HTMLIonBackButtonElement;
     backbutton.disabled = false;
-    this.joyrideService.closeTour();
+    this.intro.exit(true);
   }
-
-  
-
 
    obtenerFecha(){
     if(this.amigo.anionacimiento != '2099' || this.amigo.anionacimiento != '2100'){

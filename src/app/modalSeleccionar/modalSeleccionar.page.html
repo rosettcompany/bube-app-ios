@@ -45,19 +45,9 @@
     </ion-item>
   </ion-list>
 
-<ng-template #customContent>
-    <ion-label class="label-tour" >En el mapa encontrarás todos los establecimientos que tienen el total de tu pedido, escoge el de tu preferencia en base al mejor precio y distancia disponible.</ion-label>
-</ng-template> 
-
-<ng-template #doneButton>
-<ion-button class="button-tour" hidden>
-    Ok!
-</ion-button>
-</ng-template>
-
 </ion-content>
 <ion-footer class="ion-no-border">
-      <ion-button  joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton"  expand="block" disabled={{buttonDisabled}} id="btn-agregar-carrito" (click)="agregarAlcarrito()">
+      <ion-button   expand="block" disabled={{buttonDisabled}} id="btn-agregar-carrito" (click)="agregarAlcarrito()">
         <ion-label id="txt-cantidad-btn">{{num_bebidas}}</ion-label>
          <ion-label class="label-boton"> Ver en el mapa </ion-label>
          <ion-label id="txt-total"> S/ {{total}}</ion-label>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { JoyrideModule } from 'ngx-joyride';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -50,7 +49,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), JoyrideModule.forChild(), HttpClientModule],
+  imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
   providers: [ ]
 })

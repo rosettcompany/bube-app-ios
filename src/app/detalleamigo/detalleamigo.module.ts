@@ -5,7 +5,6 @@ import { ComponentsModule } from '../components/components.module';
 import { IonicModule } from '@ionic/angular';
 
 import { DetalleamigoPageRoutingModule } from './detalleamigo-routing.module';
-import { JoyrideModule } from 'ngx-joyride';
 import { DetalleamigoPage } from './detalleamigo.page';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { DetalleamigoPage } from './detalleamigo.page';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    JoyrideModule.forChild(),
     DetalleamigoPageRoutingModule
   ],
   declarations: [DetalleamigoPage]

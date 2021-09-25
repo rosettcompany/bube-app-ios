@@ -3,8 +3,7 @@ import { AlertController, ModalController, Platform} from '@ionic/angular';
 import {ApiServiceService} from '../api-service.service';
 import { Router,NavigationExtras } from '@angular/router';
 import { Storage } from '@ionic/storage';
-import { JoyrideService } from 'ngx-joyride';
-import { JoyrideOptions } from 'ngx-joyride/lib/models/joyride-options.class';
+import introJs from 'intro.js/intro.js';
 
 @Component({
   selector: 'app-modalSeleccionar',
@@ -40,13 +39,12 @@ export class ModalSeleccionarPage implements OnInit {
      listatemporal = [];
      listaDisponibles = [];
      listaNoDisponibles = [];
-
+     intro:any;
      
     constructor(private modalControler: ModalController,
                 public apiService:ApiServiceService,
                 public storage: Storage,
                 private platform: Platform,
-                private readonly joyrideService: JoyrideService,
                 private alertController: AlertController,
                 private router:Router) { 
     }
@@ -67,18 +65,7 @@ ionViewWillEnter(): void {
       }   
 }
 ionViewDidEnter(): void{
-  if(this.platform.is("android")){
-    this.validarInicioTour();
-  }else{
-
-    if (this.platform.is("ios")){
-      
-    }else{
-      console.log("nada");
-        this.validarInicioTour();
-    }
-  } 
-
+  this.validarInicioTour();
 }
 
 validarInicioTour(){
@@ -86,31 +73,36 @@ validarInicioTour(){
     let tour = res;
     if(tour != null || tour != undefined){
       if(tour < 2){
-        this.IniciarTour();
+        this.introTour();
       }
     }else{
-      this.IniciarTour();
+      this.introTour();
     }
   });
 }
 
 ionViewDidLeave(): void {
-  this.joyrideService.closeTour();
+  this.intro.exit(true);
 }
 
-IniciarTour(){
-  const options: JoyrideOptions = {
-    steps: ['firstStep'],
-    themeColor: '#212f23',
-    showCounter: false,
-    stepDefaultPosition: "top",
-    customTexts: {
-      next: '>>',
-      prev: '<<',
-      done: 'Ok'
+introTour() {
+  this.intro = introJs();
+  this.intro.setOptions({
+  nextLabel: ">>",
+  prevLabel: "<<",
+  doneLabel: "Aceptar",
+  hidePrev: true,
+  steps: [
+
+    {
+      element: '#btn-agregar-carrito',
+      intro: "En el mapa encontrarás todos los establecimientos que tienen el total de tu pedido, escoge el de tu preferencia en base al mejor precio y distancia disponible",
+      position: 'top'
+
     }
-  };
-  this.joyrideService.startTour(options);
+  ]
+  });
+  this.intro.start();
 }
 
 

@@ -1,24 +1,13 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
      <ion-buttons slot="start" style="color: #f3f2ed;">
-          <ion-back-button id="volver" (click) = "regresar()" ></ion-back-button>
+          <ion-back-button mode="md" id="volver" (click) = "regresar()" ></ion-back-button>
         </ion-buttons>
-      <ion-label id="step1"  joyrideStep="firstStep" [stepContent]= "customContent" [doneTemplate]="doneButton"   class="label-toolbar">{{categoria}}</ion-label>
+      <ion-label id="step1"  class="label-toolbar">{{categoria}}</ion-label>
     </ion-toolbar>
   </ion-header>
 
   <ion-content parallax-header>
-
-     <ng-template #customContent>
-               <ion-label class="label-tour" > Puedes incluir bebidas de otras categorías en tu selección principal, tu selección no se perderá</ion-label>
-      </ng-template> 
-
-      <ng-template #doneButton>
-          <ion-button class="button-tour" hidden>
-               Ok!
-          </ion-button>
-      </ng-template>
-
      <app-aspect-ratio [ratio]="{w: 36, h: 20}">
           <app-image-shell class="background-picture" animation="spinner" [src]="imagenCategoria" ></app-image-shell> <!-- [src]="friend.image"-->
      </app-aspect-ratio>

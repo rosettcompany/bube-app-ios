@@ -198,6 +198,7 @@ ion-segment-button {
       .introjs-donebutton{
           background: #108b3c !important;
           color: #ffffff !important;
+          text-shadow: none !important;
           border: none !important;
           border-radius: 3px !important;
       }
@@ -209,3 +210,8 @@ ion-segment-button {
        .introjs-tooltip{
            border-radius: 8px;
        }
+
+       ion-radio, ion-select-popover, .radio-icon, .radio-checked {
+        border-color: #108b3c !important;
+        --color-checked: #108b3c;
+      }

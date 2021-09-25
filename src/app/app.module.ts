@@ -17,7 +17,6 @@ import { File } from '@ionic-native/file/ngx';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { ParallaxHeader } from './parallax-header.directive';
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { JoyrideModule } from 'ngx-joyride';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
@@ -34,7 +33,6 @@ import { SignInWithApple } from '@ionic-native/sign-in-with-apple/ngx';
             PipesModule,
             IonicModule.forRoot(), 
             AppRoutingModule,
-            JoyrideModule.forRoot(),
             AngularFireModule.initializeApp(environment.firebaseConfig), 
             AngularFireAuthModule,
             HttpClientModule, 
