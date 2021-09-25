@@ -40,7 +40,9 @@ irEstablecimiento(){
     this.modalControler.dismiss();
 }
 
-
+cerrarModal(){
+  this.modalControler.dismiss(null);
+}
 
 construirDatosaPagar(){
 
