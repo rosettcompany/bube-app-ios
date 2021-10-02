@@ -87,7 +87,7 @@
 
  
       <ion-row>
-          <div style="width: 100%;">
+          <div style="width: 100%;" *ngIf="filtroVisible" >
                <ion-item class="item-filtro" lines ="none" [disabled] = "botonSoloComprar">
                     <ion-icon style="color: #108B3C;" name="cart-outline" slot="start"></ion-icon>
                     <ion-label>Mostrar solo establecimientos <br> donde puedo comprar</ion-label>
