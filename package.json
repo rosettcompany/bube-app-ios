@@ -103,7 +103,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-facebook4": {
-        "APP_ID": "645963152698874",
+        "APP_ID": "476447717196637",
         "APP_NAME": "BubeApp"
       },
       "cordova-sqlite-storage": {},
